@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, type ReactNode } from "react";
 import { useActivityTracker } from "@/lib/activity";
+import { useT, type MsgKey } from "@/lib/i18n";
+import { useSettingsSync } from "@/lib/settingsSync";
 import { useAuth } from "@/lib/auth";
 import { avatarEmoji } from "@/lib/avatars";
 import { local } from "@/lib/local";
@@ -30,6 +32,9 @@ export function AppShell({ children }: { children: ReactNode }) {
   // Adult guest (or no choice yet) = Paath · Culture · Settings. Family = 4 tabs.
   const family = mode === "family" && !!session;
   const tabs = family ? appTabs : adultTabs;
+  const tr = useT();
+  const label = (href: string) => tr(`nav.${href.slice(1)}` as MsgKey);
+  useSettingsSync();
   // Learning time counts only for a child profile, on the kids' tabs (not Parent / Settings).
   useActivityTracker(family && child ? child.id : null, /^\/(paath|learn|culture)(\/|$)/.test(path));
 
@@ -57,7 +62,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <span className="hidden web:block"><Logo /></span>
         </Link>
         {child && (
-          <Link href="/profiles" className="mb-2 flex w-16 flex-col items-center gap-1 rounded-lg py-2 text-[12px] font-extrabold text-ink hover:bg-sunken web:w-auto web:flex-row web:gap-3 web:px-3 web:text-[15px]" aria-label={`${child.name} — switch profile`}>
+          <Link href="/profile" className="mb-2 flex w-16 flex-col items-center gap-1 rounded-lg py-2 text-[12px] font-extrabold text-ink hover:bg-sunken web:w-auto web:flex-row web:gap-3 web:px-3 web:text-[15px]" aria-label={`${child.name} — my profile`}>
             <span className="grid size-9 place-items-center rounded-full bg-brand-soft text-[20px]">{avatarEmoji(child.avatar)}</span>
             <span className="truncate">{child.name}</span>
           </Link>
@@ -75,7 +80,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               )}
             >
               <Icon name={t.icon} size={24} />
-              <span>{t.label}</span>
+              <span>{label(t.href)}</span>
             </Link>
           );
         })}
@@ -89,7 +94,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           )}
         >
           <Icon name="settings" size={24} />
-          <span>Settings</span>
+          <span>{tr("nav.settings")}</span>
         </Link>
       </nav>
 
@@ -116,7 +121,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <span className={cn("grid h-8 w-14 place-items-center rounded-full", on && "bg-brand-soft")}>
                 <Icon name={t.icon} size={24} />
               </span>
-              {t.label}
+              {label(t.href)}
             </Link>
           );
         })}

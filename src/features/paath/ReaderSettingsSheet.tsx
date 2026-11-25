@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button, Segmented, Toggle } from "@/components/ui/controls";
 import { Sheet } from "@/components/ui/feedback";
 import { writeReaderMode, type ReaderMode } from "./recent";
+import { writePrefs } from "@/lib/prefs";
 import { writeSettings, type ReaderSettings } from "./settings";
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
@@ -125,7 +126,7 @@ export function ReaderSettingsSheet({
               checked={dark}
               onChange={(v) => {
                 setDark(v);
-                document.documentElement.dataset.theme = v ? "dark" : "light";
+                writePrefs({ theme: v ? "dark" : "light" });
               }}
             />
           </label>

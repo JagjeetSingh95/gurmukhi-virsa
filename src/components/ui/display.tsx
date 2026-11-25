@@ -23,6 +23,8 @@ export function ListRow({
   subtitle,
   trailing,
   href,
+  onClick,
+  value,
   className,
 }: {
   icon?: IconName;
@@ -30,6 +32,10 @@ export function ListRow({
   subtitle?: string;
   trailing?: ReactNode;
   href?: string;
+  /** Renders a button row (e.g. opens the parent gate). */
+  onClick?: () => void;
+  /** Short value shown before the arrow (e.g. current plan). */
+  value?: string;
   className?: string;
 }) {
   const inner = (
@@ -43,10 +49,17 @@ export function ListRow({
         <span className="block truncate text-[16px] font-bold text-ink">{title}</span>
         {subtitle && <span className="block truncate text-caption text-ink-2">{subtitle}</span>}
       </span>
-      {trailing ?? (href && <Icon name="arrow-right" size={18} className="text-ink-3" />)}
+      {value && <span className="shrink-0 text-[14px] font-bold text-ink-2">{value}</span>}
+      {trailing ?? ((href || onClick) && <Icon name="arrow-right" size={18} className="text-ink-3" />)}
     </>
   );
   const cls = cn("flex min-h-[var(--row-h)] items-center gap-3 px-4 py-2", className);
+  if (onClick)
+    return (
+      <button type="button" onClick={onClick} className={cn(cls, "self-stretch rounded-md text-left hover:bg-sunken")}>
+        {inner}
+      </button>
+    );
   return href ? (
     <Link href={href} className={cn(cls, "rounded-md hover:bg-sunken")}>
       {inner}

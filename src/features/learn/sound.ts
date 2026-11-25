@@ -1,7 +1,10 @@
 "use client";
 // Feedback tones (colour + icon + sound, U.7). Simple synthesized beeps — not voices.
+import { readPrefs } from "@/lib/prefs";
+
 let ctx: AudioContext | null = null;
 export function tone(kind: "right" | "wrong" | "done") {
+  if (!readPrefs().sounds) return; // Settings → Sounds in quizzes (N.9.1)
   try {
     ctx ??= new AudioContext();
     const notes = kind === "right" ? [660, 880] : kind === "wrong" ? [300, 220] : [523, 659, 784];

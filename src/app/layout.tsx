@@ -10,6 +10,7 @@ import "@fontsource/mukta-mahee/gurmukhi-500.css";
 import "@fontsource/mukta-mahee/gurmukhi-600.css";
 import "@fontsource/noto-sans-gurmukhi/gurmukhi-500.css";
 import "./globals.css";
+import { prefsBootScript } from "@/lib/prefsBoot";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -30,7 +31,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <head>
+        {/* Applies the saved theme before paint (N.9.1). */}
+        <script dangerouslySetInnerHTML={{ __html: prefsBootScript }} />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

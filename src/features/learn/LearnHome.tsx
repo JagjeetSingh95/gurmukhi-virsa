@@ -44,7 +44,7 @@ export function LearnHome() {
           <div className="flex items-center gap-2">
             {L.streak > 0 && <Badge tone="reward" icon="star">{L.streak}-day streak</Badge>}
             {L.child && (
-              <Link href="/profiles" aria-label={`${L.child.name} — switch profile`} className="grid size-10 place-items-center rounded-full bg-brand-soft text-[20px] tab:hidden">
+              <Link href="/profile" aria-label={`${L.child.name} — my profile`} className="grid size-10 place-items-center rounded-full bg-brand-soft text-[20px] tab:hidden">
                 {avatarEmoji(L.child.avatar)}
               </Link>
             )}

@@ -122,7 +122,7 @@ export function useLearner() {
   const weak = Object.entries(store.mistakes)
     .filter(([, m]) => m.wrong >= 2)
     .map(([id]) => id);
-  const streak = child ? Math.max(child.streak_days, streakFrom(store.days)) : streakFrom(store.days);
+  const streak = child ? Math.max(child.streak_days ?? 0, streakFrom(store.days)) : streakFrom(store.days);
   const doneToday = store.days[store.days.length - 1] === today();
   const lettersDone = Object.keys(store.progress).filter((k) => k.startsWith("letter:")).length;
 
