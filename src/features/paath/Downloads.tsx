@@ -6,10 +6,11 @@ import { Icon } from "@/components/icons";
 import { Button } from "@/components/ui/controls";
 import { ConfirmDialog, StateView } from "@/components/ui/feedback";
 import { library } from "@/features/paath/library";
-import { fmtBytes, offlineSupported, removeAll, removeBani, saveBani, useDownloads, verifyDownloads } from "@/lib/offline";
+import { fmtBytes, removeAll, removeBani, saveBani, useDownloads, useOfflineSupported, verifyDownloads } from "@/lib/offline";
 
 export function Downloads() {
   const downloads = useDownloads();
+  const supported = useOfflineSupported();
   const [busy, setBusy] = useState<string | null>(null);
   const [pct, setPct] = useState(0);
   const [askAll, setAskAll] = useState(false);
@@ -21,7 +22,7 @@ export function Downloads() {
     navigator.storage?.estimate?.().then((e) => setQuota({ usage: e.usage ?? 0, quota: e.quota ?? 0 }));
   }, [downloads.length]);
 
-  if (!offlineSupported()) return <StateView kind="offline" art={false} title="Offline reading isn't available" body="This browser can't save banis. Try an up-to-date Chrome, Edge, Safari or Firefox." />;
+  if (!supported) return <StateView kind="offline" art={false} title="Offline reading isn't available" body="This browser can't save banis. Try an up-to-date Chrome, Edge, Safari or Firefox." />;
 
   const total = downloads.reduce((a, d) => a + d.bytes, 0);
   const save = async (slug: string) => {

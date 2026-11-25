@@ -40,12 +40,12 @@ export function CultureHome() {
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2">
               {today.free && <Badge tone="success">Free</Badge>}
-              <span className="text-caption font-extrabold uppercase tracking-wider opacity-90">Today&apos;s sakhi · {today.minutes} min</span>
+              <span className="text-caption font-extrabold uppercase tracking-wider">Today&apos;s sakhi · {today.minutes} min</span>
             </div>
             <h2 className="text-h2 text-white web:text-h1">
               {sakhiHeading(today)}
             </h2>
-            <p className="text-[15px] opacity-90">{today.tagline}.</p>
+            <p className="text-[15px]">{today.tagline}.</p>
             <span className="mt-1 inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-[15px] font-extrabold text-[var(--saffron-800)]">
               <Icon name="play" size={16} /> Play story
             </span>

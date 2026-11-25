@@ -85,6 +85,7 @@ export function SearchView() {
   return (
     <>
       <header className="sticky top-0 z-20 flex flex-col gap-3 border-b border-line bg-app/95 px-3 py-3 backdrop-blur web:px-8">
+        <h1 className="sr-only">Search Gurbani</h1>
         <div className="flex items-center gap-2">
           <button type="button" onClick={() => router.back()} className="grid size-11 shrink-0 place-items-center rounded-full hover:bg-sunken" aria-label="Back">
             <Icon name="arrow-right" className="rotate-180" />

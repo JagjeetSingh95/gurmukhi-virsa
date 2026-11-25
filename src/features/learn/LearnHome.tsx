@@ -72,7 +72,7 @@ export function LearnHome() {
               <section key={u.n} aria-labelledby={`unit-${u.n}`} className="flex flex-col items-center gap-5">
                 <div className={cn("flex w-full items-center gap-3 rounded-2xl px-5 py-4 text-white", unitLocked ? "bg-[var(--gold-800)]" : "bg-brand shadow-[0_4px_0_var(--brand-shadow)]")}>
                   <div className="flex-1">
-                    <p className="text-caption font-extrabold uppercase tracking-wider opacity-90">{u.title}</p>
+                    <p className="text-caption font-extrabold uppercase tracking-wider">{u.title}</p>
                     <h2 id={`unit-${u.n}`} className="text-h3 text-white">
                       <span lang="pa">{u.subtitle}</span>
                     </h2>

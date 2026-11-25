@@ -5,6 +5,7 @@
 //   gv-static — hashed JS/CSS/font files (incl. the bani text chunk) (kept across app updates)
 //   gv-audio  — recordings for downloaded banis (when real audio exists)
 import { libraryItem, loadBani, pagedBanis } from "@/features/paath/library";
+import { useSyncExternalStore } from "react";
 import { useLocal } from "@/lib/useLocal";
 
 export const CACHES = { banis: "gv-banis", static: "gv-static", audio: "gv-audio" } as const;
@@ -12,6 +13,9 @@ export type Download = { slug: string; bytes: number; at: string; audio: boolean
 const KEY = "gv.downloads";
 
 export const offlineSupported = () => typeof window !== "undefined" && "caches" in window && "serviceWorker" in navigator;
+const noop = () => () => {};
+/** Hydration-safe: false on the server and first client render, real value after. */
+export const useOfflineSupported = () => useSyncExternalStore(noop, offlineSupported, () => false);
 
 export function readDownloads(): Download[] {
   try {

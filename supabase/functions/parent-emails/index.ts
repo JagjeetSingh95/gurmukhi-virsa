@@ -44,15 +44,15 @@ function layout(title: string, body: string, unsubUrl: string) {
 <body style="margin:0;background:#FFF9F2;font-family:Arial,Helvetica,sans-serif;color:#2A1F14">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:24px 12px">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:16px;border:1px solid #F0E4D4">
-<tr><td style="padding:28px 28px 8px;font-size:14px;color:#8A7560">Gurmukhi Virsa · ਗੁਰਮੁਖੀ ਵਿਰਸਾ</td></tr>
+<tr><td style="padding:28px 28px 8px;font-size:14px;color:#6E6155">Gurmukhi Virsa · ਗੁਰਮੁਖੀ ਵਿਰਸਾ</td></tr>
 <tr><td style="padding:0 28px 24px;font-size:16px;line-height:1.55">${body}</td></tr>
 </table>
-<p style="font-size:12px;color:#8A7560;margin:16px 0 0"><a href="${unsubUrl}" style="color:#8A7560">Unsubscribe</a> · <a href="${SITE}/parent/emails" style="color:#8A7560">Manage emails</a></p>
+<p style="font-size:12px;color:#6E6155;margin:16px 0 0"><a href="${unsubUrl}" style="color:#6E6155">Unsubscribe</a> · <a href="${SITE}/parent/emails" style="color:#6E6155">Manage emails</a></p>
 </td></tr></table></body></html>`;
 }
 
 const button = (href: string, label: string) =>
-  `<p style="margin:24px 0 0"><a href="${href}" style="display:inline-block;background:#E07B1F;color:#ffffff;text-decoration:none;font-weight:bold;padding:12px 22px;border-radius:999px">${label}</a></p>`;
+  `<p style="margin:24px 0 0"><a href="${href}" style="display:inline-block;background:#BD550E;color:#ffffff;text-decoration:none;font-weight:bold;padding:12px 22px;border-radius:999px">${label}</a></p>`;
 
 async function send(to: string, subject: string, html: string, text: string, unsubUrl: string) {
   const key = Deno.env.get("RESEND_API_KEY");
@@ -129,7 +129,7 @@ Deno.serve(async (req) => {
       const unsub = `${FN}/unsubscribe?t=${p.email_token}&k=weekly`;
       const html = layout(
         "Your family's week",
-        `<h1 style="font-size:24px;margin:8px 0 4px">Sat Sri Akal!</h1><p style="margin:0">Here's your family's week: <b>${total} minutes</b> of learning together.</p>${blocks}${family ? "" : `<p style="margin:16px 0 0;color:#8A7560;font-size:14px">The Family plan adds which letters each child learned.</p>`}${button(`${SITE}/parent`, "Open dashboard")}`,
+        `<h1 style="font-size:24px;margin:8px 0 4px">Sat Sri Akal!</h1><p style="margin:0">Here's your family's week: <b>${total} minutes</b> of learning together.</p>${blocks}${family ? "" : `<p style="margin:16px 0 0;color:#6E6155;font-size:14px">The Family plan adds which letters each child learned.</p>`}${button(`${SITE}/parent`, "Open dashboard")}`,
         unsub,
       );
       const text = `Sat Sri Akal! Your family's week: ${total} minutes.\n` + rows.map((r) => `${r.k.name}: ${r.letters.length} letters, ${r.minutes} min, ${r.k.streak_days}-day streak`).join("\n") + `\n\nOpen dashboard: ${SITE}/parent\nUnsubscribe: ${unsub}`;

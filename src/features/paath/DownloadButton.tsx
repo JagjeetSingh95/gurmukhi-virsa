@@ -4,13 +4,14 @@ import { useState } from "react";
 import { Icon } from "@/components/icons";
 import { useToast } from "@/components/ui/feedback";
 import { cn } from "@/lib/cn";
-import { offlineSupported, removeBani, saveBani, useDownloads } from "@/lib/offline";
+import { removeBani, saveBani, useDownloads, useOfflineSupported } from "@/lib/offline";
 
 export function DownloadButton({ slug, title }: { slug: string; title: string }) {
   const toast = useToast();
   const downloads = useDownloads();
+  const supported = useOfflineSupported();
   const [pct, setPct] = useState<number | null>(null);
-  if (!offlineSupported()) return null;
+  if (!supported) return null;
   const saved = downloads.some((d) => d.slug === slug);
 
   const onClick = async () => {

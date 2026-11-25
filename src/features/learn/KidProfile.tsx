@@ -132,10 +132,10 @@ export function KidProfile() {
             {badges.map((b) => (
               <li
                 key={b.id}
-                className={cn("flex flex-col items-center gap-1 rounded-2xl p-3 text-center", b.earned ? "bg-reward-bg" : "bg-sunken opacity-60")}
+                className={cn("flex flex-col items-center gap-1 rounded-2xl p-3 text-center", b.earned ? "bg-reward-bg" : "bg-sunken")}
                 aria-label={`${b.label}${b.earned ? "" : " (not yet)"}`}
               >
-                <span className={cn("text-[32px]", !b.earned && "grayscale")} aria-hidden>{b.earned ? b.emoji : "🔒"}</span>
+                <span className={cn("text-[32px]", !b.earned && "opacity-50 grayscale")} aria-hidden>{b.earned ? b.emoji : "🔒"}</span>
                 <span className="text-[12px] font-extrabold text-ink-2">{b.label}</span>
               </li>
             ))}

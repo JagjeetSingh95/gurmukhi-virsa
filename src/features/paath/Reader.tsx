@@ -170,10 +170,13 @@ export function Reader({ slug, title, gurmukhiTitle, lines, lineCount, sectionLa
 
   useEffect(() => {
     if (!playing || (settings.timer !== "15" && settings.timer !== "30")) return;
-    const t = setTimeout(() => {
-      audioRef.current?.pause();
-      toast("Sleep timer finished. Waheguru.", "info");
-    }, Number(settings.timer) * 60_000);
+    const t = setTimeout(
+      () => {
+        audioRef.current?.pause();
+        toast("Sleep timer finished. Waheguru.", "info");
+      },
+      Number(settings.timer) * 60_000,
+    );
     return () => clearTimeout(t);
   }, [playing, settings.timer, toast]);
 
@@ -208,7 +211,9 @@ export function Reader({ slug, title, gurmukhiTitle, lines, lineCount, sectionLa
         <div className="min-w-0 flex-1">
           <h1 className="truncate text-h3">{title}</h1>
           <p className="truncate text-caption text-ink-2">
-            <span lang="pa" className="font-[family-name:var(--font-gurbani)] text-[13px] text-gurbani">{gurmukhiTitle}</span>
+            <span lang="pa" className="font-[family-name:var(--font-gurbani)] text-[13px] text-gurbani">
+              {gurmukhiTitle}
+            </span>
             {sectionTitle && ` · ${sectionTitle}`}
             {kids && " · Kids"}
           </p>
@@ -226,7 +231,12 @@ export function Reader({ slug, title, gurmukhiTitle, lines, lineCount, sectionLa
           <Icon name={fav ? "heart-on" : "heart"} />
         </button>
         <DownloadButton slug={slug} title={title} />
-        <button type="button" onClick={() => setSheet(true)} className="grid size-11 place-items-center rounded-full text-ink-2 hover:bg-sunken" aria-label="Reading settings (,)">
+        <button
+          type="button"
+          onClick={() => setSheet(true)}
+          className="grid size-11 place-items-center rounded-full text-ink-2 hover:bg-sunken"
+          aria-label="Reading settings (,)"
+        >
           <Icon name="settings" />
         </button>
       </header>
@@ -235,7 +245,15 @@ export function Reader({ slug, title, gurmukhiTitle, lines, lineCount, sectionLa
         <div className="mx-auto mt-4 flex max-w-[760px] items-center gap-3 rounded-xl bg-navy-800 px-4 py-3 text-white dark:bg-navy-900 web:mx-auto">
           <Icon name="moon" className="shrink-0 text-saffron-300" />
           <p className="flex-1 text-[14px] font-bold">Bedtime Paath. Dim your screen and read slowly.</p>
-          <button type="button" className="text-[14px] font-extrabold text-saffron-300 underline" onClick={() => { writeSettings({ timer: "end" }); setBedtimeNote(false); setSheet(true); }}>
+          <button
+            type="button"
+            className="text-[14px] font-extrabold text-saffron-300 underline"
+            onClick={() => {
+              writeSettings({ timer: "end" });
+              setBedtimeNote(false);
+              setSheet(true);
+            }}
+          >
             Sleep timer
           </button>
         </div>
@@ -263,8 +281,15 @@ export function Reader({ slug, title, gurmukhiTitle, lines, lineCount, sectionLa
             if (l.kind === "heading")
               return (
                 <div key={l.id} id={`l${l.i}`} data-line={l.i} data-section={l.section}>
-                  {showSection && <h2 className="mb-1 mt-8 px-2 text-label uppercase tracking-wider text-ink-3 first:mt-0">{sectionLabels[l.section].replace(/ of \d+$/, "")}</h2>}
-                  <p lang="pa" className="mb-1 mt-5 text-center font-[family-name:var(--font-gurbani)] text-[18px] font-semibold text-ink-2">
+                  {showSection && (
+                    <h2 className="mb-1 mt-8 px-2 text-label uppercase tracking-wider text-ink-3 first:mt-0">
+                      {sectionLabels[l.section].replace(/ of \d+$/, "")}
+                    </h2>
+                  )}
+                  <p
+                    lang="pa"
+                    className="mb-1 mt-5 text-center font-[family-name:var(--font-gurbani)] text-[18px] font-semibold text-ink-2"
+                  >
                     <G text={l.gurmukhi} />
                   </p>
                 </div>
@@ -273,37 +298,47 @@ export function Reader({ slug, title, gurmukhiTitle, lines, lineCount, sectionLa
             const marked = saved.isBookmarked(slug, l.id);
             return (
               <div key={l.id} id={`l${l.i}`} data-line={l.i} data-section={l.section} className="scroll-mt-24">
-                {showSection && <h2 className="mb-1 mt-8 px-2 text-label uppercase tracking-wider text-ink-3 first:mt-0">{sectionLabels[l.section].replace(/ of \d+$/, "")}</h2>}
-                <div
-                  role="button"
-                  tabIndex={0}
-                  aria-current={on || undefined}
-                  aria-label={`Line ${k + 1}${marked ? ", bookmarked" : ""}`}
-                  onClick={() => {
-                    setCurrent(l.i);
-                    if (l.audio && audioRef.current) audioRef.current.currentTime = l.audio.start;
-                  }}
-                  onKeyDown={(e) => e.key === "Enter" && setCurrent(l.i)}
-                  onPointerDown={() => startPress(l)}
-                  onPointerUp={cancelPress}
-                  onPointerLeave={cancelPress}
-                  onContextMenu={(e) => e.preventDefault()}
-                  className={cn(
-                    "group relative flex cursor-pointer flex-col gap-1 rounded-lg px-3 py-3 pr-12 transition-colors web:px-4",
-                    on ? "bg-hl" : "hover:bg-sunken/60",
-                    kids && "py-4",
-                  )}
-                >
-                  <p lang="pa" className="font-[family-name:var(--font-gurbani)] leading-[1.55] text-gurbani" style={{ fontSize: gSize, fontWeight: kids ? 600 : 500 }}>
-                    <G text={l.gurmukhi} />
-                  </p>
-                  {settings.roman && <p className={cn("font-semibold italic text-ink-2", kids ? "text-[18px]" : "text-[15px]")}>{l.roman}</p>}
-                  {settings.en && meaning(l) && <p className={cn("text-ink-2", kids ? "text-[17px]" : "text-[15px]")}>{meaning(l)}</p>}
-                  {settings.pa && l.pa && (
-                    <p lang="pa" className="font-[family-name:var(--font-gurmukhi)] text-[15px] text-ink-2">
-                      {l.pa}
+                {showSection && (
+                  <h2 className="mb-1 mt-8 px-2 text-label uppercase tracking-wider text-ink-3 first:mt-0">
+                    {sectionLabels[l.section].replace(/ of \d+$/, "")}
+                  </h2>
+                )}
+                {/* Bookmark button sits beside (not inside) the line button — no nested interactive controls (N.9.4). */}
+                <div className={cn("group relative rounded-lg transition-colors", on ? "bg-hl" : "hover:bg-sunken/60")}>
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    aria-current={on || undefined}
+                    onClick={() => {
+                      setCurrent(l.i);
+                      if (l.audio && audioRef.current) audioRef.current.currentTime = l.audio.start;
+                    }}
+                    onKeyDown={(e) => e.key === "Enter" && setCurrent(l.i)}
+                    onPointerDown={() => startPress(l)}
+                    onPointerUp={cancelPress}
+                    onPointerLeave={cancelPress}
+                    onContextMenu={(e) => e.preventDefault()}
+                    className={cn("flex cursor-pointer flex-col gap-1 rounded-lg px-3 py-3 pr-12 web:px-4", kids && "py-4")}
+                  >
+                    {/* Accessible name = the line itself (N.9.4), prefixed for orientation. */}
+                    <span className="sr-only">{`Line ${k + 1}${marked ? ", bookmarked" : ""}: `}</span>
+                    <p
+                      lang="pa"
+                      className="font-[family-name:var(--font-gurbani)] leading-[1.55] text-gurbani"
+                      style={{ fontSize: gSize, fontWeight: kids ? 600 : 500 }}
+                    >
+                      <G text={l.gurmukhi} />
                     </p>
-                  )}
+                    {settings.roman && (
+                      <p className={cn("font-semibold italic text-ink-2", kids ? "text-[18px]" : "text-[15px]")}>{l.roman}</p>
+                    )}
+                    {settings.en && meaning(l) && <p className={cn("text-ink-2", kids ? "text-[17px]" : "text-[15px]")}>{meaning(l)}</p>}
+                    {settings.pa && l.pa && (
+                      <p lang="pa" className="font-[family-name:var(--font-gurmukhi)] text-[15px] text-ink-2">
+                        {l.pa}
+                      </p>
+                    )}
+                  </div>
                   <button
                     type="button"
                     onClick={(e) => {
@@ -328,14 +363,20 @@ export function Reader({ slug, title, gurmukhiTitle, lines, lineCount, sectionLa
           {(prev || next) && (
             <nav aria-label="Sections" className="mt-10 flex items-center justify-between gap-3 px-2">
               {prev ? (
-                <Link href={prev.href} className="inline-flex h-11 items-center gap-2 rounded-md border-2 border-line-strong bg-surface px-4 text-[15px] font-extrabold">
+                <Link
+                  href={prev.href}
+                  className="inline-flex h-11 items-center gap-2 rounded-md border-2 border-line-strong bg-surface px-4 text-[15px] font-extrabold"
+                >
                   <Icon name="arrow-right" size={18} className="rotate-180" /> {prev.label}
                 </Link>
               ) : (
                 <span />
               )}
               {next && (
-                <Link href={next.href} className="inline-flex h-11 items-center gap-2 rounded-md bg-brand px-4 text-[15px] font-extrabold text-white shadow-[0_3px_0_var(--brand-shadow)]">
+                <Link
+                  href={next.href}
+                  className="inline-flex h-11 items-center gap-2 rounded-md bg-brand px-4 text-[15px] font-extrabold text-white shadow-[0_3px_0_var(--brand-shadow)]"
+                >
                   {next.label} <Icon name="arrow-right" size={18} />
                 </Link>
               )}
@@ -351,12 +392,32 @@ export function Reader({ slug, title, gurmukhiTitle, lines, lineCount, sectionLa
       {/* Audio bar (N.4.3) — sits above the mobile tab bar. */}
       <div className="fixed inset-x-0 bottom-[84px] z-30 border-t border-line bg-surface/95 backdrop-blur tab:bottom-0 tab:left-20 web:left-[220px] wide:left-[256px]">
         <div className="mx-auto flex h-16 max-w-[760px] items-center gap-3 px-4">
-          {hasAudio && <audio ref={audioRef} src={audioUrl!} preload="metadata" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onTimeUpdate={onTime} onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)} onEnded={() => { setPlaying(false); if (settings.repeat === "bani" && audioRef.current) { audioRef.current.currentTime = 0; void audioRef.current.play(); } }} />}
+          {hasAudio && (
+            <audio
+              ref={audioRef}
+              src={audioUrl!}
+              preload="metadata"
+              onPlay={() => setPlaying(true)}
+              onPause={() => setPlaying(false)}
+              onTimeUpdate={onTime}
+              onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+              onEnded={() => {
+                setPlaying(false);
+                if (settings.repeat === "bani" && audioRef.current) {
+                  audioRef.current.currentTime = 0;
+                  void audioRef.current.play();
+                }
+              }}
+            />
+          )}
           <button
             type="button"
             onClick={togglePlay}
             aria-label={playing ? "Pause (Space)" : "Play (Space)"}
-            className={cn("grid size-11 shrink-0 place-items-center rounded-full text-white", hasAudio ? "bg-navy-800 dark:bg-navy-600" : "bg-line-strong")}
+            className={cn(
+              "grid size-11 shrink-0 place-items-center rounded-full text-white",
+              hasAudio ? "bg-navy-800 dark:bg-navy-600" : "bg-line-strong",
+            )}
           >
             <Icon name={playing ? "pause" : "play"} size={18} />
           </button>
@@ -376,7 +437,12 @@ export function Reader({ slug, title, gurmukhiTitle, lines, lineCount, sectionLa
                 className="h-2 flex-1 accent-[var(--brand)]"
               />
               <span className="w-10 text-caption tabular-nums text-ink-2">{fmtTime(duration)}</span>
-              <button type="button" onClick={() => setSheet(true)} className="rounded-md px-2 py-1 text-label text-ink" aria-label="Audio speed">
+              <button
+                type="button"
+                onClick={() => setSheet(true)}
+                className="rounded-md px-2 py-1 text-label text-ink"
+                aria-label="Audio speed"
+              >
                 {settings.speed}×
               </button>
             </>
@@ -425,12 +491,22 @@ function KidsLineView({
         <span className="text-label text-ink-2">
           Line {index + 1} of {total}
         </span>
-        <button type="button" onClick={onBookmark} aria-pressed={bookmarked} aria-label={bookmarked ? "Remove bookmark" : "Bookmark this line"} className={cn("grid size-11 place-items-center rounded-full hover:bg-sunken", bookmarked ? "text-brand-text" : "text-ink-3")}>
+        <button
+          type="button"
+          onClick={onBookmark}
+          aria-pressed={bookmarked}
+          aria-label={bookmarked ? "Remove bookmark" : "Bookmark this line"}
+          className={cn("grid size-11 place-items-center rounded-full hover:bg-sunken", bookmarked ? "text-brand-text" : "text-ink-3")}
+        >
           <Icon name={bookmarked ? "bookmark-on" : "bookmark"} />
         </button>
       </div>
       <section className="flex flex-col items-center gap-3 rounded-2xl bg-hl px-5 py-8 text-center">
-        <p lang="pa" className="font-[family-name:var(--font-gurbani)] font-semibold leading-[1.5] text-gurbani" style={{ fontSize: size + 4 }}>
+        <p
+          lang="pa"
+          className="font-[family-name:var(--font-gurbani)] font-semibold leading-[1.5] text-gurbani"
+          style={{ fontSize: size + 4 }}
+        >
           <G text={line.gurmukhi} />
         </p>
         {showRoman && <p className="text-[20px] font-bold italic text-ink-2">{line.roman}</p>}
@@ -441,7 +517,9 @@ function KidsLineView({
 
       {line.words.length > 1 && (
         <section aria-labelledby="wbw" className="flex flex-col gap-2">
-          <h2 id="wbw" className="text-label text-ink-2">Word by word</h2>
+          <h2 id="wbw" className="text-label text-ink-2">
+            Word by word
+          </h2>
           <div className="flex flex-wrap gap-2">
             {line.words.map((w, n) => (
               <span key={`${w.g}-${n}`} className="flex flex-col items-center rounded-xl border border-line bg-surface px-3 py-2">
@@ -458,7 +536,9 @@ function KidsLineView({
       <section className="flex flex-col gap-1 rounded-xl bg-info-bg p-4">
         <h2 className="text-caption font-extrabold tracking-wide text-info">SIMPLE MEANING</h2>
         <p className="text-[17px] font-semibold text-ink">{line.enKids ?? line.en ?? "Meaning coming soon."}</p>
-        {!line.enKids && <p className="text-caption text-ink-2">A simpler kids&apos; version is being written and checked by a Sikh teacher.</p>}
+        {!line.enKids && (
+          <p className="text-caption text-ink-2">A simpler kids&apos; version is being written and checked by a Sikh teacher.</p>
+        )}
       </section>
 
       <div className="flex gap-3">

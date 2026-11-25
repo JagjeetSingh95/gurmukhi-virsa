@@ -207,7 +207,7 @@ export function PricingCards() {
             )}
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="text-h2">{p.name}</h3>
+                <h2 className="text-h2">{p.name}</h2>
                 <p className="mt-1 text-[22px] font-black text-ink">{p.price}</p>
                 <p className="text-caption text-ink-2">{p.note}</p>
               </div>

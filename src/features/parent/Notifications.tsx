@@ -71,15 +71,15 @@ export function WeeklyEmail() {
       <section aria-labelledby="preview-h" className="flex flex-col gap-2">
         <h2 id="preview-h" className="text-h3">Preview</h2>
         <div className="rounded-2xl border border-line bg-white p-5 text-[#2A1F14] shadow-[0_2px_0_var(--border-default)]">
-          <p className="text-[13px] text-[#8A7560]">From Gurmukhi Virsa · {DAY_OPTS.find((d) => d.value === day)?.label ?? "Sun"}</p>
+          <p className="text-[13px] text-[#6E6155]">From Gurmukhi Virsa · {DAY_OPTS.find((d) => d.value === day)?.label ?? "Sun"}</p>
           <p className="mt-2 text-[20px] font-extrabold">Sat Sri Akal!</p>
           <p className="mt-1 text-[15px]">Here&apos;s your family&apos;s week: <b>38 minutes</b> of learning together.</p>
           <p className="mt-3 text-[15px]">
             <b>{first}&apos;s week</b>
             <br />3 letters: <span lang="pa" className="font-[family-name:var(--font-gurmukhi)] text-[18px]">ਕ ਖ ਗ</span> · 38 minutes · 6-day streak
           </p>
-          <span className="mt-4 inline-block rounded-full bg-[#E07B1F] px-4 py-2 text-[14px] font-bold text-white">Open dashboard</span>
-          <p className="mt-4 text-[12px] text-[#8A7560]">Unsubscribe · Manage emails</p>
+          <span className="mt-4 inline-block rounded-full bg-[#BD550E] px-4 py-2 text-[14px] font-bold text-white">Open dashboard</span>
+          <p className="mt-4 text-[12px] text-[#6E6155]">Unsubscribe · Manage emails</p>
         </div>
         <p className="text-caption text-ink-3">Plain email, one-tap unsubscribe, no tracking pixels. Letter details come with the Family plan.</p>
       </section>
