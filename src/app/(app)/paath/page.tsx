@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
-import { Placeholder } from "@/components/shell/Placeholder";
+import { PaathLibrary } from "./PaathLibrary";
 import { TeachingKidsCard } from "./TeachingKidsCard";
 
-export const metadata: Metadata = { title: "Paath", robots: { index: false } };
+export const metadata: Metadata = {
+  title: "Paath",
+  description: "Read Mool Mantar, Japji Sahib, Kirtan Sohila and Sukhmani Sahib with transliteration and meaning. Free forever.",
+};
 
 export default function Page() {
   return (
     <>
-      <Placeholder title="Paath" task="N.4.1" body="Mool Mantar, Japji Sahib (pauris 1–5), Kirtan Sohila and Sukhmani Sahib — with transliteration, meaning and audio. Free forever." />
+      <PaathLibrary />
       <TeachingKidsCard />
     </>
   );
