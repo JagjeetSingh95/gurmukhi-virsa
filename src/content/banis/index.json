@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "mool-mantar",
+    "title": "Mool Mantar",
+    "gurmukhi": "ਮੂਲ ਮੰਤਰ",
+    "minutes": 1,
+    "tier": "free",
+    "bedtime": false,
+    "lineCount": 1
+  },
+  {
+    "slug": "japji-1-5",
+    "title": "Japji Sahib (Pauris 1–5)",
+    "gurmukhi": "ਜਪੁਜੀ ਸਾਹਿਬ",
+    "minutes": 6,
+    "tier": "free",
+    "bedtime": false,
+    "lineCount": 48
+  },
+  {
+    "slug": "kirtan-sohila",
+    "title": "Kirtan Sohila",
+    "gurmukhi": "ਕੀਰਤਨ ਸੋਹਿਲਾ",
+    "minutes": 8,
+    "tier": "free",
+    "bedtime": true,
+    "lineCount": 54
+  },
+  {
+    "slug": "sukhmani",
+    "title": "Sukhmani Sahib",
+    "gurmukhi": "ਸੁਖਮਨੀ ਸਾਹਿਬ",
+    "minutes": 90,
+    "tier": "free",
+    "bedtime": false,
+    "lineCount": 2026
+  }
+]

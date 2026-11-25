@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: site.name,
     short_name: "Virsa",
     description: site.description,
-    start_url: "/paath",
+    start_url: "/welcome",
     display: "standalone",
     background_color: "#FFFAF3",
     theme_color: "#E07B1F",

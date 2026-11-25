@@ -7,7 +7,7 @@ export const site = {
     "Gurmukhi Virsa helps kids aged 4–12 learn the Gurmukhi alphabet, read Paath with meaning and discover Sikh heritage. Paath is free forever. No ads, no tracking.",
   url: process.env.SITE_URL ?? "https://gurmukhivirsa.app",
   supportEmail: "support@gurmukhivirsa.app",
-  appEntry: "/paath",
+  appEntry: "/welcome",
 } as const;
 
 export const marketingNav = [

@@ -1,6 +1,8 @@
 # Gurmukhi Virsa — website
 
-Next.js 16 (App Router) · TypeScript · Tailwind v4 · Cloudflare Workers via OpenNext.
+Next.js 16 (App Router) · TypeScript · Tailwind v4 · Supabase (Postgres + Auth) · Cloudflare Workers via OpenNext.
+
+Backend setup: see [docs/supabase-setup.md](docs/supabase-setup.md). Content: `src/content` (banis from Shabad OS via `scripts/extract-banis.py` + `scripts/build-banis.mjs`).
 
 ```bash
 npm install

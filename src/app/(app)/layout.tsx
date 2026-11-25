@@ -1,10 +1,13 @@
 import { AppShell } from "@/components/shell/AppShell";
 import { ToastProvider } from "@/components/ui/feedback";
+import { AuthProvider } from "@/lib/auth";
 
 export default function AppLayout({ children }: LayoutProps<"/">) {
   return (
-    <ToastProvider>
-      <AppShell>{children}</AppShell>
-    </ToastProvider>
+    <AuthProvider>
+      <ToastProvider>
+        <AppShell>{children}</AppShell>
+      </ToastProvider>
+    </AuthProvider>
   );
 }

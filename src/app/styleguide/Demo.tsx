@@ -5,6 +5,8 @@ import { IkOnkar } from "@/components/IkOnkar";
 import { Sheru, type SheruMood } from "@/components/sheru/Sheru";
 import { Button, Chip, CodeInput, Input, Segmented, Toggle } from "@/components/ui/controls";
 import { Badge, Card, ListRow, LockTag, ProfileTile, Progress } from "@/components/ui/display";
+import { ParentGate } from "@/components/gate/ParentGate";
+import { AuthProvider } from "@/lib/auth";
 import { ConfirmDialog, QuizTile, Sheet, Skeleton, StateView, ToastProvider, useToast } from "@/components/ui/feedback";
 
 const swatches = ["saffron-50", "saffron-100", "saffron-300", "saffron-500", "saffron-600", "saffron-800", "navy-50", "navy-300", "navy-600", "navy-800", "navy-900"];
@@ -28,6 +30,7 @@ function Inner() {
   const [sheet, setSheet] = useState(false);
   const [dialog, setDialog] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [gate, setGate] = useState(false);
 
   return (
     <div className="mx-auto max-w-[1200px] px-5 py-10 web:px-8">
@@ -127,10 +130,12 @@ function Inner() {
           <Button variant="secondary" onClick={() => setSheet(true)}>Open sheet</Button>
           <Button variant="secondary" onClick={() => setDialog(true)}>Open dialog</Button>
           <Button variant="secondary" onClick={() => toast("Bookmark saved", "success")}>Show toast</Button>
+          <Button variant="secondary" onClick={() => setGate(true)}>Parent gate</Button>
         </div>
         <Sheet open={sheet} onClose={() => setSheet(false)} title="Reader settings" footer={<Button onClick={() => setSheet(false)}>Done</Button>}>
           Text size, transliteration and meaning settings go here.
         </Sheet>
+        <ParentGate open={gate} onClose={() => setGate(false)} onPass={() => { setGate(false); toast("Gate passed", "success"); }} />
         <ConfirmDialog open={dialog} onClose={() => setDialog(false)} onConfirm={() => setDialog(false)} title="Remove Arjan?" body="Arjan's progress will be deleted. This can't be undone." confirmLabel="Remove" destructive />
       </Block>
 
@@ -161,8 +166,10 @@ function Inner() {
 
 export function Demo() {
   return (
-    <ToastProvider>
-      <Inner />
-    </ToastProvider>
+    <AuthProvider>
+      <ToastProvider>
+        <Inner />
+      </ToastProvider>
+    </AuthProvider>
   );
 }

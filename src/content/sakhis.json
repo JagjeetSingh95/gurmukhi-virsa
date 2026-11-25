@@ -1,0 +1,45 @@
+{
+ "source": "Draft summaries — MUST be reviewed by a Sikh reviewer before launch. Never depict the Gurus in art.",
+ "sakhis": [
+  {
+   "id": "sakhi-01",
+   "title": "The True Bargain",
+   "gurmukhi": "ਸੱਚਾ ਸੌਦਾ",
+   "minutes": 3,
+   "free": true,
+   "summary": "Young Guru Nanak Dev Ji is given money to make a good deal at the market. On the way he meets hungry holy men and spends it all on food for them. He calls this the truest bargain of all.",
+   "lesson": "Helping people in need is worth more than any profit.",
+   "body": null
+  },
+  {
+   "id": "sakhi-02",
+   "title": "Bhai Lalo and Malik Bhago",
+   "gurmukhi": "ਭਾਈ ਲਾਲੋ ਤੇ ਮਲਿਕ ਭਾਗੋ",
+   "minutes": 4,
+   "free": true,
+   "summary": "Guru Nanak Dev Ji chooses to eat the simple bread of Bhai Lalo, a hard-working carpenter, instead of a rich feast from Malik Bhago, who became rich by treating people unfairly.",
+   "lesson": "Honest work (kirat karni) matters more than riches.",
+   "body": null
+  },
+  {
+   "id": "sakhi-03",
+   "title": "Bhai Kanhaiya",
+   "gurmukhi": "ਭਾਈ ਘਨੱਈਆ",
+   "minutes": 4,
+   "free": false,
+   "summary": "During a battle, Bhai Kanhaiya gives water to every wounded soldier, friend or foe. When asked why, he says he sees the same light of God in everyone. Guru Gobind Singh Ji blesses him and gives him medicine to help even more.",
+   "lesson": "Serve everyone equally — seva without seeing sides.",
+   "body": null
+  },
+  {
+   "id": "sakhi-04",
+   "title": "The Garden and the Flower",
+   "gurmukhi": "ਬਾਗ਼ ਤੇ ਫੁੱਲ",
+   "minutes": 3,
+   "free": false,
+   "summary": "Guru Har Rai Ji loves nature and keeps a garden of healing plants. One day his robe brushes a flower and breaks it. He teaches that we must move gently, because our actions can hurt living things.",
+   "lesson": "Be gentle and care for nature.",
+   "body": null
+  }
+ ]
+}

@@ -18,6 +18,8 @@
     "@fontsource/mukta-mahee": "^5.3.0",
     "@fontsource/noto-sans-gurmukhi": "^5.3.0",
     "@fontsource/nunito": "^5.3.0",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.119.2",
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"
@@ -30,6 +32,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "gurmukhi-utils": "^3.2.2",
     "prettier": "^3.10.1",
     "tailwindcss": "4.3.3",
     "typescript": "^5",

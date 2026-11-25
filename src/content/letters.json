@@ -1,0 +1,549 @@
+{
+ "source": "Gurmukhi Painti (35 letters). Example words need native-speaker review.",
+ "letters": [
+  {
+   "id": "ltr-01",
+   "index": 1,
+   "row": 1,
+   "letter": "ੳ",
+   "name": "Oorha",
+   "roman": "oorha",
+   "example": {
+    "gurmukhi": "ਉੱਲੂ",
+    "roman": "ullu",
+    "en": "owl"
+   },
+   "note": null,
+   "free": true,
+   "audio": null
+  },
+  {
+   "id": "ltr-02",
+   "index": 2,
+   "row": 1,
+   "letter": "ਅ",
+   "name": "Airha",
+   "roman": "airha",
+   "example": {
+    "gurmukhi": "ਅੰਬ",
+    "roman": "amb",
+    "en": "mango"
+   },
+   "note": null,
+   "free": true,
+   "audio": null
+  },
+  {
+   "id": "ltr-03",
+   "index": 3,
+   "row": 1,
+   "letter": "ੲ",
+   "name": "Eeree",
+   "roman": "eeree",
+   "example": {
+    "gurmukhi": "ਇੱਟ",
+    "roman": "itt",
+    "en": "brick"
+   },
+   "note": null,
+   "free": true,
+   "audio": null
+  },
+  {
+   "id": "ltr-04",
+   "index": 4,
+   "row": 1,
+   "letter": "ਸ",
+   "name": "Sassa",
+   "roman": "sassa",
+   "example": {
+    "gurmukhi": "ਸੇਬ",
+    "roman": "seb",
+    "en": "apple"
+   },
+   "note": null,
+   "free": true,
+   "audio": null
+  },
+  {
+   "id": "ltr-05",
+   "index": 5,
+   "row": 1,
+   "letter": "ਹ",
+   "name": "Haha",
+   "roman": "haha",
+   "example": {
+    "gurmukhi": "ਹਾਥੀ",
+    "roman": "haathi",
+    "en": "elephant"
+   },
+   "note": null,
+   "free": true,
+   "audio": null
+  },
+  {
+   "id": "ltr-06",
+   "index": 6,
+   "row": 2,
+   "letter": "ਕ",
+   "name": "Kakka",
+   "roman": "kakka",
+   "example": {
+    "gurmukhi": "ਕਬੂਤਰ",
+    "roman": "kabootar",
+    "en": "pigeon"
+   },
+   "note": null,
+   "free": true,
+   "audio": null
+  },
+  {
+   "id": "ltr-07",
+   "index": 7,
+   "row": 2,
+   "letter": "ਖ",
+   "name": "Khakha",
+   "roman": "khakha",
+   "example": {
+    "gurmukhi": "ਖਰਗੋਸ਼",
+    "roman": "khargosh",
+    "en": "rabbit"
+   },
+   "note": null,
+   "free": true,
+   "audio": null
+  },
+  {
+   "id": "ltr-08",
+   "index": 8,
+   "row": 2,
+   "letter": "ਗ",
+   "name": "Gagga",
+   "roman": "gagga",
+   "example": {
+    "gurmukhi": "ਗਾਂ",
+    "roman": "gaan",
+    "en": "cow"
+   },
+   "note": null,
+   "free": true,
+   "audio": null
+  },
+  {
+   "id": "ltr-09",
+   "index": 9,
+   "row": 2,
+   "letter": "ਘ",
+   "name": "Ghagga",
+   "roman": "ghagga",
+   "example": {
+    "gurmukhi": "ਘਰ",
+    "roman": "ghar",
+    "en": "house"
+   },
+   "note": null,
+   "free": true,
+   "audio": null
+  },
+  {
+   "id": "ltr-10",
+   "index": 10,
+   "row": 2,
+   "letter": "ਙ",
+   "name": "Nganga",
+   "roman": "nganga",
+   "example": null,
+   "note": "Not used at the start of words — learn it by sight and sound.",
+   "free": true,
+   "audio": null
+  },
+  {
+   "id": "ltr-11",
+   "index": 11,
+   "row": 3,
+   "letter": "ਚ",
+   "name": "Chachcha",
+   "roman": "chachcha",
+   "example": {
+    "gurmukhi": "ਚਿੜੀ",
+    "roman": "chirri",
+    "en": "sparrow"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-12",
+   "index": 12,
+   "row": 3,
+   "letter": "ਛ",
+   "name": "Chhachha",
+   "roman": "chhachha",
+   "example": {
+    "gurmukhi": "ਛਤਰੀ",
+    "roman": "chhatri",
+    "en": "umbrella"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-13",
+   "index": 13,
+   "row": 3,
+   "letter": "ਜ",
+   "name": "Jajja",
+   "roman": "jajja",
+   "example": {
+    "gurmukhi": "ਜਹਾਜ਼",
+    "roman": "jahaaz",
+    "en": "aeroplane"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-14",
+   "index": 14,
+   "row": 3,
+   "letter": "ਝ",
+   "name": "Jhajja",
+   "roman": "jhajja",
+   "example": {
+    "gurmukhi": "ਝੰਡਾ",
+    "roman": "jhanda",
+    "en": "flag"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-15",
+   "index": 15,
+   "row": 3,
+   "letter": "ਞ",
+   "name": "Nyanya",
+   "roman": "nyanya",
+   "example": null,
+   "note": "Not used at the start of words — learn it by sight and sound.",
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-16",
+   "index": 16,
+   "row": 4,
+   "letter": "ਟ",
+   "name": "Tainka",
+   "roman": "tainka",
+   "example": {
+    "gurmukhi": "ਟਮਾਟਰ",
+    "roman": "tamaatar",
+    "en": "tomato"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-17",
+   "index": 17,
+   "row": 4,
+   "letter": "ਠ",
+   "name": "Thattha",
+   "roman": "thattha",
+   "example": {
+    "gurmukhi": "ਠੇਲਾ",
+    "roman": "thela",
+    "en": "cart"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-18",
+   "index": 18,
+   "row": 4,
+   "letter": "ਡ",
+   "name": "Dadda",
+   "roman": "dadda",
+   "example": {
+    "gurmukhi": "ਡੱਡੂ",
+    "roman": "daddu",
+    "en": "frog"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-19",
+   "index": 19,
+   "row": 4,
+   "letter": "ਢ",
+   "name": "Dhadda",
+   "roman": "dhadda",
+   "example": {
+    "gurmukhi": "ਢੋਲ",
+    "roman": "dhol",
+    "en": "drum"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-20",
+   "index": 20,
+   "row": 4,
+   "letter": "ਣ",
+   "name": "Naana",
+   "roman": "naana",
+   "example": null,
+   "note": "Not used at the start of words — learn it by sight and sound.",
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-21",
+   "index": 21,
+   "row": 5,
+   "letter": "ਤ",
+   "name": "Tatta",
+   "roman": "tatta",
+   "example": {
+    "gurmukhi": "ਤਿੱਤਲੀ",
+    "roman": "titli",
+    "en": "butterfly"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-22",
+   "index": 22,
+   "row": 5,
+   "letter": "ਥ",
+   "name": "Thattha",
+   "roman": "thattha",
+   "example": {
+    "gurmukhi": "ਥਾਲੀ",
+    "roman": "thaali",
+    "en": "plate"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-23",
+   "index": 23,
+   "row": 5,
+   "letter": "ਦ",
+   "name": "Dadda",
+   "roman": "dadda",
+   "example": {
+    "gurmukhi": "ਦੰਦ",
+    "roman": "dand",
+    "en": "tooth"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-24",
+   "index": 24,
+   "row": 5,
+   "letter": "ਧ",
+   "name": "Dhadda",
+   "roman": "dhadda",
+   "example": {
+    "gurmukhi": "ਧੁੱਪ",
+    "roman": "dhupp",
+    "en": "sunshine"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-25",
+   "index": 25,
+   "row": 5,
+   "letter": "ਨ",
+   "name": "Nanna",
+   "roman": "nanna",
+   "example": {
+    "gurmukhi": "ਨਲਕਾ",
+    "roman": "nalka",
+    "en": "hand pump"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-26",
+   "index": 26,
+   "row": 6,
+   "letter": "ਪ",
+   "name": "Pappa",
+   "roman": "pappa",
+   "example": {
+    "gurmukhi": "ਪਤੰਗ",
+    "roman": "patang",
+    "en": "kite"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-27",
+   "index": 27,
+   "row": 6,
+   "letter": "ਫ",
+   "name": "Phaphpha",
+   "roman": "phaphpha",
+   "example": {
+    "gurmukhi": "ਫੁੱਲ",
+    "roman": "phull",
+    "en": "flower"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-28",
+   "index": 28,
+   "row": 6,
+   "letter": "ਬ",
+   "name": "Babba",
+   "roman": "babba",
+   "example": {
+    "gurmukhi": "ਬੱਤਖ",
+    "roman": "battakh",
+    "en": "duck"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-29",
+   "index": 29,
+   "row": 6,
+   "letter": "ਭ",
+   "name": "Bhabba",
+   "roman": "bhabba",
+   "example": {
+    "gurmukhi": "ਭਾਲੂ",
+    "roman": "bhaalu",
+    "en": "bear"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-30",
+   "index": 30,
+   "row": 6,
+   "letter": "ਮ",
+   "name": "Mamma",
+   "roman": "mamma",
+   "example": {
+    "gurmukhi": "ਮੋਰ",
+    "roman": "mor",
+    "en": "peacock"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-31",
+   "index": 31,
+   "row": 7,
+   "letter": "ਯ",
+   "name": "Yayya",
+   "roman": "yayya",
+   "example": {
+    "gurmukhi": "ਯੋਧਾ",
+    "roman": "yodha",
+    "en": "warrior"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-32",
+   "index": 32,
+   "row": 7,
+   "letter": "ਰ",
+   "name": "Raara",
+   "roman": "raara",
+   "example": {
+    "gurmukhi": "ਰੇਲ",
+    "roman": "rel",
+    "en": "train"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-33",
+   "index": 33,
+   "row": 7,
+   "letter": "ਲ",
+   "name": "Lalla",
+   "roman": "lalla",
+   "example": {
+    "gurmukhi": "ਲਾਟੂ",
+    "roman": "laattu",
+    "en": "spinning top"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-34",
+   "index": 34,
+   "row": 7,
+   "letter": "ਵ",
+   "name": "Vaava",
+   "roman": "vaava",
+   "example": {
+    "gurmukhi": "ਵਾਜਾ",
+    "roman": "vaaja",
+    "en": "harmonium"
+   },
+   "note": null,
+   "free": false,
+   "audio": null
+  },
+  {
+   "id": "ltr-35",
+   "index": 35,
+   "row": 7,
+   "letter": "ੜ",
+   "name": "Rarha",
+   "roman": "rarha",
+   "example": null,
+   "note": "Not used at the start of words — learn it by sight and sound.",
+   "free": false,
+   "audio": null
+  }
+ ]
+}

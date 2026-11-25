@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+!.env.production
 
 # vercel
 .vercel
@@ -42,3 +44,4 @@ next-env.d.ts
 .open-next
 .wrangler
 .dev.vars
+scripts/banis.raw.json

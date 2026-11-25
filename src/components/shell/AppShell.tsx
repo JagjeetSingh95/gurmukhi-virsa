@@ -2,7 +2,11 @@
 // N.0.3 — Responsive app shell (U.8): bottom tabs <600 · rail 80 (600–1023) · side nav 220 (1024–1279) / 256 (≥1280). Content max 1200.
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
+import { useAuth } from "@/lib/auth";
+import { avatarEmoji } from "@/lib/avatars";
+import { local } from "@/lib/local";
+import { useLocal } from "@/lib/useLocal";
 import { cn } from "@/lib/cn";
 import { Icon, type IconName } from "@/components/icons";
 import { Logo } from "@/components/Logo";
@@ -14,8 +18,26 @@ export const appTabs: { href: string; label: string; gurmukhi: string; icon: Ico
   { href: "/parent", label: "Parent", gurmukhi: "ਮਾਪੇ", icon: "parent" },
 ];
 
+const adultTabs = [appTabs[0], appTabs[2], { href: "/settings", label: "Settings", gurmukhi: "ਸੈਟਿੰਗ", icon: "settings" as IconName }];
+
 export function AppShell({ children }: { children: ReactNode }) {
   const path = usePathname();
+  const { session, kids } = useAuth();
+  const mode = useLocal(local.mode, null);
+  const activeId = useLocal(local.activeChild, null);
+  const child = kids.find((k) => k.id === activeId);
+  // Adult guest (or no choice yet) = Paath · Culture · Settings. Family = 4 tabs.
+  const family = mode === "family" && !!session;
+  const tabs = family ? appTabs : adultTabs;
+
+  useEffect(() => {
+    try {
+      if (!sessionStorage.getItem("gv.counted")) {
+        sessionStorage.setItem("gv.counted", "1");
+        local.bumpSession();
+      }
+    } catch {}
+  }, []);
   const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
 
   return (
@@ -29,7 +51,13 @@ export function AppShell({ children }: { children: ReactNode }) {
           <span className="web:hidden"><Logo compact /></span>
           <span className="hidden web:block"><Logo /></span>
         </Link>
-        {appTabs.map((t) => {
+        {child && (
+          <Link href="/profiles" className="mb-2 flex w-16 flex-col items-center gap-1 rounded-lg py-2 text-[12px] font-extrabold text-ink hover:bg-sunken web:w-auto web:flex-row web:gap-3 web:px-3 web:text-[15px]" aria-label={`${child.name} — switch profile`}>
+            <span className="grid size-9 place-items-center rounded-full bg-brand-soft text-[20px]">{avatarEmoji(child.avatar)}</span>
+            <span className="truncate">{child.name}</span>
+          </Link>
+        )}
+        {tabs.filter((t) => t.href !== "/settings").map((t) => {
           const on = isActive(t.href);
           return (
             <Link
@@ -71,7 +99,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         aria-label="Main"
         className="fixed inset-x-0 bottom-0 z-30 flex h-[84px] items-start justify-around border-t border-line bg-surface px-2 pt-2 pb-[env(safe-area-inset-bottom)] tab:hidden"
       >
-        {appTabs.map((t) => {
+        {tabs.map((t) => {
           const on = isActive(t.href);
           return (
             <Link
