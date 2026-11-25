@@ -11,11 +11,13 @@
    "example": {
     "gurmukhi": "ਉੱਲੂ",
     "roman": "ullu",
-    "en": "owl"
+    "en": "owl",
+    "emoji": "🦉"
    },
    "note": null,
    "free": true,
-   "audio": null
+   "audio": null,
+   "sound": "carries the u / oo / o sounds"
   },
   {
    "id": "ltr-02",
@@ -27,11 +29,13 @@
    "example": {
     "gurmukhi": "ਅੰਬ",
     "roman": "amb",
-    "en": "mango"
+    "en": "mango",
+    "emoji": "🥭"
    },
    "note": null,
    "free": true,
-   "audio": null
+   "audio": null,
+   "sound": "carries the a / aa / ai / au sounds"
   },
   {
    "id": "ltr-03",
@@ -43,11 +47,13 @@
    "example": {
     "gurmukhi": "ਇੱਟ",
     "roman": "itt",
-    "en": "brick"
+    "en": "brick",
+    "emoji": "🧱"
    },
    "note": null,
    "free": true,
-   "audio": null
+   "audio": null,
+   "sound": "carries the i / ee / e sounds"
   },
   {
    "id": "ltr-04",
@@ -59,11 +65,13 @@
    "example": {
     "gurmukhi": "ਸੇਬ",
     "roman": "seb",
-    "en": "apple"
+    "en": "apple",
+    "emoji": "🍎"
    },
    "note": null,
    "free": true,
-   "audio": null
+   "audio": null,
+   "sound": "s as in sun"
   },
   {
    "id": "ltr-05",
@@ -75,11 +83,13 @@
    "example": {
     "gurmukhi": "ਹਾਥੀ",
     "roman": "haathi",
-    "en": "elephant"
+    "en": "elephant",
+    "emoji": "🐘"
    },
    "note": null,
    "free": true,
-   "audio": null
+   "audio": null,
+   "sound": "h as in hat"
   },
   {
    "id": "ltr-06",
@@ -91,11 +101,13 @@
    "example": {
     "gurmukhi": "ਕਬੂਤਰ",
     "roman": "kabootar",
-    "en": "pigeon"
+    "en": "pigeon",
+    "emoji": "🕊️"
    },
    "note": null,
    "free": true,
-   "audio": null
+   "audio": null,
+   "sound": "k as in kite"
   },
   {
    "id": "ltr-07",
@@ -107,11 +119,13 @@
    "example": {
     "gurmukhi": "ਖਰਗੋਸ਼",
     "roman": "khargosh",
-    "en": "rabbit"
+    "en": "rabbit",
+    "emoji": "🐇"
    },
    "note": null,
    "free": true,
-   "audio": null
+   "audio": null,
+   "sound": "kh — a breathy k"
   },
   {
    "id": "ltr-08",
@@ -123,11 +137,13 @@
    "example": {
     "gurmukhi": "ਗਾਂ",
     "roman": "gaan",
-    "en": "cow"
+    "en": "cow",
+    "emoji": "🐄"
    },
    "note": null,
    "free": true,
-   "audio": null
+   "audio": null,
+   "sound": "g as in go"
   },
   {
    "id": "ltr-09",
@@ -139,11 +155,13 @@
    "example": {
     "gurmukhi": "ਘਰ",
     "roman": "ghar",
-    "en": "house"
+    "en": "house",
+    "emoji": "🏠"
    },
    "note": null,
    "free": true,
-   "audio": null
+   "audio": null,
+   "sound": "gh — a deep g"
   },
   {
    "id": "ltr-10",
@@ -155,7 +173,8 @@
    "example": null,
    "note": "Not used at the start of words — learn it by sight and sound.",
    "free": true,
-   "audio": null
+   "audio": null,
+   "sound": "ng as in sing"
   },
   {
    "id": "ltr-11",
@@ -167,11 +186,13 @@
    "example": {
     "gurmukhi": "ਚਿੜੀ",
     "roman": "chirri",
-    "en": "sparrow"
+    "en": "sparrow",
+    "emoji": "🐦"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "ch as in chair"
   },
   {
    "id": "ltr-12",
@@ -183,11 +204,13 @@
    "example": {
     "gurmukhi": "ਛਤਰੀ",
     "roman": "chhatri",
-    "en": "umbrella"
+    "en": "umbrella",
+    "emoji": "☂️"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "chh — a breathy ch"
   },
   {
    "id": "ltr-13",
@@ -199,11 +222,13 @@
    "example": {
     "gurmukhi": "ਜਹਾਜ਼",
     "roman": "jahaaz",
-    "en": "aeroplane"
+    "en": "aeroplane",
+    "emoji": "✈️"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "j as in jam"
   },
   {
    "id": "ltr-14",
@@ -215,11 +240,13 @@
    "example": {
     "gurmukhi": "ਝੰਡਾ",
     "roman": "jhanda",
-    "en": "flag"
+    "en": "flag",
+    "emoji": "🚩"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "jh — a deep j"
   },
   {
    "id": "ltr-15",
@@ -231,7 +258,8 @@
    "example": null,
    "note": "Not used at the start of words — learn it by sight and sound.",
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "ny as in canyon"
   },
   {
    "id": "ltr-16",
@@ -243,11 +271,13 @@
    "example": {
     "gurmukhi": "ਟਮਾਟਰ",
     "roman": "tamaatar",
-    "en": "tomato"
+    "en": "tomato",
+    "emoji": "🍅"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "t with the tongue curled back"
   },
   {
    "id": "ltr-17",
@@ -259,11 +289,13 @@
    "example": {
     "gurmukhi": "ਠੇਲਾ",
     "roman": "thela",
-    "en": "cart"
+    "en": "cart",
+    "emoji": "🛒"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "th — breathy, tongue curled back"
   },
   {
    "id": "ltr-18",
@@ -275,11 +307,13 @@
    "example": {
     "gurmukhi": "ਡੱਡੂ",
     "roman": "daddu",
-    "en": "frog"
+    "en": "frog",
+    "emoji": "🐸"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "d with the tongue curled back"
   },
   {
    "id": "ltr-19",
@@ -291,11 +325,13 @@
    "example": {
     "gurmukhi": "ਢੋਲ",
     "roman": "dhol",
-    "en": "drum"
+    "en": "drum",
+    "emoji": "🥁"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "dh — deep, tongue curled back"
   },
   {
    "id": "ltr-20",
@@ -307,7 +343,8 @@
    "example": null,
    "note": "Not used at the start of words — learn it by sight and sound.",
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "n with the tongue curled back"
   },
   {
    "id": "ltr-21",
@@ -319,11 +356,13 @@
    "example": {
     "gurmukhi": "ਤਿੱਤਲੀ",
     "roman": "titli",
-    "en": "butterfly"
+    "en": "butterfly",
+    "emoji": "🦋"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "t with the tongue on the teeth"
   },
   {
    "id": "ltr-22",
@@ -335,11 +374,13 @@
    "example": {
     "gurmukhi": "ਥਾਲੀ",
     "roman": "thaali",
-    "en": "plate"
+    "en": "plate",
+    "emoji": "🍽️"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "th — breathy, tongue on the teeth"
   },
   {
    "id": "ltr-23",
@@ -351,11 +392,13 @@
    "example": {
     "gurmukhi": "ਦੰਦ",
     "roman": "dand",
-    "en": "tooth"
+    "en": "tooth",
+    "emoji": "🦷"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "d with the tongue on the teeth"
   },
   {
    "id": "ltr-24",
@@ -367,11 +410,13 @@
    "example": {
     "gurmukhi": "ਧੁੱਪ",
     "roman": "dhupp",
-    "en": "sunshine"
+    "en": "sunshine",
+    "emoji": "☀️"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "dh — deep, tongue on the teeth"
   },
   {
    "id": "ltr-25",
@@ -383,11 +428,13 @@
    "example": {
     "gurmukhi": "ਨਲਕਾ",
     "roman": "nalka",
-    "en": "hand pump"
+    "en": "hand pump",
+    "emoji": "🚰"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "n as in net"
   },
   {
    "id": "ltr-26",
@@ -399,11 +446,13 @@
    "example": {
     "gurmukhi": "ਪਤੰਗ",
     "roman": "patang",
-    "en": "kite"
+    "en": "kite",
+    "emoji": "🪁"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "p as in pen"
   },
   {
    "id": "ltr-27",
@@ -415,11 +464,13 @@
    "example": {
     "gurmukhi": "ਫੁੱਲ",
     "roman": "phull",
-    "en": "flower"
+    "en": "flower",
+    "emoji": "🌸"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "ph — a breathy p"
   },
   {
    "id": "ltr-28",
@@ -431,11 +482,13 @@
    "example": {
     "gurmukhi": "ਬੱਤਖ",
     "roman": "battakh",
-    "en": "duck"
+    "en": "duck",
+    "emoji": "🦆"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "b as in bat"
   },
   {
    "id": "ltr-29",
@@ -447,11 +500,13 @@
    "example": {
     "gurmukhi": "ਭਾਲੂ",
     "roman": "bhaalu",
-    "en": "bear"
+    "en": "bear",
+    "emoji": "🐻"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "bh — a deep b"
   },
   {
    "id": "ltr-30",
@@ -463,11 +518,13 @@
    "example": {
     "gurmukhi": "ਮੋਰ",
     "roman": "mor",
-    "en": "peacock"
+    "en": "peacock",
+    "emoji": "🦚"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "m as in mat"
   },
   {
    "id": "ltr-31",
@@ -479,11 +536,13 @@
    "example": {
     "gurmukhi": "ਯੋਧਾ",
     "roman": "yodha",
-    "en": "warrior"
+    "en": "warrior",
+    "emoji": null
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "y as in yes"
   },
   {
    "id": "ltr-32",
@@ -495,11 +554,13 @@
    "example": {
     "gurmukhi": "ਰੇਲ",
     "roman": "rel",
-    "en": "train"
+    "en": "train",
+    "emoji": "🚆"
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "r — a light tapped r"
   },
   {
    "id": "ltr-33",
@@ -511,11 +572,13 @@
    "example": {
     "gurmukhi": "ਲਾਟੂ",
     "roman": "laattu",
-    "en": "spinning top"
+    "en": "spinning top",
+    "emoji": null
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "l as in lamp"
   },
   {
    "id": "ltr-34",
@@ -527,11 +590,13 @@
    "example": {
     "gurmukhi": "ਵਾਜਾ",
     "roman": "vaaja",
-    "en": "harmonium"
+    "en": "harmonium",
+    "emoji": null
    },
    "note": null,
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "v / w as in van"
   },
   {
    "id": "ltr-35",
@@ -543,7 +608,8 @@
    "example": null,
    "note": "Not used at the start of words — learn it by sight and sound.",
    "free": false,
-   "audio": null
+   "audio": null,
+   "sound": "rr — a flapped r, tongue curled back"
   }
  ]
 }

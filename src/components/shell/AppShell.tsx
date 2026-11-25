@@ -39,6 +39,8 @@ export function AppShell({ children }: { children: ReactNode }) {
     } catch {}
   }, []);
   const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
+  // Lessons are full-screen (D09/D10): no tab bar or side nav while learning.
+  if (/^\/learn\/.+/.test(path)) return <main id="main" className="min-h-dvh bg-app">{children}</main>;
 
   return (
     <div className="flex min-h-dvh bg-app">

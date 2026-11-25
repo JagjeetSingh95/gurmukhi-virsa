@@ -1,0 +1,49 @@
+{
+  "source": "Draft content — needs native-speaker / Sikh teacher review before launch.",
+  "matras": [
+    { "id": "kanna", "sign": "ਾ", "name": "Kanna", "example": "ਕਾ", "roman": "kaa", "note": "after the letter" },
+    { "id": "sihari", "sign": "ਿ", "name": "Sihari", "example": "ਕਿ", "roman": "ki", "note": "written before the letter, said after it" },
+    { "id": "bihari", "sign": "ੀ", "name": "Bihari", "example": "ਕੀ", "roman": "kee", "note": "after the letter" },
+    { "id": "aunkar", "sign": "ੁ", "name": "Aunkar", "example": "ਕੁ", "roman": "ku", "note": "under the letter" },
+    { "id": "dulainkar", "sign": "ੂ", "name": "Dulainkar", "example": "ਕੂ", "roman": "koo", "note": "under the letter" },
+    { "id": "lavan", "sign": "ੇ", "name": "Lavan", "example": "ਕੇ", "roman": "ke", "note": "on top of the letter" },
+    { "id": "dulavan", "sign": "ੈ", "name": "Dulavan", "example": "ਕੈ", "roman": "kai", "note": "on top of the letter" },
+    { "id": "hora", "sign": "ੋ", "name": "Hora", "example": "ਕੋ", "roman": "ko", "note": "on top of the letter" },
+    { "id": "kanaura", "sign": "ੌ", "name": "Kanaura", "example": "ਕੌ", "roman": "kau", "note": "on top of the letter" }
+  ],
+  "words": [
+    { "id": "ghar", "word": "ਘਰ", "letters": ["ਘ", "ਰ"], "roman": "ghar", "en": "home", "emoji": "🏠", "distractors": ["ਗ", "ੜ"] },
+    { "id": "jal", "word": "ਜਲ", "letters": ["ਜ", "ਲ"], "roman": "jal", "en": "water", "emoji": "💧", "distractors": ["ਝ", "ਰ"] },
+    { "id": "phal", "word": "ਫਲ", "letters": ["ਫ", "ਲ"], "roman": "phal", "en": "fruit", "emoji": "🍎", "distractors": ["ਪ", "ਨ"] },
+    { "id": "bas", "word": "ਬਸ", "letters": ["ਬ", "ਸ"], "roman": "bas", "en": "bus", "emoji": "🚌", "distractors": ["ਭ", "ਹ"] },
+    { "id": "kamal", "word": "ਕਮਲ", "letters": ["ਕ", "ਮ", "ਲ"], "roman": "kamal", "en": "lotus", "emoji": "🪷", "distractors": ["ਖ", "ਨ"] },
+    { "id": "kalam", "word": "ਕਲਮ", "letters": ["ਕ", "ਲ", "ਮ"], "roman": "kalam", "en": "pen", "emoji": "🖊️", "distractors": ["ਗ", "ਰ"] },
+    { "id": "matar", "word": "ਮਟਰ", "letters": ["ਮ", "ਟ", "ਰ"], "roman": "matar", "en": "peas", "emoji": "🫛", "distractors": ["ਤ", "ਲ"] },
+    { "id": "sarak", "word": "ਸੜਕ", "letters": ["ਸ", "ੜ", "ਕ"], "roman": "sarak", "en": "road", "emoji": "🛣️", "distractors": ["ਰ", "ਖ"] }
+  ],
+  "sentences": [
+    { "id": "s1", "words": ["ਮੈਂ", "ਸਕੂਲ", "ਜਾਂਦਾ", "ਹਾਂ"], "roman": "main sakool jaandaa haan", "en": "I go to school.", "distractors": ["ਘਰ"] },
+    { "id": "s2", "words": ["ਇਹ", "ਮੇਰਾ", "ਘਰ", "ਹੈ"], "roman": "ih meraa ghar hai", "en": "This is my home.", "distractors": ["ਪਾਣੀ"] },
+    { "id": "s3", "words": ["ਮੈਂ", "ਪਾਣੀ", "ਪੀਂਦਾ", "ਹਾਂ"], "roman": "main paanee peendaa haan", "en": "I drink water.", "distractors": ["ਸਕੂਲ"] }
+  ],
+  "everyday": {
+    "numbers": [
+      { "g": "੧", "w": "ਇੱਕ", "roman": "ikk", "en": "one" }, { "g": "੨", "w": "ਦੋ", "roman": "do", "en": "two" },
+      { "g": "੩", "w": "ਤਿੰਨ", "roman": "tinn", "en": "three" }, { "g": "੪", "w": "ਚਾਰ", "roman": "chaar", "en": "four" },
+      { "g": "੫", "w": "ਪੰਜ", "roman": "panj", "en": "five" }, { "g": "੬", "w": "ਛੇ", "roman": "chhe", "en": "six" },
+      { "g": "੭", "w": "ਸੱਤ", "roman": "satt", "en": "seven" }, { "g": "੮", "w": "ਅੱਠ", "roman": "atth", "en": "eight" },
+      { "g": "੯", "w": "ਨੌਂ", "roman": "naun", "en": "nine" }, { "g": "੧੦", "w": "ਦਸ", "roman": "das", "en": "ten" }
+    ],
+    "colours": [
+      { "w": "ਲਾਲ", "roman": "laal", "en": "red", "hex": "#D93A3A" }, { "w": "ਨੀਲਾ", "roman": "neelaa", "en": "blue", "hex": "#2F6FD0" },
+      { "w": "ਹਰਾ", "roman": "haraa", "en": "green", "hex": "#2E9B55" }, { "w": "ਪੀਲਾ", "roman": "peelaa", "en": "yellow", "hex": "#F2C230" },
+      { "w": "ਕਾਲਾ", "roman": "kaalaa", "en": "black", "hex": "#222222" }, { "w": "ਚਿੱਟਾ", "roman": "chittaa", "en": "white", "hex": "#FFFFFF" }
+    ],
+    "family": [
+      { "w": "ਮਾਂ", "roman": "maan", "en": "mother" }, { "w": "ਪਿਤਾ ਜੀ", "roman": "pitaa jee", "en": "father" },
+      { "w": "ਭੈਣ", "roman": "bhain", "en": "sister" }, { "w": "ਭਰਾ", "roman": "bharaa", "en": "brother" },
+      { "w": "ਦਾਦੀ ਜੀ", "roman": "daadee jee", "en": "grandmother (father's mother)" }, { "w": "ਦਾਦਾ ਜੀ", "roman": "daadaa jee", "en": "grandfather (father's father)" },
+      { "w": "ਨਾਨੀ ਜੀ", "roman": "naanee jee", "en": "grandmother (mother's mother)" }, { "w": "ਨਾਨਾ ਜੀ", "roman": "naanaa jee", "en": "grandfather (mother's father)" }
+    ]
+  }
+}

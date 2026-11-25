@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 // Reader route: server-renders every line (SEO + fast first paint), then <Reader> adds settings, highlight, audio, kids views.
 // Calm, plain layout — no mascot or decoration near Gurbani (D.4).
 import type { Metadata } from "next";
@@ -37,7 +38,16 @@ export async function generateMetadata({ params }: PageProps<"/paath/[slug]/[[..
 }
 
 
-export default async function ReaderPage({ params }: PageProps<"/paath/[slug]/[[...part]]">) {
+// Params are read inside <Suspense> so client navigations stay instant (cacheComponents).
+export default function Page(props: PageProps<"/paath/[slug]/[[...part]]">) {
+  return (
+    <Suspense fallback={null}>
+      <Content {...props} />
+    </Suspense>
+  );
+}
+
+async function Content({ params }: PageProps<"/paath/[slug]/[[...part]]">) {
   const { slug, part } = await params;
   const bani = await loadBani(slug);
   const item = libraryItem(slug);
