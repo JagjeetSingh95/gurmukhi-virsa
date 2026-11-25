@@ -45,3 +45,18 @@ Add Resend: host `smtp.resend.com`, port 465, user `resend`, password = Resend A
 - Free: 1 child, letters `ltr-01…ltr-10`, sakhis `sakhi-01…02`. Family (or active trial): 5 children, everything. A client can't change its own plan.
 - Parent PIN: bcrypt, 3 wrong → 30 s lockout; the hash can't be read by clients (`has_pin` flag only).
 - RPCs: `give_consent`, `finish_setup`, `set_parent_pin`, `clear_parent_pin`, `verify_parent_pin`, `record_progress`, `merge_guest`.
+
+## Parent emails + 2nd device (N.7.2 / N.7.3)
+Already done in the project: tables/columns + RPCs (migrations in `supabase/migrations/`), Edge Functions
+`join-family`, `parent-emails`, `unsubscribe` (source in `supabase/functions/`), pg_cron job `parent-emails`
+(hourly at :05, secret in Vault as `cron_secret`).
+
+Your steps (Dashboard → Edge Functions → Secrets):
+1. `RESEND_API_KEY` — from resend.com (API Keys). Without it the function runs but sends nothing (`NO_RESEND_KEY`).
+2. `EMAIL_FROM` — e.g. `Gurmukhi Virsa <hello@yourdomain>` once the domain is verified in Resend
+   (default `onboarding@resend.dev` only delivers to your own Resend account email).
+3. Optional `SITE_URL` (default https://gurmukhivirsa.app) for links in emails.
+
+Test without sending (SQL editor):
+`select net.http_post(url := 'https://plkevjftjmiohxsedule.supabase.co/functions/v1/parent-emails?dry=1&user=<parent uuid>&force=weekly', headers := jsonb_build_object('x-cron-secret',(select decrypted_secret from vault.decrypted_secrets where name='cron_secret')), body := '{}'::jsonb);`
+then `select content from net._http_response order by id desc limit 1;`

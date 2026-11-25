@@ -1,5 +1,6 @@
 "use client";
 // N.3.1 Who's using (D05 / U01): Adult = guest (no account) · Family = parent sign-in.
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Icon } from "@/components/icons";
 import { Sheru } from "@/components/sheru/Sheru";
@@ -36,6 +37,9 @@ export default function Who() {
         </span>
         <Icon name="arrow-right" className="text-ink-3" />
       </button>
+      <p className="text-center text-[15px] text-ink-2">
+        Already set up on another device? <Link href="/join" className="font-bold text-brand-text underline">Join my family</Link>
+      </p>
     </div>
   );
 }

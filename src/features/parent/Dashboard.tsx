@@ -101,9 +101,9 @@ export function ParentDashboard() {
 
         {/* Settings column */}
         <aside className="flex flex-col gap-3">
-          <SettingRow icon="mail" title="Weekly email" value={profile?.weekly_email ? "Sundays" : "Off"} soon />
-          <SettingRow icon="clock" title="Reminders" value="Set up" soon />
-          <SettingRow icon="devices" title="Devices" value="Join code" soon />
+          <SettingRow icon="mail" title="Weekly email" value={profile?.weekly_email ? ["Sundays", "Mondays", "", "", "", "", "Saturdays"][profile.weekly_day ?? 0] || "On" : "Off"} href="/parent/emails" />
+          <SettingRow icon="clock" title="Reminders" value={profile?.reminder_on ? new Date(2000, 0, 1, profile.reminder_hour).toLocaleTimeString("en-GB", { hour: "numeric", hour12: true }) : "Off"} href="/parent/reminders" />
+          <SettingRow icon="devices" title="Devices" value="Family code" href="/parent/devices" />
           <SettingRow icon="star" title="Plan" value={plan} href="/pricing" />
           <SettingRow icon="shield" title="Parent PIN" value={profile?.has_pin ? "On" : "Off"} soon />
           <div className="mt-2 flex flex-col gap-1 rounded-2xl border border-line bg-surface p-4">
@@ -132,7 +132,8 @@ export function ParentDashboard() {
 function ChildCard({ s, loading, detail }: { s: ChildStats; loading: boolean; detail: boolean }) {
   const { child } = s;
   return (
-    <li className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-4 shadow-[0_2px_0_var(--border-default)]">
+    <li>
+      <Link href={`/parent/child?id=${child.id}`} aria-label={`${child.name} — progress`} className="flex h-full flex-col gap-4 rounded-2xl border border-line bg-surface p-4 shadow-[0_2px_0_var(--border-default)] transition-transform hover:-translate-y-0.5">
       <div className="flex items-center gap-3">
         <span className="grid size-14 place-items-center rounded-2xl text-[30px]" style={{ background: AVATAR_BG[child.color_index % AVATAR_BG.length] }} aria-hidden>
           {avatarEmoji(child.avatar)}
@@ -154,6 +155,7 @@ function ChildCard({ s, loading, detail }: { s: ChildStats; loading: boolean; de
         <span className="font-bold text-ink-2">This week</span>
         {detail ? <span className="font-extrabold">{loading ? "…" : `${s.minutesWeek} min · ${s.newLetters} letters`}</span> : <LockTag />}
       </div>
+      </Link>
     </li>
   );
 }

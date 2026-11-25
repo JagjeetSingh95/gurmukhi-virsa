@@ -17,7 +17,7 @@ type AuthState = {
 };
 
 // pin_hash is not readable by clients (column grant); has_pin is.
-const PROFILE_COLS = "id,email,consent_at,has_pin,pin_failed_count,pin_locked_until,plan,trial_ends_at,weekly_email,setup_done,created_at";
+const PROFILE_COLS = "id,email,consent_at,has_pin,pin_failed_count,pin_locked_until,plan,trial_ends_at,weekly_email,setup_done,created_at,weekly_day,reminder_on,reminder_hour,timezone,gurpurab_reminders";
 
 const Ctx = createContext<AuthState | null>(null);
 
