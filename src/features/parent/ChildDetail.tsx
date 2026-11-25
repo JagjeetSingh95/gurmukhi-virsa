@@ -182,7 +182,7 @@ export function ChildDetail({ id }: { id: string }) {
           <Badge tone="reward" icon="lock">Family plan</Badge>
           <p className="text-h3">See what {child.name} finds hard</p>
           <p className="text-[15px] text-ink-2">Letters to practise, daily goal and recent activity come with the Family plan.</p>
-          <Link href="/pricing" className="text-[15px] font-bold text-brand-text underline">See plans</Link>
+          <Link href="/parent/plans" className="text-[15px] font-bold text-brand-text underline">See plans</Link>
         </div>
       )}
     </>

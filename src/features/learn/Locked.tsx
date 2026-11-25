@@ -6,6 +6,7 @@ import { ParentGate } from "@/components/gate/ParentGate";
 import { Icon } from "@/components/icons";
 import { Sheru } from "@/components/sheru/Sheru";
 import { Button, ButtonLink } from "@/components/ui/controls";
+import { plansHref } from "@/lib/entitlement";
 
 export function UnlockCard({ compact }: { compact?: boolean }) {
   const router = useRouter();
@@ -22,7 +23,7 @@ export function UnlockCard({ compact }: { compact?: boolean }) {
       <Button variant="secondary" size="sm" icon={<Icon name="lock" size={16} />} onClick={() => setGate(true)}>
         Ask a grown-up
       </Button>
-      <ParentGate open={gate} reason="Plans are for grown-ups." onClose={() => setGate(false)} onPass={() => { setGate(false); router.push("/pricing"); }} />
+      <ParentGate open={gate} reason="Plans are for grown-ups." onClose={() => setGate(false)} onPass={() => { setGate(false); router.push(plansHref(location.pathname + location.search)); }} />
     </div>
   );
 }

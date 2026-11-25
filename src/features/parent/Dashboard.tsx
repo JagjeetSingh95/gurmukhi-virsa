@@ -11,7 +11,7 @@ import { Skeleton } from "@/components/ui/feedback";
 import { useAuth } from "@/lib/auth";
 import { avatarEmoji } from "@/lib/avatars";
 import { cn } from "@/lib/cn";
-import { useIsFamily } from "@/lib/entitlement";
+import { tierLabel, useEntitlement } from "@/lib/entitlement";
 import { useFamilyStats, type ChildStats } from "./stats";
 
 const AVATAR_BG = ["#FFE7CC", "#E6E9F6", "#DDF3E6", "#FFF1C7", "#E0EEFA", "#FBE3E3"];
@@ -20,19 +20,18 @@ const ageLabel = (b: string) => `Age ${b.replace("-", "–")}`;
 export function ParentDashboard() {
   const router = useRouter();
   const { profile, kids, signOut } = useAuth();
-  const isFamily = useIsFamily();
+  const ent = useEntitlement();
+  const isFamily = ent.isFamily;
   const { loading, error, stats, totals, familyDays } = useFamilyStats(kids);
   const [range, setRange] = useState<"week" | "month">("week");
-  const [now] = useState(() => Date.now());
   const maxKids = isFamily ? 5 : 1;
-  const trialDays = profile?.trial_ends_at ? Math.ceil((new Date(profile.trial_ends_at).getTime() - now) / 86_400_000) : 0;
-  const plan = profile?.plan === "family" ? "Family" : trialDays > 0 ? `Trial · ${trialDays} day${trialDays === 1 ? "" : "s"} left` : "Free";
+  const plan = tierLabel(ent);
 
   return (
     <div className="flex flex-col gap-6 px-5 py-6 web:px-8">
       <div className="flex items-center justify-between gap-3">
         <h1 className="text-h2 web:text-h1">Parent dashboard</h1>
-        <ButtonLink href={kids.length < maxKids ? "/setup?add=1" : "/pricing"} size="sm" variant="secondary" className="gap-2">
+        <ButtonLink href={kids.length < maxKids ? "/setup?add=1" : "/parent/plans"} size="sm" variant="secondary" className="gap-2">
           <Icon name="users" size={18} /> Add child
         </ButtonLink>
       </div>
@@ -91,7 +90,7 @@ export function ParentDashboard() {
                 ) : (
                   <div className="flex flex-col items-start gap-3">
                     <p className="text-[15px] text-ink-2">See minutes per day, letters to practise and recent activity with the Family plan.</p>
-                    <Button size="sm" variant="secondary" onClick={() => router.push("/pricing")}>See plans</Button>
+                    <Button size="sm" variant="secondary" onClick={() => router.push("/parent/plans")}>See plans</Button>
                   </div>
                 )}
               </section>
@@ -104,7 +103,7 @@ export function ParentDashboard() {
           <SettingRow icon="mail" title="Weekly email" value={profile?.weekly_email ? ["Sundays", "Mondays", "", "", "", "", "Saturdays"][profile.weekly_day ?? 0] || "On" : "Off"} href="/parent/emails" />
           <SettingRow icon="clock" title="Reminders" value={profile?.reminder_on ? new Date(2000, 0, 1, profile.reminder_hour).toLocaleTimeString("en-GB", { hour: "numeric", hour12: true }) : "Off"} href="/parent/reminders" />
           <SettingRow icon="devices" title="Devices" value="Family code" href="/parent/devices" />
-          <SettingRow icon="star" title="Plan" value={plan} href="/pricing" />
+          <SettingRow icon="star" title="Plan" value={plan} href="/parent/plans" />
           <SettingRow icon="shield" title="Parent PIN" value={profile?.has_pin ? "On" : "Off"} soon />
           <div className="mt-2 flex flex-col gap-1 rounded-2xl border border-line bg-surface p-4">
             <p className="text-caption text-ink-3">Signed in as</p>

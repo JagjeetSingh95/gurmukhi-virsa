@@ -9,6 +9,8 @@ import { Badge, Progress, ProfileTile } from "@/components/ui/display";
 import { useToast } from "@/components/ui/feedback";
 import { useAuth } from "@/lib/auth";
 import { ageBands, avatarEmoji, avatars, levels } from "@/lib/avatars";
+import { billing } from "@/lib/billing";
+import { useIsFamily } from "@/lib/entitlement";
 import { friendlyError, supabase } from "@/lib/supabase/client";
 import type { Child } from "@/lib/supabase/types";
 
@@ -38,7 +40,7 @@ export default function Setup() {
     if (profile?.setup_done && !adding) return router.replace("/profiles");
   }, [ready, session, profile, router, adding]);
 
-  const isFamily = profile?.plan === "family" || (!!profile?.trial_ends_at && new Date(profile.trial_ends_at) > new Date());
+  const isFamily = useIsFamily();
   const limit = isFamily ? 5 : 1;
   const go = (s: Step) => {
     setError(null);
@@ -236,10 +238,29 @@ export default function Setup() {
           <Badge tone="reward" icon="star">Optional</Badge>
           <h1 className="text-h1">Try Family free for 7 days</h1>
           <p className="text-body-l text-ink-2">All 35 letters, every sakhi and up to 5 children. We&apos;ll remind you on day 5. Cancel any time.</p>
-          <p className="rounded-md bg-info-bg px-3 py-2 text-[14px] font-bold text-info">Payments aren&apos;t live yet — you can start the trial once Family launches.</p>
+          {!billing().live && (
+            <p className="rounded-md bg-info-bg px-3 py-2 text-[14px] font-bold text-info">Payments aren&apos;t live yet — you can start the trial once Family launches.</p>
+          )}
           {error && <p className="text-caption text-error" role="alert">{error}</p>}
+          {billing().live && (
+            <Button
+              block
+              loading={busy}
+              onClick={async () => {
+                const r = await billing().startTrial("yearly");
+                if (!r.ok) return setError(r.message);
+                if (await run(async () => supabase().rpc("finish_setup"))) {
+                  await refresh();
+                  router.replace("/profiles");
+                }
+              }}
+            >
+              Start 7-day free trial
+            </Button>
+          )}
           <Button
             block
+            variant={billing().live ? "ghost" : undefined}
             loading={busy}
             onClick={async () => (await run(async () => supabase().rpc("finish_setup"))) && (await refresh(), router.replace("/profiles"))}
           >

@@ -38,7 +38,7 @@ export function Devices() {
         <Badge tone="reward" icon="lock">Family plan</Badge>
         <p className="text-h3">Use Gurmukhi Virsa on more devices</p>
         <p className="text-[15px] text-ink-2">With the Family plan, your child&apos;s tablet can join with a 6-digit code — no second sign-in.</p>
-        <ButtonLink href="/pricing" size="sm" variant="secondary">See plans</ButtonLink>
+        <ButtonLink href="/parent/plans" size="sm" variant="secondary">See plans</ButtonLink>
       </div>
     );
 

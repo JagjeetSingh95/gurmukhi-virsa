@@ -7,6 +7,7 @@ import { ParentGate } from "@/components/gate/ParentGate";
 import { Icon } from "@/components/icons";
 import { IkOnkar } from "@/components/IkOnkar";
 import { Button } from "@/components/ui/controls";
+import { plansHref } from "@/lib/entitlement";
 import { Badge, LockTag, TopBar } from "@/components/ui/display";
 import { cn } from "@/lib/cn";
 import { sakhiHeading, type Guru, type Sakhi } from "./content";
@@ -85,7 +86,7 @@ export function CultureUnlock({ text = "2 sakhis are free. Explore the rest with
       <Button variant="secondary" size="sm" onClick={() => setGate(true)}>
         Ask a grown-up
       </Button>
-      <ParentGate open={gate} reason="Plans are for grown-ups." onClose={() => setGate(false)} onPass={() => { setGate(false); router.push("/pricing"); }} />
+      <ParentGate open={gate} reason="Plans are for grown-ups." onClose={() => setGate(false)} onPass={() => { setGate(false); router.push(plansHref(location.pathname + location.search)); }} />
     </div>
   );
 }
