@@ -7,7 +7,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { Sheru } from "@/components/sheru/Sheru";
 import { ButtonLink } from "@/components/ui/controls";
 import { nextRoute, useAuth } from "@/lib/auth";
-import { supabase } from "@/lib/supabase/client";
+import { loadSupabase } from "@/lib/supabase/client";
 
 function Confirm() {
   const params = useSearchParams();
@@ -25,7 +25,7 @@ function Confirm() {
     const errDesc = params.get("error_description") ?? params.get("error");
     (async () => {
       if (errDesc) return setState(/expired|invalid/i.test(errDesc) ? "expired" : "error");
-      const sb = supabase();
+      const sb = await loadSupabase();
       const { error } = tokenHash
         ? await sb.auth.verifyOtp({ token_hash: tokenHash, type: (type as "email" | "magiclink" | "signup") ?? "email" })
         : code

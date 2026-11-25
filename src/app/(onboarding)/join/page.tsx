@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Sheru } from "@/components/sheru/Sheru";
 import { Button, CodeInput } from "@/components/ui/controls";
 import { local } from "@/lib/local";
-import { friendlyError, supabase } from "@/lib/supabase/client";
+import { friendlyError, loadSupabase } from "@/lib/supabase/client";
 
 const ERRORS: Record<string, string> = {
   BAD_CODE: "That code didn't work. Codes last 10 minutes and work once — ask for a new one.",
@@ -23,14 +23,14 @@ export default function Join() {
     setBusy(true);
     setError(null);
     try {
-      const { data, error: e } = await supabase().functions.invoke<{ token_hash?: string; error?: string }>("join-family", { body: { code } });
+      const { data, error: e } = await (await loadSupabase()).functions.invoke<{ token_hash?: string; error?: string }>("join-family", { body: { code } });
       const token = data?.token_hash;
       if (e) {
         const body = await (e as { context?: Response }).context?.json?.().catch(() => null);
         throw new Error(body?.error ?? e.message);
       }
       if (!token) throw new Error(data?.error ?? "BAD_CODE");
-      const { error: v } = await supabase().auth.verifyOtp({ token_hash: token, type: "magiclink" });
+      const { error: v } = await (await loadSupabase()).auth.verifyOtp({ token_hash: token, type: "magiclink" });
       if (v) throw v;
       local.setMode("family");
       router.replace("/profiles");

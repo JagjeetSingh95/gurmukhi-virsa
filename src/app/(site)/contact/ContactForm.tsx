@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Icon } from "@/components/icons";
 import { Button, Chip, Input } from "@/components/ui/controls";
 import { site } from "@/lib/site";
-import { supabase } from "@/lib/supabase/client";
+import { loadSupabase } from "@/lib/supabase/client";
 
 const topics = ["General", "Billing", "Schools", "Bug report", "Content", "Account"] as const;
 
@@ -41,7 +41,7 @@ export function ContactForm({ defaultEmail = "", compact }: { defaultEmail?: str
         setErrors(next);
         if (Object.keys(next).length) return;
         setBusy(true);
-        const { error } = await supabase().functions.invoke("contact", { body: { topic, name, email, message, website: f.get("website") } });
+        const { error } = await (await loadSupabase()).functions.invoke("contact", { body: { topic, name, email, message, website: f.get("website") } });
         setBusy(false);
         if (!error) return setSent(true);
         const status = (error as { context?: Response }).context?.status;

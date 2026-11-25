@@ -7,8 +7,8 @@ To get them as files: `npx supabase link --project-ref plkevjftjmiohxsedule && n
 These auth settings can only be changed in the dashboard:
 
 ## 1. URL configuration (Authentication → URL Configuration)
-- Site URL: `https://gurmukhivirsa.app` (or your Cloudflare preview URL for now)
-- Redirect URLs: `http://localhost:3000/auth/confirm`, `https://gurmukhivirsa.app/auth/confirm`, `https://*-gurmukhi-virsa.<your-subdomain>.workers.dev/auth/confirm`
+- Site URL: `https://gurmukhi-virsa.sjagjeet528.workers.dev` (later your custom domain)
+- Redirect URLs: `https://gurmukhi-virsa.sjagjeet528.workers.dev/auth/confirm`, `https://gurmukhi-virsa.sjagjeet528.workers.dev/**` (the app always sends sign-in links to this URL, even from localhost — NEXT_PUBLIC_SITE_URL)
 
 ## 2. Email OTP (Authentication → Providers → Email)
 - Email OTP expiration: **900** seconds (15 min, per U.2)
@@ -55,7 +55,7 @@ Your steps (Dashboard → Edge Functions → Secrets):
 1. `RESEND_API_KEY` — from resend.com (API Keys). Without it the function runs but sends nothing (`NO_RESEND_KEY`).
 2. `EMAIL_FROM` — e.g. `Gurmukhi Virsa <hello@yourdomain>` once the domain is verified in Resend
    (default `onboarding@resend.dev` only delivers to your own Resend account email).
-3. Optional `SITE_URL` (default https://gurmukhivirsa.app) for links in emails.
+3. Optional `SITE_URL` (default https://gurmukhi-virsa.sjagjeet528.workers.dev, built into parent-emails) for links in emails.
 
 Test without sending (SQL editor):
 `select net.http_post(url := 'https://plkevjftjmiohxsedule.supabase.co/functions/v1/parent-emails?dry=1&user=<parent uuid>&force=weekly', headers := jsonb_build_object('x-cron-secret',(select decrypted_secret from vault.decrypted_secrets where name='cron_secret')), body := '{}'::jsonb);`

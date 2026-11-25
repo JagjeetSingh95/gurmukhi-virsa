@@ -34,6 +34,7 @@ function write(id: string | null, s: Store) {
 }
 
 export function streakFrom(days: string[]) {
+  if (!days.length) return 0; // also keeps server prerender free of Date (N.9.5)
   const set = new Set(days);
   let n = 0;
   const d = new Date();
@@ -123,7 +124,7 @@ export function useLearner() {
     .filter(([, m]) => m.wrong >= 2)
     .map(([id]) => id);
   const streak = child ? Math.max(child.streak_days ?? 0, streakFrom(store.days)) : streakFrom(store.days);
-  const doneToday = store.days[store.days.length - 1] === today();
+  const doneToday = store.days.length > 0 && store.days[store.days.length - 1] === today();
   const lettersDone = Object.keys(store.progress).filter((k) => k.startsWith("letter:")).length;
 
   return { child, synced, remoteLoaded, isFamily, isLocked, progress: store.progress, record, mark, weak, streak, doneToday, lettersDone, freeLetters: FREE_LETTERS };

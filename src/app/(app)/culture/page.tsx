@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { ClientOnly } from "@/components/ClientOnly";
 import { CultureHome } from "@/features/culture/CultureHome";
 
 export const metadata: Metadata = { title: "Culture", robots: { index: false } };
 
-// Client-only: today's sakhi depends on the date and the family plan.
+// N.9.5: server-rendered too; today's sakhi (date + plan) swaps in after hydration without a mismatch.
 export default function Page() {
-  return (
-    <ClientOnly>
-      <CultureHome />
-    </ClientOnly>
-  );
+  return <CultureHome />;
 }

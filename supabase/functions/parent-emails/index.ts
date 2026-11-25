@@ -7,7 +7,7 @@
 // Test: ?dry=1 (no sending, returns previews) · ?user=<uuid>&force=weekly|reminder (ignores the schedule).
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-const SITE = Deno.env.get("SITE_URL") ?? "https://gurmukhivirsa.app";
+const SITE = Deno.env.get("SITE_URL") ?? "https://gurmukhi-virsa.sjagjeet528.workers.dev";
 const FROM = Deno.env.get("EMAIL_FROM") ?? "Gurmukhi Virsa <onboarding@resend.dev>";
 const FN = `${Deno.env.get("SUPABASE_URL")}/functions/v1`;
 const LETTERS = "ੳ ਅ ੲ ਸ ਹ ਕ ਖ ਗ ਘ ਙ ਚ ਛ ਜ ਝ ਞ ਟ ਠ ਡ ਢ ਣ ਤ ਥ ਦ ਧ ਨ ਪ ਫ ਬ ਭ ਮ ਯ ਰ ਲ ਵ ੜ".split(" ");

@@ -5,7 +5,7 @@ import { AuthProvider } from "@/lib/auth";
 
 export default function OnboardingLayout({ children }: LayoutProps<"/">) {
   return (
-    <AuthProvider>
+    <AuthProvider eager>
       <ToastProvider>
         <div className="flex min-h-dvh flex-col bg-gradient-to-b from-saffron-50 to-app dark:from-sunken">
           <header className="mx-auto flex h-16 w-full max-w-[1200px] items-center px-5 web:px-8">

@@ -1,6 +1,7 @@
 "use client";
 // N.6.1 Culture home (D12): greeting, today's sakhi, 6 sections, the 10 Gurus strip.
 import Link from "next/link";
+import { useSyncExternalStore } from "react";
 import { Icon } from "@/components/icons";
 import { Sheru } from "@/components/sheru/Sheru";
 import { ButtonLink } from "@/components/ui/controls";
@@ -13,13 +14,17 @@ import { cn } from "@/lib/cn";
 import { sakhiHeading, sections, tenGurus, todaysSakhi } from "./content";
 import { CultureUnlock, GuruNumeral } from "./ui";
 
+const noop = () => () => {};
+
 export function CultureHome() {
   const { session, kids } = useAuth();
   const mode = useLocal(local.mode, null);
   const activeId = useLocal(local.activeChild, null);
   const child = session && mode === "family" ? kids.find((k) => k.id === activeId) : undefined;
   const isFamily = useIsFamily();
-  const today = todaysSakhi(isFamily);
+  // Server/first render uses a fixed day (no Date during prerender); the real day swaps in after hydration (N.9.5).
+  const day = useSyncExternalStore(noop, () => Math.floor(Date.now() / 86_400_000), () => 0);
+  const today = todaysSakhi(isFamily, new Date(day * 86_400_000));
 
   return (
     <>

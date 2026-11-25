@@ -8,7 +8,7 @@ import { Icon } from "@/components/icons";
 import { Sheru } from "@/components/sheru/Sheru";
 import { Button, CodeInput, Input } from "@/components/ui/controls";
 import { nextRoute, useAuth } from "@/lib/auth";
-import { friendlyError, siteOrigin, supabase } from "@/lib/supabase/client";
+import { friendlyError, siteOrigin, loadSupabase } from "@/lib/supabase/client";
 
 const RESEND_SECONDS = 60;
 
@@ -52,7 +52,7 @@ export default function SignIn() {
     setError(null);
     if (!/^\S+@\S+\.\S+$/.test(email.trim())) return setError("Enter a valid email address.");
     setBusy(true);
-    const { error } = await supabase().auth.signInWithOtp({
+    const { error } = await (await loadSupabase()).auth.signInWithOtp({
       email: email.trim(),
       options: { emailRedirectTo: `${siteOrigin()}/auth/confirm`, shouldCreateUser: true },
     });
@@ -66,7 +66,7 @@ export default function SignIn() {
     if (token.length !== 6) return;
     setBusy(true);
     setError(null);
-    const { error } = await supabase().auth.verifyOtp({ email: email.trim(), token, type: "email" });
+    const { error } = await (await loadSupabase()).auth.verifyOtp({ email: email.trim(), token, type: "email" });
     setBusy(false);
     if (error) {
       setCode("");
@@ -77,7 +77,7 @@ export default function SignIn() {
 
   const google = async () => {
     setError(null);
-    const { error } = await supabase().auth.signInWithOAuth({ provider: "google", options: { redirectTo: `${siteOrigin()}/auth/confirm` } });
+    const { error } = await (await loadSupabase()).auth.signInWithOAuth({ provider: "google", options: { redirectTo: `${siteOrigin()}/auth/confirm` } });
     if (error) setError(/not enabled|provider/i.test(error.message) ? "Google sign-in isn't switched on yet. Use email for now." : friendlyError(error));
   };
 

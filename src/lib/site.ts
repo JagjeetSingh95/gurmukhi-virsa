@@ -5,7 +5,7 @@ export const site = {
   tagline: "Gurmukhi, Paath and Sikh heritage — made for kids.",
   description:
     "Gurmukhi Virsa helps kids aged 4–12 learn the Gurmukhi alphabet, read Paath with meaning and discover Sikh heritage. Paath is free forever. No ads, no tracking.",
-  url: process.env.SITE_URL ?? "https://gurmukhivirsa.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? process.env.SITE_URL ?? "https://gurmukhi-virsa.sjagjeet528.workers.dev",
   supportEmail: "support@gurmukhivirsa.app",
   appEntry: "/welcome",
 } as const;

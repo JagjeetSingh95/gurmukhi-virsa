@@ -6,7 +6,7 @@ Backend setup: see [docs/supabase-setup.md](docs/supabase-setup.md). Content: `s
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000
+npm run dev          # http://localhost:3000 (sign-in links still go to https://gurmukhi-virsa.sjagjeet528.workers.dev)
 npm run typecheck && npm run lint && npm run build
 npm run preview      # Cloudflare runtime locally
 npm run deploy       # needs `npx wrangler login` once

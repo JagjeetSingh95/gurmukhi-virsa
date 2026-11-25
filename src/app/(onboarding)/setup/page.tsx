@@ -11,7 +11,7 @@ import { useAuth } from "@/lib/auth";
 import { ageBands, avatarEmoji, avatars, levels } from "@/lib/avatars";
 import { billing } from "@/lib/billing";
 import { useIsFamily } from "@/lib/entitlement";
-import { friendlyError, supabase } from "@/lib/supabase/client";
+import { friendlyError, loadSupabase } from "@/lib/supabase/client";
 import type { Child } from "@/lib/supabase/types";
 
 type Step = "consent" | "pin" | "name" | "age" | "avatar" | "level" | "more" | "trial";
@@ -95,7 +95,7 @@ export default function Setup() {
             I&apos;m the parent or guardian and I agree to the Privacy policy.
           </label>
           {error && <p className="text-caption text-error" role="alert">{error}</p>}
-          <Button disabled={!agree} loading={busy} onClick={async () => (await run(async () => supabase().rpc("give_consent"))) && (await refresh(), go("pin"))}>
+          <Button disabled={!agree} loading={busy} onClick={async () => (await run(async () => (await loadSupabase()).rpc("give_consent"))) && (await refresh(), go("pin"))}>
             Agree and continue
           </Button>
         </section>
@@ -110,7 +110,7 @@ export default function Setup() {
           <Button
             disabled={pin.length !== 4 || pin !== pin2}
             loading={busy}
-            onClick={async () => (await run(async () => supabase().rpc("set_parent_pin", { p_pin: pin }))) && (await refresh(), go(kids.length ? "more" : "name"))}
+            onClick={async () => (await run(async () => (await loadSupabase()).rpc("set_parent_pin", { p_pin: pin }))) && (await refresh(), go(kids.length ? "more" : "name"))}
           >
             Save PIN
           </Button>
@@ -187,7 +187,7 @@ export default function Setup() {
             loading={busy}
             onClick={async () => {
               const ok = await run(async () =>
-                supabase().from("children").insert({
+                (await loadSupabase()).from("children").insert({
                   parent_id: session.user.id,
                   name: draft.name.trim(),
                   age_band: draft.age_band as Child["age_band"],
@@ -249,7 +249,7 @@ export default function Setup() {
               onClick={async () => {
                 const r = await billing().startTrial("yearly");
                 if (!r.ok) return setError(r.message);
-                if (await run(async () => supabase().rpc("finish_setup"))) {
+                if (await run(async () => (await loadSupabase()).rpc("finish_setup"))) {
                   await refresh();
                   router.replace("/profiles");
                 }
@@ -262,7 +262,7 @@ export default function Setup() {
             block
             variant={billing().live ? "ghost" : undefined}
             loading={busy}
-            onClick={async () => (await run(async () => supabase().rpc("finish_setup"))) && (await refresh(), router.replace("/profiles"))}
+            onClick={async () => (await run(async () => (await loadSupabase()).rpc("finish_setup"))) && (await refresh(), router.replace("/profiles"))}
           >
             Maybe later — let&apos;s start
           </Button>
