@@ -1,26 +1,124 @@
 @import "tailwindcss";
+@import "../styles/tokens.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@custom-variant dark {
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme="light"]) *) {
+      @slot;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Breakpoints (U.8): mobile <600 · tab 600–1023 · web ≥1024 · wide ≥1280 */
+@theme {
+  --breakpoint-tab: 600px;
+  --breakpoint-web: 1024px;
+  --breakpoint-wide: 1280px;
 }
+
+@theme inline {
+  --color-app: var(--bg-app);
+  --color-surface: var(--bg-surface);
+  --color-sunken: var(--bg-sunken);
+  --color-inverse: var(--bg-inverse);
+  --color-line: var(--border-default);
+  --color-line-strong: var(--border-strong);
+  --color-ink: var(--text-primary);
+  --color-ink-2: var(--text-secondary);
+  --color-ink-3: var(--text-muted);
+  --color-ink-inverse: var(--text-inverse);
+  --color-gurbani: var(--text-gurbani);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-text: var(--text-brand);
+  --color-accent: var(--accent);
+  --color-hl: var(--highlight-line);
+  --color-success-bg: var(--success-bg);
+  --color-success: var(--success-fg);
+  --color-error-bg: var(--error-bg);
+  --color-error: var(--error-fg);
+  --color-reward-bg: var(--reward-bg);
+  --color-reward: var(--reward-fg);
+  --color-info-bg: var(--info-bg);
+  --color-info: var(--info-fg);
+  --color-saffron-50: var(--saffron-50);
+  --color-saffron-100: var(--saffron-100);
+  --color-saffron-300: var(--saffron-300);
+  --color-saffron-500: var(--saffron-500);
+  --color-saffron-600: var(--saffron-600);
+  --color-saffron-800: var(--saffron-800);
+  --color-navy-50: var(--navy-50);
+  --color-navy-300: var(--navy-300);
+  --color-navy-600: var(--navy-600);
+  --color-navy-800: var(--navy-800);
+  --color-navy-900: var(--navy-900);
+  --color-gold: var(--gold-500);
+  --color-green: var(--green-600);
+  --color-sky: var(--sky-600);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+
+  --font-sans: "Nunito", "Baloo Paaji 2", "Noto Sans Gurmukhi", system-ui, sans-serif;
+  --font-gurmukhi: "Baloo Paaji 2", "Noto Sans Gurmukhi", sans-serif;
+  --font-gurbani: "Mukta Mahee", "Noto Sans Gurmukhi", serif;
+}
+
+html {
+  background: var(--bg-app);
+  color: var(--text-primary);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-app);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+/* Text styles (D.2) */
+@utility text-display { font: 900 40px/1.1 var(--font-sans); letter-spacing: -0.01em; }
+@utility text-h1 { font: 900 32px/1.15 var(--font-sans); }
+@utility text-h2 { font: 800 24px/1.25 var(--font-sans); }
+@utility text-h3 { font: 800 20px/1.3 var(--font-sans); }
+@utility text-body-l { font: 500 18px/1.55 var(--font-sans); }
+@utility text-body { font: 500 16px/1.55 var(--font-sans); }
+@utility text-label { font: 700 14px/1.4 var(--font-sans); }
+@utility text-caption { font: 600 12px/1.35 var(--font-sans); }
+@utility text-letter-xl { font: 700 160px/1 var(--font-gurmukhi); }
+@utility text-letter-l { font: 700 64px/1.1 var(--font-gurmukhi); }
+@utility text-gurmukhi-h { font: 700 28px/1.3 var(--font-gurmukhi); }
+@utility text-gurbani-adult { font: 500 24px/1.6 var(--font-gurbani); color: var(--text-gurbani); }
+@utility text-gurbani-kids { font: 600 32px/1.5 var(--font-gurbani); color: var(--text-gurbani); }
+@utility text-gurbani-compact { font: 500 20px/1.6 var(--font-gurbani); color: var(--text-gurbani); }
+
+@media (min-width: 1024px) {
+  .text-display { font-size: 56px; }
+  .text-h1 { font-size: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes gv-bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+@keyframes gv-pop { 0% { transform: scale(.9); opacity: 0 } 100% { transform: scale(1); opacity: 1 } }
+@utility animate-bob { animation: gv-bob 1.2s ease-in-out 2; }
+@utility animate-pop { animation: gv-pop .25s ease-out; }

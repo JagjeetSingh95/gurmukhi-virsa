@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gurmukhi Virsa — website
 
-## Getting Started
-
-First, run the development server:
+Next.js 16 (App Router) · TypeScript · Tailwind v4 · Cloudflare Workers via OpenNext.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # http://localhost:3000
+npm run typecheck && npm run lint && npm run build
+npm run preview      # Cloudflare runtime locally
+npm run deploy       # needs `npx wrangler login` once
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
+- `src/app/(site)` — marketing: `/`, `/features`, `/pricing`, `/about`, `/contact`, `/download`, `/support`, `/privacy`, `/terms` (+ root `not-found`, sitemap, robots, manifest, OG image)
+- `src/app/(app)` — app shell: `/paath`, `/learn`, `/culture`, `/parent`, `/settings` (placeholders until N.3–N.9)
+- `src/app/styleguide` — living component library (noindex)
+- `src/styles/tokens.css` — D.2 tokens as CSS variables (light/dark via `prefers-color-scheme` or `data-theme`)
+- `src/components/ui` — controls (N.1.1), display (N.1.2), feedback (N.1.3); `sheru/` (N.1.4); `shell/` (N.0.3)
+- `src/content` — marketing copy, later bani/letter JSON
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Fonts are self-hosted via Fontsource (no Google requests). Breakpoints: `tab:` 600 · `web:` 1024 · `wide:` 1280.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy (Cloudflare Workers Builds)
+Cloudflare dashboard → Workers & Pages → Create → Import a repository → this repo.
+Build command `npx opennextjs-cloudflare build`, deploy command `npx opennextjs-cloudflare deploy`. Previews per branch are automatic.

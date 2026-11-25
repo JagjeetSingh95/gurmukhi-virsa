@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "gurmukhi-virsa",
+  "compatibility_date": "2026-11-25",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "gurmukhi-virsa" }]
+  // Add an R2 incremental cache when pages become dynamic (N.2+): https://opennext.js.org/cloudflare/caching
+}

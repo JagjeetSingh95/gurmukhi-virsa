@@ -1,0 +1,157 @@
+/* Gurmukhi Virsa — design tokens from canvas board D02 (Foundations).
+   Same token names in light + dark. Dark applies via prefers-color-scheme
+   or data-theme="dark" on <html>; data-theme="light" forces light. */
+
+:root {
+  /* Palette */
+  --saffron-50: #fff4e8;
+  --saffron-100: #ffe7cc;
+  --saffron-300: #f3ae68;
+  --saffron-500: #e07b1f;
+  --saffron-600: #c2570f;
+  --saffron-700: #a94c0c;
+  --saffron-800: #8f3e08;
+  --saffron-900: #7a3e0e;
+  --navy-50: #e6e9f6;
+  --navy-300: #7c88c2;
+  --navy-600: #2f4fa8;
+  --navy-800: #1e2a5a;
+  --navy-900: #0f1738;
+  --green-600: #1f8a4c;
+  --green-800: #136034;
+  --red-600: #c93636;
+  --red-800: #9e2626;
+  --gold-500: #e5a912;
+  --gold-800: #7a5600;
+  --sky-600: #2f7fc8;
+  --sky-800: #1d5c99;
+
+  /* Semantic — light */
+  --bg-app: #fffaf3;
+  --bg-surface: #ffffff;
+  --bg-sunken: #f4eadd;
+  --bg-inverse: #1e2a5a;
+  --border-default: #eee3d3;
+  --border-strong: #e3d5c1;
+  --text-primary: #2a2018;
+  --text-secondary: #6e6155;
+  --text-muted: #8a7c6f;
+  --text-inverse: #ffffff;
+  --text-gurbani: #1e2a5a;
+  --text-brand: #a94c0c;
+  --highlight-line: #fff1e0;
+  --success-bg: #ddf3e6;
+  --success-fg: #136034;
+  --error-bg: #fbe3e3;
+  --error-fg: #9e2626;
+  --reward-bg: #fff1c7;
+  --reward-fg: #7a5600;
+  --info-bg: #e0eefa;
+  --info-fg: #1d5c99;
+  --brand: #e07b1f;
+  --brand-strong: #c2570f;
+  --brand-shadow: #8f3e08;
+  --brand-soft: #ffe7cc;
+  --accent: #1e2a5a;
+  --accent-shadow: #0f1738;
+  --focus-ring: #2f4fa8;
+
+  /* Spacing (0, 2xs … 6xl) */
+  --space-0: 0;
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 32px;
+  --space-4xl: 40px;
+  --space-5xl: 48px;
+  --space-6xl: 64px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Control sizes (mobile / web) */
+  --control-h: 52px;
+  --chip-h: 40px;
+  --row-h: 56px;
+  --segment-h: 44px;
+
+  color-scheme: light;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --control-h: 44px;
+    --chip-h: 36px;
+    --row-h: 48px;
+    --segment-h: 36px;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg-app: #16141c;
+  --bg-surface: #221f2a;
+  --bg-sunken: #2b2734;
+  --bg-inverse: #f3ece3;
+  --border-default: #34303d;
+  --border-strong: #3f3a49;
+  --text-primary: #f3ece3;
+  --text-secondary: #b5aa9e;
+  --text-muted: #8f857a;
+  --text-inverse: #16141c;
+  --text-gurbani: #e6e9f6;
+  --text-brand: #f3ae68;
+  --highlight-line: #3a2e1c;
+  --success-bg: #173a27;
+  --success-fg: #8fd8ae;
+  --error-bg: #432020;
+  --error-fg: #f2a5a5;
+  --reward-bg: #3d3214;
+  --reward-fg: #f2d27a;
+  --info-bg: #1a2f45;
+  --info-fg: #9cc8f0;
+  --brand-soft: #3a2e1c;
+  --accent: #7c88c2;
+  --accent-shadow: #2f4fa8;
+  --focus-ring: #7c88c2;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-app: #16141c;
+    --bg-surface: #221f2a;
+    --bg-sunken: #2b2734;
+    --bg-inverse: #f3ece3;
+    --border-default: #34303d;
+    --border-strong: #3f3a49;
+    --text-primary: #f3ece3;
+    --text-secondary: #b5aa9e;
+    --text-muted: #8f857a;
+    --text-inverse: #16141c;
+    --text-gurbani: #e6e9f6;
+    --text-brand: #f3ae68;
+    --highlight-line: #3a2e1c;
+    --success-bg: #173a27;
+    --success-fg: #8fd8ae;
+    --error-bg: #432020;
+    --error-fg: #f2a5a5;
+    --reward-bg: #3d3214;
+    --reward-fg: #f2d27a;
+    --info-bg: #1a2f45;
+    --info-fg: #9cc8f0;
+    --brand-soft: #3a2e1c;
+    --accent: #7c88c2;
+    --accent-shadow: #2f4fa8;
+    --focus-ring: #7c88c2;
+    color-scheme: dark;
+  }
+}
