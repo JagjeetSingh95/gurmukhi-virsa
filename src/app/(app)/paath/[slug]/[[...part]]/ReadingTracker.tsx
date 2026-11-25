@@ -18,7 +18,7 @@ export function ReadingTracker({ slug, title, lineCount }: { slug: string; title
       if (timer) clearTimeout(timer);
       timer = setTimeout(save, 400);
     };
-    save();
+
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);

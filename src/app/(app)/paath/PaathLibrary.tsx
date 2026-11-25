@@ -2,12 +2,15 @@
 // N.4.1 Paath library (D06): Adult/Kids toggle · Continue reading · All banis · Bedtime card.
 // Respect rules: the only art here is Sheru Sleepy on the bedtime card; none near Gurbani lines.
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { Icon } from "@/components/icons";
 import { Sheru } from "@/components/sheru/Sheru";
 import { Segmented } from "@/components/ui/controls";
 import { Badge, Progress, TopBar } from "@/components/ui/display";
 import { library, lineHref, sectionLabel } from "@/features/paath/library";
 import { readReaderMode, readRecent, writeReaderMode, type ReaderMode } from "@/features/paath/recent";
+import { useSaved } from "@/features/paath/saved";
 import { useAuth } from "@/lib/auth";
 import { local } from "@/lib/local";
 import { useLocal } from "@/lib/useLocal";
@@ -15,6 +18,18 @@ import { useLocal } from "@/lib/useLocal";
 const gurmukhiFont = "font-[family-name:var(--font-gurbani)]";
 
 export function PaathLibrary() {
+  const router = useRouter();
+  // "/" opens search (U.8).
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "/" && !(e.target as HTMLElement).closest("input, textarea")) {
+        e.preventDefault();
+        router.push("/paath/search");
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [router]);
   const { session } = useAuth();
   const mode = useLocal(local.mode, null);
   const activeChild = useLocal(local.activeChild, null);
@@ -24,6 +39,9 @@ export function PaathLibrary() {
   const readerMode: ReaderMode = stored ?? (mode === "family" && session && activeChild ? "kids" : "adult");
   const kids = readerMode === "kids";
   const recentItem = recent ? library.find((b) => b.slug === recent.slug) : null;
+  const { favourites } = useSaved();
+  // Favourites are pinned to the top (U11).
+  const ordered = [...library].sort((a, b) => Number(favourites.includes(b.slug)) - Number(favourites.includes(a.slug)));
   const recentPct = recent ? ((recent.lineIndex + 1) / Math.max(1, recent.lineCount)) * 100 : 0;
 
   return (
@@ -32,11 +50,11 @@ export function PaathLibrary() {
         title="Paath"
         trailing={
           <div className="flex items-center gap-1">
-            <span className="grid size-11 place-items-center rounded-full text-ink-3" title="Search arrives soon" aria-label="Search (coming soon)">
+            <Link href="/paath/search" className="grid size-11 place-items-center rounded-full text-ink-2 hover:bg-sunken" aria-label="Search Paath (/)">
               <Icon name="search" />
-            </span>
-            <Link href="/settings" className="grid size-11 place-items-center rounded-full text-ink-2 hover:bg-sunken" aria-label="Settings">
-              <Icon name="settings" />
+            </Link>
+            <Link href="/paath/saved" className="grid size-11 place-items-center rounded-full text-ink-2 hover:bg-sunken" aria-label="Saved lines and favourites">
+              <Icon name="bookmark" />
             </Link>
           </div>
         }
@@ -115,7 +133,7 @@ export function PaathLibrary() {
             <span className="text-caption text-ink-2">{library.length} banis · audio coming soon</span>
           </div>
           <ul className="grid gap-3 web:grid-cols-2">
-            {library.map((b) => {
+            {ordered.map((b) => {
               const isRecent = recent?.slug === b.slug;
               const pct = isRecent ? Math.round(recentPct) : 0;
               return (
@@ -132,7 +150,10 @@ export function PaathLibrary() {
                       {b.tile}
                     </span>
                     <span className="flex min-w-0 flex-1 flex-col gap-0.5">
-                      <span className="text-h3 text-ink">{b.short}</span>
+                      <span className="flex items-center gap-1.5 text-h3 text-ink">
+                        {b.short}
+                        {favourites.includes(b.slug) && <Icon name="heart-on" size={16} className="text-brand-text" aria-label="Favourite" />}
+                      </span>
                       <span lang="pa" className={`text-[15px] text-gurbani ${gurmukhiFont}`}>{b.gurmukhi}</span>
                       <span className="text-caption text-ink-2">
                         {b.detail} · about {b.minutes} min

@@ -19,9 +19,28 @@ export function readRecent(): Recent | null {
     return null;
   }
 }
+const LIST = "gv.recents";
+/** Last 10 places read (one per bani), newest first. */
+export function readRecents(): Recent[] {
+  try {
+    return JSON.parse(localStorage.getItem(LIST) ?? "[]") as Recent[];
+  } catch {
+    return [];
+  }
+}
 export function writeRecent(r: Recent) {
   try {
     localStorage.setItem(KEY, JSON.stringify(r));
+    const list = [r, ...readRecents().filter((x) => x.slug !== r.slug)].slice(0, 10);
+    localStorage.setItem(LIST, JSON.stringify(list));
+    window.dispatchEvent(new Event("gv-local"));
+  } catch {}
+}
+export function clearRecent(slug: string) {
+  try {
+    localStorage.setItem(LIST, JSON.stringify(readRecents().filter((x) => x.slug !== slug)));
+    const cur = readRecent();
+    if (cur?.slug === slug) localStorage.removeItem(KEY);
     window.dispatchEvent(new Event("gv-local"));
   } catch {}
 }

@@ -11,7 +11,9 @@
     "format": "prettier --write src",
     "cf:build": "opennextjs-cloudflare build",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "test": "node --experimental-strip-types --no-warnings tests/audio.test.ts",
+    "content:search": "node scripts/build-search.mjs"
   },
   "dependencies": {
     "@fontsource/baloo-paaji-2": "^5.3.0",

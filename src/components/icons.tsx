@@ -3,7 +3,8 @@ import type { SVGProps } from "react";
 export type IconName =
   | "book" | "letter" | "culture" | "parent" | "settings" | "check" | "close" | "lock"
   | "play" | "star" | "shield" | "heart" | "menu" | "arrow-right" | "search" | "sparkle"
-  | "devices" | "mail" | "moon" | "chevron-down" | "info" | "alert" | "wifi-off" | "users";
+  | "devices" | "mail" | "moon" | "chevron-down" | "info" | "alert" | "wifi-off" | "users"
+  | "bookmark" | "bookmark-on" | "pause" | "volume" | "keyboard" | "heart-on" | "clock";
 
 const paths: Record<IconName, React.ReactNode> = {
   book: <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" />,
@@ -30,6 +31,13 @@ const paths: Record<IconName, React.ReactNode> = {
   alert: <><path d="M12 3.5 2.5 20h19z" /><path d="M12 10v4.5M12 17v.5" /></>,
   "wifi-off": <path d="M3 3l18 18M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5-2.7M14 10.3A10 10 0 0 1 19 13M2 9.5a15 15 0 0 1 4.5-2.8M12 20h.01" />,
   users: <><circle cx="12" cy="8" r="4" /><path d="M4 21v-1a8 8 0 0 1 16 0v1" /></>,
+  bookmark: <path d="M6 3.5h12v17l-6-4-6 4z" />,
+  "bookmark-on": <path d="M6 3.5h12v17l-6-4-6 4z" fill="currentColor" />,
+  pause: <path d="M7 4.5h3.5v15H7zM13.5 4.5H17v15h-3.5z" fill="currentColor" />,
+  volume: <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4zM15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" />,
+  keyboard: <><rect x="2.5" y="6" width="19" height="12" rx="2" /><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M7 14h10" /></>,
+  "heart-on": <path d="M12 20.5s-8-4.7-8-10.6A4.4 4.4 0 0 1 12 7.4a4.4 4.4 0 0 1 8 2.5c0 5.9-8 10.6-8 10.6z" fill="currentColor" />,
+  clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
 };
 
 export function Icon({ name, size = 24, ...rest }: { name: IconName; size?: number } & SVGProps<SVGSVGElement>) {

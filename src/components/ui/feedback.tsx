@@ -110,7 +110,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   return (
     <ToastCtx.Provider value={push}>
       {children}
-      <div aria-live="polite" className="pointer-events-none fixed inset-x-0 bottom-24 z-50 flex flex-col items-center gap-2 px-4 web:bottom-8">
+      <div aria-live="polite" className="pointer-events-none fixed inset-x-0 bottom-[164px] z-50 flex flex-col items-center gap-2 px-4 tab:bottom-24">
         {items.map((t) => (
           <div
             key={t.id}
@@ -130,7 +130,9 @@ export function StateView({
   title,
   body,
   action,
+  art = true,
 }: {
+  art?: boolean; // false in Paath areas — no mascot near Gurbani (D.4)
   kind: "empty" | "error" | "offline";
   title: string;
   body?: string;
@@ -139,9 +141,9 @@ export function StateView({
   const mood: Record<typeof kind, SheruMood> = { empty: "think", error: "oops", offline: "sleepy" };
   return (
     <div className="flex flex-col items-center gap-3 px-6 py-12 text-center">
-      {kind === "offline" ? (
+      {kind === "offline" || !art ? (
         <span className="grid size-24 place-items-center rounded-full bg-sunken text-ink-2">
-          <Icon name="wifi-off" size={40} />
+          <Icon name={kind === "offline" ? "wifi-off" : kind === "error" ? "alert" : "search"} size={40} />
         </span>
       ) : (
         <Sheru mood={mood[kind]} size={96} decorative />
