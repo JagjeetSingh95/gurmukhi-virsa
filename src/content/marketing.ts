@@ -58,7 +58,7 @@ export const faqs: { q: string; a: string; group: "general" | "pricing" | "priva
   {
     group: "privacy",
     q: "How do I delete my account?",
-    a: "From Settings, behind the parent gate. Your data is deleted within 30 days.",
+    a: "Parent area → Account & data (behind the parent gate). We email you a code to confirm, then delete everything straight away; backups clear within 30 days. You can download your data first.",
   },
 ];
 

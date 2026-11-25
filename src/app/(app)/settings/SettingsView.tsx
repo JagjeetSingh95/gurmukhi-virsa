@@ -139,8 +139,8 @@ export function SettingsView() {
 
         <Card className="flex flex-col gap-1">
           <h2 className="mb-1 text-h3">{t("settings.help")}</h2>
-          <ListRow icon="info" title={t("settings.helpCentre")} href="/support" className="-mx-4" />
-          <ListRow icon="mail" title={t("settings.contact")} href="/contact" className="-mx-4" />
+          <ListRow icon="info" title={t("settings.helpCentre")} href="/help" className="-mx-4" />
+          <ListRow icon="mail" title={t("settings.contact")} href="/parent/contact" className="-mx-4" />
           <ListRow icon="shield" title={t("settings.privacy")} href="/privacy" className="-mx-4" />
           <ListRow icon="book" title={t("settings.terms")} href="/terms" className="-mx-4" />
         </Card>

@@ -104,7 +104,8 @@ export function ParentDashboard() {
           <SettingRow icon="clock" title="Reminders" value={profile?.reminder_on ? new Date(2000, 0, 1, profile.reminder_hour).toLocaleTimeString("en-GB", { hour: "numeric", hour12: true }) : "Off"} href="/parent/reminders" />
           <SettingRow icon="devices" title="Devices" value="Family code" href="/parent/devices" />
           <SettingRow icon="star" title="Plan" value={plan} href="/parent/plans" />
-          <SettingRow icon="shield" title="Parent PIN" value={profile?.has_pin ? "On" : "Off"} soon />
+          <SettingRow icon="shield" title="Parent PIN" value={profile?.has_pin ? "On" : "Off"} href="/parent/pin" />
+          <SettingRow icon="users" title="Account & data" value="Export, delete" href="/parent/account" />
           <div className="mt-2 flex flex-col gap-1 rounded-2xl border border-line bg-surface p-4">
             <p className="text-caption text-ink-3">Signed in as</p>
             <p className="truncate text-[16px] font-extrabold">{profile?.email}</p>

@@ -1,6 +1,8 @@
 // N.3.1 Welcome (D05 / U01)
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
+import { Deleted } from "./Deleted";
 import { Sheru } from "@/components/sheru/Sheru";
 import { ButtonLink } from "@/components/ui/controls";
 import { Returning } from "./Returning";
@@ -11,6 +13,9 @@ export default function Welcome() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
       <Returning />
+      <Suspense fallback={null}>
+        <Deleted />
+      </Suspense>
       <Sheru mood="happy" size={160} className="animate-bob" />
       <div className="flex flex-col gap-2">
         <p lang="pa" className="text-gurmukhi-h text-brand-text">ਜੀ ਆਇਆਂ ਨੂੰ!</p>

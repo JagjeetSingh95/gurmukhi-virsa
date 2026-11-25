@@ -6,7 +6,7 @@ import { useId, useRef, type ComponentProps, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { Icon } from "@/components/icons";
 
-type Variant = "primary" | "secondary" | "navy" | "success" | "ghost";
+type Variant = "primary" | "secondary" | "navy" | "success" | "ghost" | "danger";
 type Size = "md" | "sm";
 
 const variants: Record<Variant, string> = {
@@ -15,6 +15,7 @@ const variants: Record<Variant, string> = {
   navy: "bg-navy-800 text-white shadow-[0_4px_0_var(--navy-900)] dark:bg-navy-600",
   success: "bg-green text-white shadow-[0_4px_0_var(--green-800)]",
   ghost: "bg-transparent text-brand-text shadow-none hover:bg-brand-soft",
+  danger: "bg-[var(--red-600)] text-white shadow-[0_4px_0_var(--red-800)] hover:brightness-105",
 };
 
 export function buttonClasses({
