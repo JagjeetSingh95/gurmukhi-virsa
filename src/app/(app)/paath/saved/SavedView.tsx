@@ -1,6 +1,7 @@
 "use client";
 // N.4.5 Saved (U11): Bookmarks (lines) · Favourites (banis pinned to Paath home) · Recent (last 10). Remove → undo toast.
 import Link from "next/link";
+import { Downloads } from "@/features/paath/Downloads";
 import { useEffect, useMemo, useState } from "react";
 import { Icon } from "@/components/icons";
 import { Segmented } from "@/components/ui/controls";
@@ -12,7 +13,7 @@ import { useSaved } from "@/features/paath/saved";
 import { useLocal } from "@/lib/useLocal";
 
 type Row = [slug: string, i: number, section: number, g: string, r: string, en: string, fl: string, flr: string];
-type Tab = "bookmarks" | "favourites" | "recent";
+type Tab = "bookmarks" | "favourites" | "recent" | "offline";
 type Undo = { kind: "bookmark"; slug: string; id: string } | { kind: "fav"; slug: string } | { kind: "recent"; recent: Recent };
 
 function ago(iso: string | number) {
@@ -26,7 +27,7 @@ function ago(iso: string | number) {
 
 export function SavedView() {
   const toast = useToast();
-  const [tab, setTab] = useState<Tab>("bookmarks");
+  const [tab, setTab] = useState<Tab>(() => (typeof location !== "undefined" && new URLSearchParams(location.search).get("tab") === "offline" ? "offline" : "bookmarks"));
   const saved = useSaved();
   const recents = useLocal(readRecents, []);
   const [rows, setRows] = useState<Row[] | null>(null);
@@ -82,6 +83,7 @@ export function SavedView() {
             { value: "bookmarks", label: "Bookmarks" },
             { value: "favourites", label: "Favourites" },
             { value: "recent", label: "Recent" },
+            { value: "offline", label: "Offline" },
           ]}
         />
         {!saved.synced && <p className="text-caption text-ink-2">Saved on this device. <Link href="/signin" className="font-bold underline">Create a free account</Link> to keep them everywhere.</p>}
@@ -162,6 +164,7 @@ export function SavedView() {
             <StateView art={false} kind="empty" title="No favourites yet" body="Tap the heart in the reader to pin a bani to the top of Paath." />
           ))}
 
+        {tab === "offline" && <Downloads />}
         {tab === "recent" &&
           (recents.length ? (
             <ul className="flex flex-col gap-2">

@@ -5,7 +5,7 @@ export type IconName =
   | "play" | "star" | "shield" | "heart" | "menu" | "arrow-right" | "search" | "sparkle"
   | "devices" | "mail" | "moon" | "chevron-down" | "info" | "alert" | "wifi-off" | "users"
   | "bookmark" | "bookmark-on" | "pause" | "volume" | "keyboard" | "heart-on" | "clock"
-  | "arrow-left" | "calendar" | "pin" | "chevron-left" | "chevron-right";
+  | "arrow-left" | "calendar" | "pin" | "chevron-left" | "chevron-right" | "download" | "download-done";
 
 const paths: Record<IconName, React.ReactNode> = {
   book: <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" />,
@@ -30,6 +30,8 @@ const paths: Record<IconName, React.ReactNode> = {
   "chevron-down": <path d="m6 9 6 6 6-6" />,
   info: <><circle cx="12" cy="12" r="9" /><path d="M12 11v5.5M12 7.5v.5" /></>,
   alert: <><path d="M12 3.5 2.5 20h19z" /><path d="M12 10v4.5M12 17v.5" /></>,
+  download: <path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" />,
+  "download-done": <path d="M5 12.5 9.5 17 19 7.5M5 21h14" />,
   "wifi-off": <path d="M3 3l18 18M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5-2.7M14 10.3A10 10 0 0 1 19 13M2 9.5a15 15 0 0 1 4.5-2.8M12 20h.01" />,
   users: <><circle cx="12" cy="8" r="4" /><path d="M4 21v-1a8 8 0 0 1 16 0v1" /></>,
   bookmark: <path d="M6 3.5h12v17l-6-4-6 4z" />,

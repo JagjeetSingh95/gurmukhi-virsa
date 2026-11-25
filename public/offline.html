@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offline · Gurmukhi Virsa</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { color-scheme: light dark; --bg:#FFFAF3; --ink:#2A2420; --ink2:#6B6158; --line:#EADFD2; --card:#fff; --brand:#B85C0F; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16141C; --ink:#F4EFE8; --ink2:#B9B0A6; --line:#2E2A36; --card:#201D27; --brand:#F2A35E; } }
+  html[data-theme="dark"] { --bg:#16141C; --ink:#F4EFE8; --ink2:#B9B0A6; --line:#2E2A36; --card:#201D27; --brand:#F2A35E; }
+  html[data-theme="light"] { --bg:#FFFAF3; --ink:#2A2420; --ink2:#6B6158; --line:#EADFD2; --card:#fff; --brand:#B85C0F; }
+  body { margin:0; min-height:100vh; display:grid; place-items:center; background:var(--bg); color:var(--ink); font-family:Nunito, system-ui, sans-serif; }
+  main { max-width:420px; padding:48px 24px; text-align:center; }
+  .ico { width:80px; height:80px; border-radius:50%; display:grid; place-items:center; margin:0 auto 20px; background:var(--line); color:var(--ink2); }
+  h1 { font-size:26px; margin:0 0 8px; } p { color:var(--ink2); font-size:16px; line-height:1.5; }
+  ul { list-style:none; padding:0; margin:20px 0; text-align:left; display:grid; gap:8px; }
+  a.row { display:flex; justify-content:space-between; padding:14px 16px; border:1px solid var(--line); border-radius:12px; background:var(--card); color:var(--ink); font-weight:800; text-decoration:none; }
+  button { background:none; border:0; color:var(--brand); font-weight:800; font-size:15px; text-decoration:underline; cursor:pointer; }
+</style>
+<script>try{var p=JSON.parse(localStorage.getItem("gv.prefs")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+</head>
+<body>
+<main id="main">
+  <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l18 18M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5-2.7M14 10.3A10 10 0 0 1 19 13M2 9.5a15 15 0 0 1 4.5-2.8M12 20h.01"/></svg></div>
+  <h1>You're offline</h1>
+  <p>This page needs internet. Banis you saved on this device still open.</p>
+  <ul id="list"></ul>
+  <button type="button" onclick="location.reload()">Try again</button>
+</main>
+<script>
+  var names = { "mool-mantar": "Mool Mantar", "japji-1-5": "Japji Sahib", "kirtan-sohila": "Kirtan Sohila", sukhmani: "Sukhmani Sahib" };
+  var list = document.getElementById("list"), d = [];
+  try { d = JSON.parse(localStorage.getItem("gv.downloads") || "[]"); } catch (e) {}
+  if (!d.length) list.outerHTML = "<p>No banis saved yet. When you're back online, tap the download button in the reader.</p>";
+  d.forEach(function (x) {
+    var li = document.createElement("li"), a = document.createElement("a");
+    a.className = "row"; a.href = "/paath/" + encodeURIComponent(x.slug);
+    a.textContent = names[x.slug] || x.slug; a.insertAdjacentHTML("beforeend", "<span aria-hidden='true'>→</span>");
+    li.appendChild(a); list.appendChild(li);
+  });
+</script>
+</body>
+</html>

@@ -85,6 +85,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       signOut: async () => {
         await supabase().auth.signOut();
         local.setActiveChild(null);
+        local.setMode(null); // deliberate sign-out ≠ "session expired" banner (N.9.3)
         local.closeGate();
         local.setMode(null);
       },

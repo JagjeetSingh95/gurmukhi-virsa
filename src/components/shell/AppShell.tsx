@@ -13,6 +13,7 @@ import { useLocal } from "@/lib/useLocal";
 import { cn } from "@/lib/cn";
 import { Icon, type IconName } from "@/components/icons";
 import { Logo } from "@/components/Logo";
+import { SystemBanners } from "@/components/shell/SystemBanners";
 
 export const appTabs: { href: string; label: string; gurmukhi: string; icon: IconName }[] = [
   { href: "/paath", label: "Paath", gurmukhi: "ਪਾਠ", icon: "book" },
@@ -48,7 +49,13 @@ export function AppShell({ children }: { children: ReactNode }) {
   }, []);
   const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
   // Lessons and the sakhi player are full-screen (D09/D10/D12): no tab bar or side nav.
-  if (/^\/learn\/.+/.test(path) || /^\/culture\/sakhis\/.+/.test(path)) return <main id="main" className="min-h-dvh bg-app">{children}</main>;
+  if (/^\/learn\/.+/.test(path) || /^\/culture\/sakhis\/.+/.test(path))
+    return (
+      <main id="main" className="min-h-dvh bg-app">
+        <SystemBanners />
+        {children}
+      </main>
+    );
 
   return (
     <div className="flex min-h-dvh bg-app">
@@ -99,6 +106,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </nav>
 
       <div className="flex min-w-0 flex-1 flex-col pb-[84px] tab:pb-0">
+        <SystemBanners />
         <main id="main" className="mx-auto w-full max-w-[1200px] flex-1">
           {children}
         </main>

@@ -46,7 +46,7 @@ export function CultureHome() {
               {sakhiHeading(today)}
             </h2>
             <p className="text-[15px] opacity-90">{today.tagline}.</p>
-            <span className="mt-1 inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-[15px] font-extrabold text-brand-text">
+            <span className="mt-1 inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-[15px] font-extrabold text-[var(--saffron-800)]">
               <Icon name="play" size={16} /> Play story
             </span>
           </div>

@@ -15,6 +15,7 @@ import { fmtTime, lineAtTime, repeatRange } from "./audio";
 import { readReaderMode, writeRecent, type ReaderMode } from "./recent";
 import { ReaderSettingsSheet } from "./ReaderSettingsSheet";
 import { useSaved } from "./saved";
+import { DownloadButton } from "./DownloadButton";
 import { sizes, useReaderSettings, writeSettings } from "./settings";
 
 export type ReaderLine = {
@@ -224,6 +225,7 @@ export function Reader({ slug, title, gurmukhiTitle, lines, lineCount, sectionLa
         >
           <Icon name={fav ? "heart-on" : "heart"} />
         </button>
+        <DownloadButton slug={slug} title={title} />
         <button type="button" onClick={() => setSheet(true)} className="grid size-11 place-items-center rounded-full text-ink-2 hover:bg-sunken" aria-label="Reading settings (,)">
           <Icon name="settings" />
         </button>

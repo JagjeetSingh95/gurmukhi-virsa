@@ -27,7 +27,7 @@ export function buttonClasses({
   return cn(
     "relative inline-flex select-none items-center justify-center gap-2 font-extrabold transition-[transform,box-shadow,filter]",
     "active:translate-y-[3px] active:shadow-none",
-    "disabled:pointer-events-none disabled:bg-[#E9DFD2] disabled:text-ink-3 disabled:shadow-none aria-disabled:pointer-events-none aria-disabled:opacity-60",
+    "disabled:pointer-events-none disabled:bg-sunken disabled:text-ink-3 disabled:shadow-none aria-disabled:pointer-events-none aria-disabled:opacity-60",
     size === "md"
       ? "h-[var(--control-h)] rounded-lg px-6 text-[16px] web:rounded-md"
       : "h-10 rounded-md px-4 text-[14px]",

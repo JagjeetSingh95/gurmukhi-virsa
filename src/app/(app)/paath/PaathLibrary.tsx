@@ -13,6 +13,7 @@ import { readReaderMode, readRecent, writeReaderMode, type ReaderMode } from "@/
 import { useSaved } from "@/features/paath/saved";
 import { useAuth } from "@/lib/auth";
 import { local } from "@/lib/local";
+import { useDownloads } from "@/lib/offline";
 import { useLocal } from "@/lib/useLocal";
 
 const gurmukhiFont = "font-[family-name:var(--font-gurbani)]";
@@ -40,6 +41,7 @@ export function PaathLibrary() {
   const kids = readerMode === "kids";
   const recentItem = recent ? library.find((b) => b.slug === recent.slug) : null;
   const { favourites } = useSaved();
+  const downloads = useDownloads();
   // Favourites are pinned to the top (U11).
   const ordered = [...library].sort((a, b) => Number(favourites.includes(b.slug)) - Number(favourites.includes(a.slug)));
   const recentPct = recent ? ((recent.lineIndex + 1) / Math.max(1, recent.lineCount)) * 100 : 0;
@@ -157,6 +159,9 @@ export function PaathLibrary() {
                       <span lang="pa" className={`text-[15px] text-gurbani ${gurmukhiFont}`}>{b.gurmukhi}</span>
                       <span className="text-caption text-ink-2">
                         {b.detail} · about {b.minutes} min
+                        {downloads.some((d) => d.slug === b.slug) && (
+                          <span className="ml-1.5 inline-flex items-center gap-0.5 font-bold text-success"><Icon name="download-done" size={13} /> Offline</span>
+                        )}
                       </span>
                     </span>
                     {isRecent && pct > 0 ? (
