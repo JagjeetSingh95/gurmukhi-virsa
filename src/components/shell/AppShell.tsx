@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, type ReactNode } from "react";
+import { useActivityTracker } from "@/lib/activity";
 import { useAuth } from "@/lib/auth";
 import { avatarEmoji } from "@/lib/avatars";
 import { local } from "@/lib/local";
@@ -29,6 +30,8 @@ export function AppShell({ children }: { children: ReactNode }) {
   // Adult guest (or no choice yet) = Paath · Culture · Settings. Family = 4 tabs.
   const family = mode === "family" && !!session;
   const tabs = family ? appTabs : adultTabs;
+  // Learning time counts only for a child profile, on the kids' tabs (not Parent / Settings).
+  useActivityTracker(family && child ? child.id : null, /^\/(paath|learn|culture)(\/|$)/.test(path));
 
   useEffect(() => {
     try {

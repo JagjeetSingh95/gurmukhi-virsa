@@ -1,14 +1,13 @@
 "use client";
-// Parent tab — always behind the parent gate (U.5). Full dashboard arrives in N.7.1.
-import Link from "next/link";
+// Parent tab — always behind the parent gate (U.5). Dashboard = N.7.1.
 import { GatedPage } from "@/components/gate/ParentGate";
 import { ButtonLink } from "@/components/ui/controls";
-import { Badge, Card, ListRow, TopBar } from "@/components/ui/display";
+import { TopBar } from "@/components/ui/display";
+import { ParentDashboard } from "@/features/parent/Dashboard";
 import { useAuth } from "@/lib/auth";
-import { avatarEmoji } from "@/lib/avatars";
 
 export function ParentHome() {
-  const { ready, session, profile, kids } = useAuth();
+  const { ready, session } = useAuth();
   if (!ready) return null;
   if (!session)
     return (
@@ -25,22 +24,7 @@ export function ParentHome() {
     <>
       <TopBar title="Parent" />
       <GatedPage>
-        <div className="flex flex-col gap-5 p-5 web:p-8">
-          <Card className="flex flex-col gap-1">
-            <p className="text-caption text-ink-3">Signed in as</p>
-            <p className="text-[17px] font-extrabold">{profile?.email}</p>
-            <div className="mt-2 flex gap-2">
-              <Badge tone={profile?.plan === "family" ? "success" : "navy"}>{profile?.plan === "family" ? "Family" : "Free plan"}</Badge>
-              <Badge tone={profile?.has_pin ? "success" : "reward"} icon="shield">{profile?.has_pin ? "PIN on" : "No PIN"}</Badge>
-            </div>
-          </Card>
-          <Card className="!p-2">
-            {kids.map((k) => (
-              <ListRow key={k.id} title={`${avatarEmoji(k.avatar)}  ${k.name}`} subtitle={`Age ${k.age_band} · ${k.streak_days}-day streak`} />
-            ))}
-          </Card>
-          <p className="text-caption text-ink-3">Progress dashboard and weekly summary arrive in the next update. <Link href="/profiles" className="underline">Switch profile</Link></p>
-        </div>
+        <ParentDashboard />
       </GatedPage>
     </>
   );
