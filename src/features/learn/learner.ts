@@ -4,6 +4,7 @@
 // via record_progress (which enforces Free limits and updates the child's streak server-side).
 import { useCallback, useEffect, useState } from "react";
 import { useAuth } from "@/lib/auth";
+import { useIsFamily } from "@/lib/entitlement";
 import { local } from "@/lib/local";
 import { supabase } from "@/lib/supabase/client";
 import { useLocal } from "@/lib/useLocal";
@@ -45,7 +46,7 @@ export function streakFrom(days: string[]) {
 }
 
 export function useLearner() {
-  const { session, profile, kids, refresh } = useAuth();
+  const { session, kids, refresh } = useAuth();
   const mode = useLocal(local.mode, null);
   const activeId = useLocal(local.activeChild, null);
   const child = session && mode === "family" ? (kids.find((k) => k.id === activeId) ?? null) : null;
@@ -53,9 +54,7 @@ export function useLearner() {
   const store = useLocal(() => read(storeId), empty);
   const [remoteLoaded, setRemoteLoaded] = useState(false);
 
-  // Dev-only override (localStorage gv.devFamily = "1") to QA Family screens; ignored in production builds.
-  const devFamily = process.env.NODE_ENV !== "production" && typeof window !== "undefined" && localStorage.getItem("gv.devFamily") === "1";
-  const isFamily = devFamily || (!!profile && (profile.plan === "family" || (!!profile.trial_ends_at && new Date(profile.trial_ends_at) > new Date())));
+  const isFamily = useIsFamily();
   const synced = !!child;
 
   // Pull server progress for this child into the device copy.

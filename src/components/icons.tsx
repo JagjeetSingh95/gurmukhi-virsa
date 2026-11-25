@@ -4,7 +4,8 @@ export type IconName =
   | "book" | "letter" | "culture" | "parent" | "settings" | "check" | "close" | "lock"
   | "play" | "star" | "shield" | "heart" | "menu" | "arrow-right" | "search" | "sparkle"
   | "devices" | "mail" | "moon" | "chevron-down" | "info" | "alert" | "wifi-off" | "users"
-  | "bookmark" | "bookmark-on" | "pause" | "volume" | "keyboard" | "heart-on" | "clock";
+  | "bookmark" | "bookmark-on" | "pause" | "volume" | "keyboard" | "heart-on" | "clock"
+  | "arrow-left" | "calendar" | "pin" | "chevron-left" | "chevron-right";
 
 const paths: Record<IconName, React.ReactNode> = {
   book: <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" />,
@@ -37,6 +38,11 @@ const paths: Record<IconName, React.ReactNode> = {
   volume: <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4zM15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" />,
   keyboard: <><rect x="2.5" y="6" width="19" height="12" rx="2" /><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M7 14h10" /></>,
   "heart-on": <path d="M12 20.5s-8-4.7-8-10.6A4.4 4.4 0 0 1 12 7.4a4.4 4.4 0 0 1 8 2.5c0 5.9-8 10.6-8 10.6z" fill="currentColor" />,
+  "arrow-left": <path d="M19 12H5M11 6l-6 6 6 6" />,
+  calendar: <><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" /><path d="M3.5 10h17M8 3v4M16 3v4" /></>,
+  pin: <><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" /><circle cx="12" cy="10" r="2.5" /></>,
+  "chevron-left": <path d="m15 6-6 6 6 6" />,
+  "chevron-right": <path d="m9 6 6 6-6 6" />,
   clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
 };
 

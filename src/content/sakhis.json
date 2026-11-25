@@ -1,45 +1,110 @@
 {
- "source": "Draft summaries — MUST be reviewed by a Sikh reviewer before launch. Never depict the Gurus in art.",
+ "source": "Draft summaries and pages — MUST be reviewed by a Sikh reviewer before launch. Never depict the Gurus in art: scenes use objects and nature only.",
  "sakhis": [
   {
    "id": "sakhi-01",
    "title": "The True Bargain",
    "gurmukhi": "ਸੱਚਾ ਸੌਦਾ",
-   "minutes": 3,
+   "roman": "Sacha Sauda",
+   "guru": "1",
+   "minutes": 4,
    "free": true,
    "summary": "Young Guru Nanak Dev Ji is given money to make a good deal at the market. On the way he meets hungry holy men and spends it all on food for them. He calls this the truest bargain of all.",
+   "tagline": "A story about sharing with people in need",
    "lesson": "Helping people in need is worth more than any profit.",
-   "body": null
+   "audio": null,
+   "pages": [
+    { "scene": "🏡", "en": "When Guru Nanak Dev Ji was young, he lived in the village of Talwandi with his family.", "pa": "ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਬਚਪਨ ਵਿੱਚ ਤਲਵੰਡੀ ਪਿੰਡ ਵਿੱਚ ਰਹਿੰਦੇ ਸਨ।" },
+    { "scene": "🪙", "en": "His father gave him twenty rupees. “Go to the market and make a good bargain,” he said.", "pa": "ਪਿਤਾ ਜੀ ਨੇ ਉਨ੍ਹਾਂ ਨੂੰ ਵੀਹ ਰੁਪਏ ਦਿੱਤੇ ਤੇ ਕਿਹਾ, “ਕੋਈ ਖਰਾ ਸੌਦਾ ਕਰ ਕੇ ਆਉਣਾ।”" },
+    { "scene": "🛤️", "en": "Young Nanak set off with the twenty rupees. On the way he met hungry holy men.", "pa": "ਰਸਤੇ ਵਿੱਚ ਉਨ੍ਹਾਂ ਨੂੰ ਭੁੱਖੇ ਸਾਧੂ ਮਿਲੇ।" },
+    { "scene": "🍞", "en": "He felt their hunger as his own, and used all the money to buy food for them.", "pa": "ਗੁਰੂ ਜੀ ਨੇ ਸਾਰੇ ਪੈਸਿਆਂ ਨਾਲ ਉਨ੍ਹਾਂ ਲਈ ਭੋਜਨ ਖਰੀਦਿਆ।" },
+    { "scene": "🥣", "en": "The holy men ate and were happy. Nothing was left to take home.", "pa": "ਸਾਧੂਆਂ ਨੇ ਭੋਜਨ ਛਕਿਆ ਤੇ ਬਹੁਤ ਖੁਸ਼ ਹੋਏ।" },
+    { "scene": "🏠", "en": "Back home, his father asked, “Where is the bargain you made?”", "pa": "ਘਰ ਆ ਕੇ ਪਿਤਾ ਜੀ ਨੇ ਪੁੱਛਿਆ, “ਸੌਦਾ ਕਿੱਥੇ ਹੈ?”" },
+    { "scene": "💛", "en": "He smiled. “I fed people who were hungry. That is the truest bargain — Sacha Sauda.”", "pa": "ਗੁਰੂ ਜੀ ਨੇ ਕਿਹਾ, “ਭੁੱਖਿਆਂ ਨੂੰ ਭੋਜਨ ਛਕਾਉਣਾ ਹੀ ਸੱਚਾ ਸੌਦਾ ਹੈ।”" },
+    { "scene": "🌾", "en": "Today, the langar in every Gurdwara keeps this sharing going. Who can you share with today?", "pa": "ਅੱਜ ਹਰ ਗੁਰਦੁਆਰੇ ਦਾ ਲੰਗਰ ਇਹੀ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।" }
+   ]
   },
   {
    "id": "sakhi-02",
    "title": "Bhai Lalo and Malik Bhago",
    "gurmukhi": "ਭਾਈ ਲਾਲੋ ਤੇ ਮਲਿਕ ਭਾਗੋ",
+   "roman": "Bhai Lalo",
+   "guru": "1",
    "minutes": 4,
    "free": true,
    "summary": "Guru Nanak Dev Ji chooses to eat the simple bread of Bhai Lalo, a hard-working carpenter, instead of a rich feast from Malik Bhago, who became rich by treating people unfairly.",
+   "tagline": "A story about honest work",
    "lesson": "Honest work (kirat karni) matters more than riches.",
-   "body": null
+   "audio": null,
+   "pages": [
+    { "scene": "🪚", "en": "In the town of Saidpur lived Bhai Lalo, a carpenter who worked hard and honestly.", "pa": "ਸੈਦਪੁਰ ਵਿੱਚ ਭਾਈ ਲਾਲੋ ਰਹਿੰਦੇ ਸਨ, ਜੋ ਮਿਹਨਤ ਨਾਲ ਤਰਖਾਣ ਦਾ ਕੰਮ ਕਰਦੇ ਸਨ।" },
+    { "scene": "🫓", "en": "Guru Nanak Dev Ji stayed at his home and happily ate his simple rotis.", "pa": "ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਉਨ੍ਹਾਂ ਦੇ ਘਰ ਠਹਿਰੇ ਤੇ ਸਾਦੀਆਂ ਰੋਟੀਆਂ ਪਿਆਰ ਨਾਲ ਛਕੀਆਂ।" },
+    { "scene": "🏰", "en": "Malik Bhago, a rich official, held a big feast and invited Guru Ji.", "pa": "ਅਮੀਰ ਮਲਿਕ ਭਾਗੋ ਨੇ ਵੱਡਾ ਭੋਜ ਕੀਤਾ ਤੇ ਗੁਰੂ ਜੀ ਨੂੰ ਸੱਦਾ ਭੇਜਿਆ।" },
+    { "scene": "🍽️", "en": "Guru Ji did not go. Malik Bhago was angry and asked why.", "pa": "ਗੁਰੂ ਜੀ ਨਾ ਗਏ। ਮਲਿਕ ਭਾਗੋ ਨੇ ਗੁੱਸੇ ਵਿੱਚ ਕਾਰਨ ਪੁੱਛਿਆ।" },
+    { "scene": "⚖️", "en": "Guru Ji explained: Bhai Lalo's bread was earned honestly, but Malik Bhago's riches came from treating poor people unfairly.", "pa": "ਗੁਰੂ ਜੀ ਨੇ ਸਮਝਾਇਆ ਕਿ ਲਾਲੋ ਦੀ ਰੋਟੀ ਹੱਕ ਦੀ ਕਮਾਈ ਹੈ।" },
+    { "scene": "✨", "en": "Malik Bhago understood and promised to be fair. Honest work is precious.", "pa": "ਮਲਿਕ ਭਾਗੋ ਨੂੰ ਸਮਝ ਆ ਗਈ। ਹੱਕ ਦੀ ਕਮਾਈ ਸਭ ਤੋਂ ਉੱਤਮ ਹੈ।" }
+   ]
   },
   {
    "id": "sakhi-03",
    "title": "Bhai Kanhaiya",
    "gurmukhi": "ਭਾਈ ਘਨੱਈਆ",
+   "roman": "Bhai Kanhaiya",
+   "guru": "10",
    "minutes": 4,
    "free": false,
    "summary": "During a battle, Bhai Kanhaiya gives water to every wounded soldier, friend or foe. When asked why, he says he sees the same light of God in everyone. Guru Gobind Singh Ji blesses him and gives him medicine to help even more.",
+   "tagline": "A story about serving everyone",
    "lesson": "Serve everyone equally — seva without seeing sides.",
-   "body": null
+   "audio": null,
+   "pages": [
+    { "scene": "🏞️", "en": "Long ago, near Anandpur Sahib, a battle was being fought.", "pa": "ਅਨੰਦਪੁਰ ਸਾਹਿਬ ਕੋਲ ਇੱਕ ਜੰਗ ਹੋ ਰਹੀ ਸੀ।" },
+    { "scene": "💧", "en": "Bhai Kanhaiya carried a water bag (mashak) and gave water to thirsty, wounded soldiers.", "pa": "ਭਾਈ ਘਨੱਈਆ ਜੀ ਮਸ਼ਕ ਨਾਲ ਜ਼ਖ਼ਮੀਆਂ ਨੂੰ ਪਾਣੀ ਪਿਲਾਉਂਦੇ ਸਨ।" },
+    { "scene": "🫗", "en": "He gave water to everyone — soldiers on his own side, and on the other side too.", "pa": "ਉਹ ਹਰ ਕਿਸੇ ਨੂੰ ਪਾਣੀ ਦਿੰਦੇ ਸਨ — ਆਪਣਿਆਂ ਨੂੰ ਵੀ ਤੇ ਦੂਜੀ ਫ਼ੌਜ ਦਿਆਂ ਨੂੰ ਵੀ।" },
+    { "scene": "❓", "en": "Some Sikhs complained to Guru Gobind Singh Ji about this.", "pa": "ਕੁਝ ਸਿੱਖਾਂ ਨੇ ਗੁਰੂ ਗੋਬਿੰਦ ਸਿੰਘ ਜੀ ਕੋਲ ਸ਼ਿਕਾਇਤ ਕੀਤੀ।" },
+    { "scene": "🕯️", "en": "Bhai Kanhaiya said, “I see no friend or enemy. I see the same light of God in everyone.”", "pa": "ਭਾਈ ਜੀ ਨੇ ਕਿਹਾ, “ਮੈਨੂੰ ਸਭ ਵਿੱਚ ਇੱਕੋ ਰੱਬ ਦੀ ਜੋਤ ਦਿਸਦੀ ਹੈ।”" },
+    { "scene": "🩹", "en": "Guru Ji was pleased and gave him ointment to help heal wounds too. Serve everyone, without seeing sides.", "pa": "ਗੁਰੂ ਜੀ ਨੇ ਖੁਸ਼ ਹੋ ਕੇ ਉਨ੍ਹਾਂ ਨੂੰ ਮੱਲ੍ਹਮ ਵੀ ਦਿੱਤੀ।" }
+   ]
   },
   {
    "id": "sakhi-04",
    "title": "The Garden and the Flower",
    "gurmukhi": "ਬਾਗ਼ ਤੇ ਫੁੱਲ",
+   "roman": "The Garden",
+   "guru": "7",
    "minutes": 3,
    "free": false,
    "summary": "Guru Har Rai Ji loves nature and keeps a garden of healing plants. One day his robe brushes a flower and breaks it. He teaches that we must move gently, because our actions can hurt living things.",
+   "tagline": "A story about caring for nature",
    "lesson": "Be gentle and care for nature.",
-   "body": null
+   "audio": null,
+   "pages": [
+    { "scene": "🌿", "en": "Guru Har Rai Ji loved nature. At Kiratpur Sahib he kept a beautiful garden of healing plants.", "pa": "ਗੁਰੂ ਹਰਿ ਰਾਇ ਜੀ ਨੂੰ ਕੁਦਰਤ ਨਾਲ ਬਹੁਤ ਪਿਆਰ ਸੀ।" },
+    { "scene": "🌸", "en": "One day, as he walked by, his long robe brushed a flower and broke its stem.", "pa": "ਇੱਕ ਦਿਨ ਉਨ੍ਹਾਂ ਦਾ ਚੋਲਾ ਲੱਗ ਕੇ ਇੱਕ ਫੁੱਲ ਟੁੱਟ ਗਿਆ।" },
+    { "scene": "🥀", "en": "Guru Ji stopped. He felt sad for the little flower.", "pa": "ਗੁਰੂ ਜੀ ਰੁਕ ਗਏ ਤੇ ਫੁੱਲ ਲਈ ਉਦਾਸ ਹੋਏ।" },
+    { "scene": "🍃", "en": "From then on, he held his robe close as he walked, so he would not hurt any plant.", "pa": "ਉਸ ਤੋਂ ਬਾਅਦ ਉਹ ਆਪਣਾ ਚੋਲਾ ਸਮੇਟ ਕੇ ਤੁਰਦੇ ਸਨ।" },
+    { "scene": "🌳", "en": "He taught: move gently, because even small actions can hurt living things.", "pa": "ਹੌਲੀ ਤੇ ਪਿਆਰ ਨਾਲ ਚੱਲੋ, ਹਰ ਜੀਵ ਦਾ ਧਿਆਨ ਰੱਖੋ।" }
+   ]
+  },
+  {
+   "id": "sakhi-05",
+   "title": "The Rich Man's Needle",
+   "gurmukhi": "ਦੁਨੀ ਚੰਦ ਦੀ ਸੂਈ",
+   "roman": "Duni Chand",
+   "guru": "1",
+   "minutes": 3,
+   "free": false,
+   "summary": "Guru Nanak Dev Ji asks a proud rich man, Duni Chand, to keep a needle and return it in the next world. Duni Chand realises that none of his riches can go with him either.",
+   "tagline": "A story about what really matters",
+   "lesson": "Riches stay behind; kindness and good deeds go with us.",
+   "audio": null,
+   "pages": [
+    { "scene": "💰", "en": "In Lahore lived Duni Chand, a very rich man who was proud of his wealth.", "pa": "ਲਾਹੌਰ ਵਿੱਚ ਦੁਨੀ ਚੰਦ ਨਾਂ ਦਾ ਇੱਕ ਬਹੁਤ ਅਮੀਰ ਆਦਮੀ ਰਹਿੰਦਾ ਸੀ।" },
+    { "scene": "🪡", "en": "Guru Nanak Dev Ji gave him a small needle. “Please keep this, and give it back to me in the next world.”", "pa": "ਗੁਰੂ ਜੀ ਨੇ ਉਸ ਨੂੰ ਇੱਕ ਸੂਈ ਦਿੱਤੀ ਤੇ ਕਿਹਾ, “ਇਹ ਮੈਨੂੰ ਅਗਲੇ ਜਹਾਨ ਵਿੱਚ ਮੋੜ ਦੇਣਾ।”" },
+    { "scene": "🤔", "en": "Duni Chand's wife asked, “How can anyone carry a needle after they die?”", "pa": "ਉਸ ਦੀ ਪਤਨੀ ਨੇ ਪੁੱਛਿਆ, “ਮਰਨ ਤੋਂ ਬਾਅਦ ਸੂਈ ਕਿਵੇਂ ਨਾਲ ਜਾਵੇਗੀ?”" },
+    { "scene": "💡", "en": "Duni Chand understood: none of his riches could go with him either.", "pa": "ਦੁਨੀ ਚੰਦ ਨੂੰ ਸਮਝ ਆਈ ਕਿ ਉਸ ਦੀ ਦੌਲਤ ਵੀ ਨਾਲ ਨਹੀਂ ਜਾਵੇਗੀ।" },
+    { "scene": "🍲", "en": "From then on, he used his wealth to help others and feed the hungry.", "pa": "ਉਸ ਨੇ ਆਪਣੀ ਦੌਲਤ ਲੋੜਵੰਦਾਂ ਦੀ ਸੇਵਾ ਵਿੱਚ ਲਾਈ।" }
+   ]
   }
  ]
 }

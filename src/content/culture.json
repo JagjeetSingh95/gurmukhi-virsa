@@ -1,0 +1,118 @@
+{
+ "source": "Draft — MUST be reviewed by a Sikh reviewer before launch. Gurus are never drawn: numerals and text only. Gurpurab dates stay null until the calendar source (Nanakshahi / Bikrami) is chosen.",
+ "gurus": [
+  {
+   "id": "1", "numeral": "੧", "name": "Guru Nanak Dev Ji", "gurmukhi": "ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ", "years": "1469–1539", "role": "First Guru",
+   "born": "Rai Bhoi di Talwandi, now Nankana Sahib, in 1469.",
+   "facts": ["Travelled far and wide on long journeys (udasis) to share his message.", "Taught that there is one God, and that all people are equal.", "Founded the town of Kartarpur, where everyone worked, prayed and ate together."],
+   "teachings": [
+    { "gurmukhi": "ਨਾਮ ਜਪੋ", "roman": "Naam Japo", "meaning": "Remember God" },
+    { "gurmukhi": "ਕਿਰਤ ਕਰੋ", "roman": "Kirat Karo", "meaning": "Work honestly" },
+    { "gurmukhi": "ਵੰਡ ਛਕੋ", "roman": "Vand Chhako", "meaning": "Share" }
+   ]
+  },
+  {
+   "id": "2", "numeral": "੨", "name": "Guru Angad Dev Ji", "gurmukhi": "ਗੁਰੂ ਅੰਗਦ ਦੇਵ ਜੀ", "years": "1504–1552", "role": "Second Guru",
+   "born": "Matte di Sarai, near Muktsar, in 1504.",
+   "facts": ["Gave the Gurmukhi script the shape we learn today.", "Opened schools so children could learn to read and write.", "With Mata Khivi Ji, grew the langar so everyone could eat together.", "Encouraged healthy bodies with exercise and wrestling."]
+  },
+  {
+   "id": "3", "numeral": "੩", "name": "Guru Amar Das Ji", "gurmukhi": "ਗੁਰੂ ਅਮਰਦਾਸ ਜੀ", "years": "1479–1574", "role": "Third Guru",
+   "born": "Basarke, near Amritsar, in 1479.",
+   "facts": ["Asked every visitor to sit together and eat in langar first — rich or poor, side by side (pangat).", "Built the baoli (step-well) at Goindval Sahib.", "Spoke up for women and taught that they are equal."]
+  },
+  {
+   "id": "4", "numeral": "੪", "name": "Guru Ram Das Ji", "gurmukhi": "ਗੁਰੂ ਰਾਮਦਾਸ ਜੀ", "years": "1534–1581", "role": "Fourth Guru",
+   "born": "Chuna Mandi, Lahore, in 1534.",
+   "facts": ["Founded the city of Ramdaspur, which we now call Amritsar.", "Began digging the holy sarovar (pool) at Amritsar.", "Wrote the Laavan, the four hymns sung at a Sikh wedding."]
+  },
+  {
+   "id": "5", "numeral": "੫", "name": "Guru Arjan Dev Ji", "gurmukhi": "ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ", "years": "1563–1606", "role": "Fifth Guru",
+   "born": "Goindval Sahib in 1563.",
+   "facts": ["Built Sri Harmandir Sahib, with four doors open to everyone.", "Gathered the Gurus' bani into the Adi Granth in 1604.", "Wrote Sukhmani Sahib, the Prayer of Peace.", "Gave his life in 1606 — the first Sikh shaheed."]
+  },
+  {
+   "id": "6", "numeral": "੬", "name": "Guru Hargobind Sahib Ji", "gurmukhi": "ਗੁਰੂ ਹਰਿਗੋਬਿੰਦ ਸਾਹਿਬ ਜੀ", "years": "1595–1644", "role": "Sixth Guru",
+   "born": "Guru ki Wadali, near Amritsar, in 1595.",
+   "facts": ["Wore two swords, Miri and Piri — caring for the world and for the spirit.", "Built the Akal Takht in Amritsar.", "Freed 52 kings from Gwalior Fort, remembered on Bandi Chhor Divas."]
+  },
+  {
+   "id": "7", "numeral": "੭", "name": "Guru Har Rai Ji", "gurmukhi": "ਗੁਰੂ ਹਰਿ ਰਾਇ ਜੀ", "years": "1630–1661", "role": "Seventh Guru",
+   "born": "Kiratpur Sahib in 1630.",
+   "facts": ["Loved nature and kept gardens full of plants and animals.", "Ran a place where sick people were given free medicine.", "Taught everyone to be gentle with all living things."]
+  },
+  {
+   "id": "8", "numeral": "੮", "name": "Guru Har Krishan Ji", "gurmukhi": "ਗੁਰੂ ਹਰਿ ਕ੍ਰਿਸ਼ਨ ਜੀ", "years": "1656–1664", "role": "Eighth Guru",
+   "born": "Kiratpur Sahib in 1656.",
+   "facts": ["Became Guru when he was only five years old.", "In Delhi, cared for people who were ill during an epidemic.", "Gurdwara Bangla Sahib stands where he stayed in Delhi."]
+  },
+  {
+   "id": "9", "numeral": "੯", "name": "Guru Tegh Bahadur Ji", "gurmukhi": "ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ", "years": "1621–1675", "role": "Ninth Guru",
+   "born": "Amritsar in 1621.",
+   "facts": ["Founded the town that became Anandpur Sahib.", "Stood up for people's freedom to follow their own faith.", "Gave his life in Delhi in 1675; Gurdwara Sis Ganj Sahib marks the place.", "His bani is in Guru Granth Sahib Ji."]
+  },
+  {
+   "id": "10", "numeral": "੧੦", "name": "Guru Gobind Singh Ji", "gurmukhi": "ਗੁਰੂ ਗੋਬਿੰਦ ਸਿੰਘ ਜੀ", "years": "1666–1708", "role": "Tenth Guru",
+   "born": "Patna Sahib in 1666.",
+   "facts": ["Created the Khalsa at Anandpur Sahib on Vaisakhi, 1699.", "Was a poet and wrote many banis.", "In 1708 at Nanded, made Guru Granth Sahib Ji the eternal Guru."]
+  },
+  {
+   "id": "granth", "numeral": "ੴ", "name": "Guru Granth Sahib Ji", "gurmukhi": "ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ", "years": "Guru since 1708", "role": "Our eternal Guru",
+   "born": "First gathered as the Adi Granth by Guru Arjan Dev Ji in 1604.",
+   "facts": ["Holds the bani of six Gurus and of holy people (Bhagats) from different faiths.", "Written in Gurmukhi, with 1430 pages called angs.", "Guru Gobind Singh Ji gave it the Guruship in 1708.", "Sikhs bow to Guru Granth Sahib Ji as their living Guru."]
+  }
+ ],
+ "fiveKs": [
+  { "gurmukhi": "ਕੇਸ", "roman": "Kesh", "meaning": "Uncut hair — accepting the body as God made it" },
+  { "gurmukhi": "ਕੰਘਾ", "roman": "Kangha", "meaning": "A small wooden comb — keeping clean and tidy" },
+  { "gurmukhi": "ਕੜਾ", "roman": "Kara", "meaning": "A steel bracelet — a reminder to do good" },
+  { "gurmukhi": "ਕਛਹਿਰਾ", "roman": "Kachera", "meaning": "Cotton undergarment — self-control" },
+  { "gurmukhi": "ਕਿਰਪਾਨ", "roman": "Kirpan", "meaning": "A reminder to stand up for what is right" }
+ ],
+ "gurdwaras": [
+  { "id": "harmandir-sahib", "name": "Sri Harmandir Sahib", "gurmukhi": "ਸ੍ਰੀ ਹਰਿਮੰਦਰ ਸਾਹਿਬ", "place": "Amritsar, Punjab", "tags": ["historic"], "free": true, "guru": "5",
+    "about": ["Built by Guru Arjan Dev Ji in the middle of the sarovar started by Guru Ram Das Ji.", "It has four doors, showing it is open to people from every direction and every background.", "Its langar serves free meals to many thousands of people every day."] },
+  { "id": "akal-takht", "name": "Sri Akal Takht Sahib", "gurmukhi": "ਸ੍ਰੀ ਅਕਾਲ ਤਖ਼ਤ ਸਾਹਿਬ", "place": "Amritsar, Punjab", "tags": ["takht", "historic"], "free": false, "guru": "6",
+    "about": ["Built by Guru Hargobind Sahib Ji, facing Sri Harmandir Sahib.", "The first of the five Takhts — seats of Sikh authority."] },
+  { "id": "kesgarh-sahib", "name": "Takht Sri Kesgarh Sahib", "gurmukhi": "ਤਖ਼ਤ ਸ੍ਰੀ ਕੇਸਗੜ੍ਹ ਸਾਹਿਬ", "place": "Anandpur Sahib, Punjab", "tags": ["takht", "historic"], "free": false, "guru": "10",
+    "about": ["Stands where Guru Gobind Singh Ji created the Khalsa on Vaisakhi, 1699.", "Anandpur Sahib was founded by Guru Tegh Bahadur Ji."] },
+  { "id": "damdama-sahib", "name": "Takht Sri Damdama Sahib", "gurmukhi": "ਤਖ਼ਤ ਸ੍ਰੀ ਦਮਦਮਾ ਸਾਹਿਬ", "place": "Talwandi Sabo, Punjab", "tags": ["takht", "historic"], "free": false, "guru": "10",
+    "about": ["Guru Gobind Singh Ji stayed here, and the full Guru Granth Sahib was prepared here.", "It is one of the five Takhts."] },
+  { "id": "patna-sahib", "name": "Takht Sri Patna Sahib", "gurmukhi": "ਤਖ਼ਤ ਸ੍ਰੀ ਪਟਨਾ ਸਾਹਿਬ", "place": "Patna, Bihar", "tags": ["takht", "historic"], "free": false, "guru": "10",
+    "about": ["Marks the birthplace of Guru Gobind Singh Ji in 1666.", "It is one of the five Takhts."] },
+  { "id": "hazur-sahib", "name": "Takht Sri Hazur Sahib", "gurmukhi": "ਤਖ਼ਤ ਸ੍ਰੀ ਹਜ਼ੂਰ ਸਾਹਿਬ", "place": "Nanded, Maharashtra", "tags": ["takht", "historic"], "free": false, "guru": "10",
+    "about": ["Here Guru Gobind Singh Ji made Guru Granth Sahib Ji the eternal Guru in 1708.", "It is one of the five Takhts."] },
+  { "id": "bangla-sahib", "name": "Gurdwara Bangla Sahib", "gurmukhi": "ਗੁਰਦੁਆਰਾ ਬੰਗਲਾ ਸਾਹਿਬ", "place": "New Delhi", "tags": ["historic"], "free": false, "guru": "8",
+    "about": ["Guru Har Krishan Ji stayed here and cared for sick people.", "Visitors still take water from its sarovar."] },
+  { "id": "sis-ganj-sahib", "name": "Gurdwara Sis Ganj Sahib", "gurmukhi": "ਗੁਰਦੁਆਰਾ ਸੀਸ ਗੰਜ ਸਾਹਿਬ", "place": "Chandni Chowk, Delhi", "tags": ["historic"], "free": false, "guru": "9",
+    "about": ["Marks where Guru Tegh Bahadur Ji gave his life in 1675 for freedom of faith."] },
+  { "id": "nankana-sahib", "name": "Gurdwara Janam Asthan", "gurmukhi": "ਗੁਰਦੁਆਰਾ ਜਨਮ ਅਸਥਾਨ", "place": "Nankana Sahib, Pakistan", "tags": ["historic"], "free": false, "guru": "1",
+    "about": ["Marks the birthplace of Guru Nanak Dev Ji in 1469."] },
+  { "id": "kartarpur-sahib", "name": "Gurdwara Darbar Sahib Kartarpur", "gurmukhi": "ਗੁਰਦੁਆਰਾ ਦਰਬਾਰ ਸਾਹਿਬ ਕਰਤਾਰਪੁਰ", "place": "Kartarpur, Pakistan", "tags": ["historic"], "free": false, "guru": "1",
+    "about": ["Guru Nanak Dev Ji lived his last years here, farming and sharing with everyone."] }
+ ],
+ "gurpurabs": [
+  { "id": "nanak", "title": "Guru Nanak Dev Ji Gurpurab", "kind": "gurpurab", "when": "Kartik Puranmashi (Oct–Nov)", "guru": "1", "dates": {} },
+  { "id": "tegh-bahadur-shaheedi", "title": "Shaheedi of Guru Tegh Bahadur Ji", "kind": "shaheedi", "when": "November–December", "guru": "9", "dates": {} },
+  { "id": "gobind-singh", "title": "Guru Gobind Singh Ji Gurpurab", "kind": "gurpurab", "when": "December–January", "guru": "10", "dates": {} },
+  { "id": "sahibzade", "title": "Shaheedi of the Sahibzade", "kind": "shaheedi", "when": "December", "dates": {} },
+  { "id": "vaisakhi", "title": "Vaisakhi", "kind": "festival", "when": "April · usually 13 or 14 April", "guru": "10", "dates": {} },
+  { "id": "arjan-shaheedi", "title": "Shaheedi of Guru Arjan Dev Ji", "kind": "shaheedi", "when": "May–June", "guru": "5", "dates": {} },
+  { "id": "parkash-granth", "title": "First Parkash of Guru Granth Sahib Ji", "kind": "gurpurab", "when": "August–September", "guru": "granth", "dates": {} },
+  { "id": "bandi-chhor", "title": "Bandi Chhor Divas", "kind": "festival", "when": "October–November", "guru": "6", "dates": {} }
+ ],
+ "etiquette": [
+  { "icon": "users", "title": "Cover your head", "body": "A patka, dastar, chunni or scarf" },
+  { "icon": "sparkle", "title": "Remove shoes, wash hands", "body": "Before going into the darbar hall" },
+  { "icon": "heart", "title": "Sit humbly on the floor", "body": "In the darbar and in langar" },
+  { "icon": "star", "title": "Accept Karah Prashad", "body": "With both hands cupped together" },
+  { "icon": "shield", "title": "No tobacco or alcohol", "body": "Anywhere in the Gurdwara" }
+ ],
+ "etiquetteQuiz": [
+  { "q": "What do we do before going into the darbar hall?", "options": ["Take off shoes and wash hands", "Put on sunglasses", "Run in quickly"], "answer": 0 },
+  { "q": "How do we cover our head?", "options": ["With a patka, dastar, chunni or scarf", "We don't need to", "With a baseball cap backwards"], "answer": 0 },
+  { "q": "How do we accept Karah Prashad?", "options": ["With both hands cupped together", "With one finger", "In our pocket"], "answer": 0 },
+  { "q": "Where do we sit in langar?", "options": ["Together on the floor", "Only at the front", "Alone, away from others"], "answer": 0 },
+  { "q": "Which is never allowed in the Gurdwara?", "options": ["Tobacco or alcohol", "Smiling", "Saying Sat Sri Akal"], "answer": 0 }
+ ]
+}
