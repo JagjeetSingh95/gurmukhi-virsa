@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { Icon } from "@/components/icons";
-import { ButtonLink } from "@/components/ui/controls";
 import { marketingNav, site } from "@/lib/site";
+import { HeaderCta } from "@/components/site/VisitorCta";
 
 export function SiteHeader() {
   return (
@@ -22,9 +22,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <span className="ml-auto hidden tab:block web:ml-2">
-          <ButtonLink href={site.appEntry} size="sm">
-            Open web app
-          </ButtonLink>
+          <HeaderCta />
         </span>
         {/* Mobile / tablet menu — no JS needed */}
         <details className="group relative ml-auto tab:ml-0 web:hidden">
@@ -41,9 +39,7 @@ export function SiteHeader() {
             <Link href="/download" className="block rounded-md px-4 py-3 text-[16px] font-bold hover:bg-sunken">
               Get the app
             </Link>
-            <ButtonLink href={site.appEntry} block className="mt-2">
-              Open web app
-            </ButtonLink>
+            <HeaderCta mobile />
           </div>
         </details>
       </div>
@@ -52,7 +48,7 @@ export function SiteHeader() {
 }
 
 const footerCols = [
-  { title: "Product", links: [["Features", "/features"], ["Pricing", "/pricing"], ["Get the app", "/download"], ["Open web app", "/paath"]] },
+  { title: "Product", links: [["Features", "/features"], ["Pricing", "/pricing"], ["Get the app", "/download"], ["Start free", "/welcome"]] },
   { title: "Company", links: [["About", "/about"], ["Contact", "/contact"]] },
   { title: "Help", links: [["Help centre", "/support"], ["Privacy", "/privacy"], ["Terms", "/terms"]] },
 ] as const;

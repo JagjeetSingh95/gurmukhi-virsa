@@ -260,7 +260,7 @@ export function CtaBand() {
           <p className="mt-2 text-body-l text-navy-50">Paath is free forever. Kids get 10 letters and 2 sakhis free — no card needed.</p>
         </div>
         <div className="flex flex-col gap-3 tab:flex-row">
-          <ButtonLink href={site.appEntry}>Open web app</ButtonLink>
+          <ButtonLink href={site.appEntry}>Start learning — free</ButtonLink>
           <ButtonLink href="/pricing" variant="secondary">
             See plans
           </ButtonLink>

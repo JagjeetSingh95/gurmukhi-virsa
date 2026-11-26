@@ -16,7 +16,9 @@ import {
   TrustStrip,
 } from "@/components/site/blocks";
 import { pillars } from "@/content/marketing";
-import { site } from "@/lib/site";
+import { HeroCta, HeroEyebrow } from "@/components/site/VisitorCta";
+
+const heroChips = ["🔤 35 letters through games", "🎧 Paath with meaning + audio", "📖 Stories of the Gurus"];
 
 const floating = [
   { l: "ੳ", c: "left-[6%] top-[12%] rotate-[-8deg]" },
@@ -32,25 +34,28 @@ export default function Landing() {
       <section className="relative overflow-hidden bg-gradient-to-b from-saffron-50 via-app to-app dark:from-sunken">
         <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 pb-16 pt-10 web:grid-cols-[1.1fr_1fr] web:px-8 web:pb-24 web:pt-16">
           <div className="flex flex-col items-start gap-5">
-            <span className="inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1.5 text-label text-brand-text shadow-[0_2px_0_var(--border-default)]">
-              <Icon name="sparkle" size={16} /> For kids 4–12 · Families everywhere
-            </span>
+            <HeroEyebrow />
             <h1 className="text-display text-ink">
-              Gurmukhi, Paath and Sikh heritage —{" "}
+              Learn Gurmukhi, Paath and Sikh heritage —{" "}
               <span className="text-brand-text">made for kids.</span>
             </h1>
             <p className="max-w-xl text-body-l text-ink-2">
-              Learn all 35 letters through play, read Paath with meaning and real audio, and discover the stories of the Gurus. Paath is free forever.
+              Kids play their way through all 35 letters, read Paath with meaning and real audio, and discover the stories of the Gurus. Paath is free forever.
             </p>
+            <ul className="flex flex-wrap gap-2" aria-label="What's inside">
+              {heroChips.map((c) => (
+                <li key={c} className="rounded-full border border-line bg-surface px-3 py-1.5 text-label text-ink-2">
+                  {c}
+                </li>
+              ))}
+            </ul>
             <div className="flex w-full flex-col gap-3 tab:w-auto tab:flex-row">
-              <ButtonLink href={site.appEntry}>
-                Open web app — free <Icon name="arrow-right" size={18} />
-              </ButtonLink>
+              <HeroCta />
               <ButtonLink href="/features" variant="secondary">
                 See how it works
               </ButtonLink>
             </div>
-            <p className="text-caption text-ink-3">No card needed · No ads · No tracking</p>
+            <p className="text-caption text-ink-3">Works in your browser — no download · No card · No ads</p>
           </div>
 
           <div className="relative mx-auto grid aspect-square w-full max-w-[320px] tab:max-w-[460px] place-items-center" aria-hidden>

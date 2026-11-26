@@ -14,7 +14,7 @@ export default function NotFound() {
         <p className="max-w-md text-body-l text-ink-2">Sheru looked everywhere but couldn&apos;t find it. Let&apos;s get you back on the path.</p>
         <div className="flex flex-col gap-3 tab:flex-row">
           <ButtonLink href="/">Go home</ButtonLink>
-          <ButtonLink href="/paath" variant="secondary">Open web app</ButtonLink>
+          <ButtonLink href="/paath" variant="secondary">Read Paath</ButtonLink>
         </div>
       </main>
       <SiteFooter />
