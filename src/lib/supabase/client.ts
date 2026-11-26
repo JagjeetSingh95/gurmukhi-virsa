@@ -26,7 +26,10 @@ export function supabase(): SupabaseClient<Database> {
 }
 
 /** A Supabase auth cookie exists → this device has (or had) a parent session. */
-export const hasAuthCookie = () => typeof document !== "undefined" && /(?:^|;\s*)sb-[^=]+-auth-token/.test(document.cookie);
+// Real session cookie only: `sb-<ref>-auth-token` or its chunks `.0`, `.1`, with a value.
+// Not `sb-<ref>-auth-token-code-verifier`, which Supabase leaves behind after a sign-in attempt.
+export const hasAuthCookie = () =>
+  typeof document !== "undefined" && /(?:^|;\s*)sb-[^=;]+-auth-token(?:\.\d+)?=[^;]+/.test(document.cookie);
 
 /** Public site URL used for sign-in / email redirects (always the deployed site, even from localhost). */
 export function siteOrigin() {
