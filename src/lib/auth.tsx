@@ -40,7 +40,9 @@ export function AuthProvider({ children, eager = false }: { children: ReactNode;
       sb.from("profiles").select(PROFILE_COLS).eq("id", s.user.id).maybeSingle(),
       sb.from("children").select("*").order("created_at"),
     ]);
-    setProfile((p.data as Profile) ?? null);
+    const prof = (p.data as Profile) ?? null;
+    setProfile(prof);
+    local.setPlan(prof ? { plan: prof.plan, trial_ends_at: prof.trial_ends_at } : null);
     setKids((c.data as Child[]) ?? []);
   }, []);
 
@@ -99,6 +101,7 @@ export function AuthProvider({ children, eager = false }: { children: ReactNode;
       signOut: async () => {
         await (await loadSupabase()).auth.signOut();
         local.setActiveChild(null);
+        local.setPlan(null);
         local.setMode(null); // deliberate sign-out ≠ "session expired" banner (N.9.3)
         local.closeGate();
       },

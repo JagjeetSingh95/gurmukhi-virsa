@@ -16,7 +16,7 @@ import {
   TrustStrip,
 } from "@/components/site/blocks";
 import { pillars } from "@/content/marketing";
-import { HeroCta, HeroEyebrow } from "@/components/site/VisitorCta";
+import { HeroCta, HeroEyebrow, HeroNote } from "@/components/site/VisitorCta";
 
 const heroChips = [
   { icon: "letter", text: "35 letters → words → sentences" },
@@ -61,7 +61,7 @@ export default function Landing() {
                 See how it works
               </ButtonLink>
             </div>
-            <p className="text-caption text-ink-3">Works in your browser — no download · No card · No ads</p>
+            <HeroNote />
           </div>
 
           <div className="relative mx-auto grid aspect-square w-full max-w-[320px] tab:max-w-[460px] place-items-center" aria-hidden>

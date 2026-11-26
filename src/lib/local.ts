@@ -4,7 +4,7 @@
 export type Mode = "adult" | "family";
 export type GuestBookmark = { baniSlug: string; lineId: string; createdAt: string };
 
-const K = { mode: "gv.mode", bookmarks: "gv.guest.bookmarks", settings: "gv.guest.settings", child: "gv.activeChild", gate: "gv.gateUntil", sessions: "gv.sessions" };
+const K = { mode: "gv.mode", bookmarks: "gv.guest.bookmarks", settings: "gv.guest.settings", child: "gv.activeChild", gate: "gv.gateUntil", sessions: "gv.sessions", plan: "gv.plan" };
 
 function get<T>(key: string, fallback: T, store: "local" | "session" = "local"): T {
   try {
@@ -36,6 +36,9 @@ export const local = {
   gateOpen: () => get<number>(K.gate, 0, "session") > Date.now(),
   openGate: () => set(K.gate, Date.now() + 5 * 60_000, "session"),
   closeGate: () => set(K.gate, null, "session"),
+  /** Last known parent plan, cached so marketing pages can tailor CTAs without loading Supabase. */
+  plan: () => get<{ plan: "free" | "family"; trial_ends_at: string | null } | null>(K.plan, null),
+  setPlan: (p: { plan: "free" | "family"; trial_ends_at: string | null } | null) => set(K.plan, p),
   bumpSession: () => {
     const n = get<number>(K.sessions, 0) + 1;
     set(K.sessions, n);

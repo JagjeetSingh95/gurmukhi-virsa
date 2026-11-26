@@ -8,6 +8,7 @@ import { ButtonLink } from "@/components/ui/controls";
 import { hasAuthCookie } from "@/lib/supabase/client";
 import { local } from "@/lib/local";
 import { site } from "@/lib/site";
+import { resolveEntitlement } from "@/lib/plan";
 
 export type Visitor = "out" | "parent" | "guest";
 
@@ -35,7 +36,7 @@ const dest: Record<Visitor, string> = { out: site.appEntry, parent: "/profiles",
 /** Navbar actions. `mobile` = full-width stack inside the menu. */
 export function HeaderCta({ mobile = false }: { mobile?: boolean }) {
   const v = useVisitor();
-  const label = v === "out" ? "Start free" : v === "parent" ? "My family" : "Go to Paath";
+  const label = v === "out" ? "Let's start — free" : v === "parent" ? "Let's learn" : "Let's read Paath";
   return (
     <span className={mobile ? "mt-2 flex flex-col gap-2" : "flex items-center gap-2"}>
       {v !== "parent" && (
@@ -72,10 +73,46 @@ export function HeroEyebrow() {
 /** Primary hero button. */
 export function HeroCta() {
   const v = useVisitor();
-  const label = v === "parent" ? "Let's start learning" : v === "guest" ? "Let's read Paath" : "Start learning — free";
+  const label = v === "parent" ? "Let's learn" : v === "guest" ? "Let's read Paath" : "Start learning — free";
   return (
     <ButtonLink href={dest[v]}>
       {label} <Icon name="arrow-right" size={18} />
     </ButtonLink>
+  );
+}
+
+// Plan snapshot as a string ("" unknown · "free" · "trial:N" · "family") so useSyncExternalStore stays stable.
+function readPlan(): string {
+  if (!hasAuthCookie()) return "";
+  const cached = local.plan();
+  if (!cached) return ""; // unknown → show nothing (never nudge a paying parent by mistake)
+  const e = resolveEntitlement(cached, null);
+  return e.tier === "trial" ? `trial:${e.trialDaysLeft}` : e.tier;
+}
+
+/** Line under the hero buttons: trust line (signed out), calm plan note (parents on Free / trial). */
+export function HeroNote() {
+  const v = useVisitor();
+  const plan = useSyncExternalStore(subscribe, readPlan, () => "");
+  const link = "font-bold text-brand-text underline underline-offset-2 hover:no-underline";
+  if (v === "out") return <p className="text-caption text-ink-3">Works in your browser — no download · No card · No ads</p>;
+  if (v !== "parent" || !plan || plan === "family") return null;
+  if (plan === "free")
+    return (
+      <p className="text-caption text-ink-3">
+        You&apos;re on Free ·{" "}
+        <Link href="/pricing" className={link}>
+          Try Family free for 7 days →
+        </Link>
+      </p>
+    );
+  const days = Number(plan.split(":")[1] ?? 0);
+  return (
+    <p className="text-caption text-ink-3">
+      Family trial · {days} day{days === 1 ? "" : "s"} left ·{" "}
+      <Link href="/pricing" className={link}>
+        Keep Family →
+      </Link>
+    </p>
   );
 }
