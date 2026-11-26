@@ -31,7 +31,7 @@ export function useVisitor(): Visitor {
   return useSyncExternalStore(subscribe, readVisitor, () => "out");
 }
 
-const leadIcon = { parent: "letter", guest: "book" } as const;
+const leadIcon = { parent: "users", guest: "book" } as const;
 const dest: Record<Visitor, string> = { out: site.appEntry, parent: "/profiles", guest: "/paath" };
 
 /** Navbar actions. `mobile` = full-width stack inside the menu. */
