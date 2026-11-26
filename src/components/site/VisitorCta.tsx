@@ -35,7 +35,7 @@ const dest: Record<Visitor, string> = { out: site.appEntry, parent: "/profiles",
 /** Navbar actions. `mobile` = full-width stack inside the menu. */
 export function HeaderCta({ mobile = false }: { mobile?: boolean }) {
   const v = useVisitor();
-  const label = v === "out" ? "Start free" : "Continue";
+  const label = v === "out" ? "Start free" : v === "parent" ? "My family" : "Go to Paath";
   return (
     <span className={mobile ? "mt-2 flex flex-col gap-2" : "flex items-center gap-2"}>
       {v !== "parent" && (
@@ -72,7 +72,7 @@ export function HeroEyebrow() {
 /** Primary hero button. */
 export function HeroCta() {
   const v = useVisitor();
-  const label = v === "parent" ? "Continue learning" : v === "guest" ? "Continue reading Paath" : "Start learning — free";
+  const label = v === "parent" ? "Go to my family" : v === "guest" ? "Go to Paath" : "Start learning — free";
   return (
     <ButtonLink href={dest[v]}>
       {label} <Icon name="arrow-right" size={18} />

@@ -18,7 +18,12 @@ import {
 import { pillars } from "@/content/marketing";
 import { HeroCta, HeroEyebrow } from "@/components/site/VisitorCta";
 
-const heroChips = ["🔤 35 letters through games", "🎧 Paath with meaning + audio", "📖 Stories of the Gurus"];
+const heroChips = [
+  { icon: "letter", text: "35 letters → words → sentences" },
+  { icon: "volume", text: "Paath with meaning + audio" },
+  { icon: "book", text: "Stories of the Gurus" },
+  { icon: "culture", text: "Sikh culture & Gurdwaras" },
+] as const;
 
 const floating = [
   { l: "ੳ", c: "left-[6%] top-[12%] rotate-[-8deg]" },
@@ -42,10 +47,11 @@ export default function Landing() {
             <p className="max-w-xl text-body-l text-ink-2">
               Kids play their way through all 35 letters, read Paath with meaning and real audio, and discover the stories of the Gurus. Paath is free forever.
             </p>
-            <ul className="flex flex-wrap gap-2" aria-label="What's inside">
+            <ul className="grid w-full max-w-xl gap-2 tab:grid-cols-2" aria-label="What's inside">
               {heroChips.map((c) => (
-                <li key={c} className="rounded-full border border-line bg-surface px-3 py-1.5 text-label text-ink-2">
-                  {c}
+                <li key={c.text} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-label text-ink-2">
+                  <Icon name={c.icon} size={16} className="text-brand-text" />
+                  {c.text}
                 </li>
               ))}
             </ul>
