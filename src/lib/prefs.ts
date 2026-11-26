@@ -1,5 +1,5 @@
 "use client";
-// N.9.1 App preferences (theme + UI language), saved on this device and synced to the parent's settings row.
+// N.9.1 App preferences (default theme = light; header toggle switches light/dark) (theme + UI language), saved on this device and synced to the parent's settings row.
 import { PREFS_KEY } from "@/lib/prefsBoot";
 import { useLocal } from "@/lib/useLocal";
 
@@ -8,7 +8,7 @@ export { PREFS_KEY };
 export type Theme = "system" | "light" | "dark";
 export type Lang = "en" | "pa";
 export type Prefs = { theme: Theme; lang: Lang; sounds: boolean };
-export const defaultPrefs: Prefs = { theme: "system", lang: "en", sounds: true };
+export const defaultPrefs: Prefs = { theme: "light", lang: "en", sounds: true };
 
 export function readPrefs(): Prefs {
   try {

@@ -11,6 +11,7 @@ import { avatarEmoji } from "@/lib/avatars";
 import { local } from "@/lib/local";
 import { useLocal } from "@/lib/useLocal";
 import { cn } from "@/lib/cn";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { Icon, type IconName } from "@/components/icons";
 import { Logo } from "@/components/Logo";
 import { SystemBanners } from "@/components/shell/SystemBanners";
@@ -92,6 +93,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           );
         })}
         <div className="mt-auto" />
+        <ThemeToggle className="web:ml-1" />
         <Link
           href="/settings"
           aria-current={isActive("/settings") ? "page" : undefined}

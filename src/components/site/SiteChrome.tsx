@@ -3,6 +3,7 @@ import { Logo } from "@/components/Logo";
 import { Icon } from "@/components/icons";
 import { marketingNav, site } from "@/lib/site";
 import { HeaderCta } from "@/components/site/VisitorCta";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function SiteHeader() {
   return (
@@ -21,11 +22,12 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <span className="ml-auto hidden tab:block web:ml-2">
+        <ThemeToggle className="ml-auto web:ml-0" />
+        <span className="hidden tab:block">
           <HeaderCta />
         </span>
         {/* Mobile / tablet menu — no JS needed */}
-        <details className="group relative ml-auto tab:ml-0 web:hidden">
+        <details className="group relative web:hidden">
           <summary className="grid size-11 cursor-pointer list-none place-items-center rounded-md hover:bg-sunken [&::-webkit-details-marker]:hidden" aria-label="Menu">
             <Icon name="menu" className="group-open:hidden" />
             <Icon name="close" className="hidden group-open:block" />

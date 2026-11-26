@@ -3,7 +3,7 @@ import type { SVGProps } from "react";
 export type IconName =
   | "book" | "letter" | "culture" | "parent" | "settings" | "check" | "close" | "lock"
   | "play" | "star" | "shield" | "heart" | "menu" | "arrow-right" | "search" | "sparkle"
-  | "devices" | "mail" | "moon" | "chevron-down" | "info" | "alert" | "wifi-off" | "users"
+  | "devices" | "mail" | "moon" | "sun" | "chevron-down" | "info" | "alert" | "wifi-off" | "users"
   | "bookmark" | "bookmark-on" | "pause" | "volume" | "keyboard" | "heart-on" | "clock"
   | "arrow-left" | "calendar" | "pin" | "chevron-left" | "chevron-right" | "download" | "download-done";
 
@@ -26,6 +26,7 @@ const paths: Record<IconName, React.ReactNode> = {
   sparkle: <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6" />,
   devices: <><rect x="2.5" y="5" width="13" height="10" rx="1.5" /><path d="M6 19h6M9 15v4" /><rect x="17" y="8" width="5" height="12" rx="1.5" /></>,
   mail: <><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m4 7 8 6 8-6" /></>,
+  sun: <><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" /></>,
   moon: <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" />,
   "chevron-down": <path d="m6 9 6 6 6-6" />,
   info: <><circle cx="12" cy="12" r="9" /><path d="M12 11v5.5M12 7.5v.5" /></>,

@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+    <html lang="en" data-theme="light" className="h-full antialiased" suppressHydrationWarning>
       <head>
         {/* Applies the saved theme before paint (N.9.1). */}
         <script dangerouslySetInnerHTML={{ __html: prefsBootScript }} />
