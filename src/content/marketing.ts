@@ -78,8 +78,8 @@ export const pillars = [
     gurmukhi: "ਸਿੱਖੋ",
     icon: "letter" as const,
     free: "First 10 letters free",
-    body: "A playful path through all 35 letters of the Painti, then laga matra, words and short sentences.",
-    points: ["Trace letters with a finger", "Listen, match and quiz", "Daily streaks, no guilt", "Numbers, colours and family words"],
+    body: "A playful path from all 35 letters of the Painti to laga matra, first words and short sentences kids can read on their own.",
+    points: ["Trace letters with a finger", "Build and read real words", "Read short sentences", "Numbers, colours and family words"],
   },
   {
     key: "culture",

@@ -45,7 +45,7 @@ export default function Landing() {
               <span className="text-brand-text">made for kids.</span>
             </h1>
             <p className="max-w-xl text-body-l text-ink-2">
-              Kids play their way through all 35 letters, read Paath with meaning and real audio, and discover the stories of the Gurus. Paath is free forever.
+              Kids play their way from all 35 letters to their first words and simple sentences, read Paath with meaning and real audio, and discover the stories of the Gurus. Paath is free forever.
             </p>
             <ul className="grid w-full max-w-xl gap-2 tab:grid-cols-2" aria-label="What's inside">
               {heroChips.map((c) => (
@@ -135,11 +135,11 @@ export default function Landing() {
           <LetterPathPreview className="order-last web:order-first" />
           <div>
             <SectionHead
-              eyebrow="Learn · first 10 letters free"
-              title="From ੳ to ੜ, one happy step at a time"
-              body="Kids hear each letter, trace it with a finger, then play quick matching games. Sheru cheers them on — gently, with no guilt."
+              eyebrow="Learn · letters, words & sentences"
+              title="From ੳ to first sentences, one happy step at a time"
+              body="Kids hear each letter, trace it with a finger, then join letters into real words and read short sentences. Sheru cheers them on — gently, with no guilt. First 10 letters are free."
             />
-            <FeatureList items={["All 35 letters of the Painti", "Tracing, listening and quiz games", "Laga matra, words and short sentences", "Streaks that celebrate, never shame"]} />
+            <FeatureList items={["All 35 letters of the Painti", "Laga matra — the vowel signs that build words", "First words and short sentences to read aloud", "Everyday words: numbers, colours, family", "Tracing, listening and quiz games"]} />
           </div>
         </div>
       </Section>

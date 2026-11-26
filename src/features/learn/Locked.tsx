@@ -16,7 +16,7 @@ export function UnlockCard({ compact }: { compact?: boolean }) {
       <div className="flex items-center gap-3">
         {!compact && <Sheru mood="proud" size={48} decorative />}
         <div>
-          <p className="text-h3 text-reward">Unlock all 35 letters</p>
+          <p className="text-h3 text-reward">Unlock all letters, words & sentences</p>
           <p className="text-[14px] text-ink-2">First 10 letters are free. Ask a grown-up to see plans.</p>
         </div>
       </div>

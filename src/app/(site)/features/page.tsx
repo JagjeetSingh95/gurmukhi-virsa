@@ -19,7 +19,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Features",
-  description: "Paath reader with audio and meaning, a playful Gurmukhi letter path, Sikh culture stories and a parent dashboard — all in one app.",
+  description: "Paath reader with audio and meaning, a playful path from Gurmukhi letters to words and sentences, Sikh culture stories and a parent dashboard — all in one app.",
   alternates: { canonical: "/features" },
 };
 
@@ -57,7 +57,7 @@ export default function Features() {
       <PageHero
         eyebrow="Features"
         title="Built for little learners and calm reading"
-        body="Gurmukhi Virsa brings together letters, Paath and Sikh heritage in one place — designed for kids, trusted by parents."
+        body="Gurmukhi Virsa brings together letters, words, Paath and Sikh heritage in one place — designed for kids, trusted by parents."
       >
         <nav aria-label="Jump to" className="mt-2 flex flex-wrap gap-2">
           {pillars.map((p) => (

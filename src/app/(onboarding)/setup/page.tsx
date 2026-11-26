@@ -237,7 +237,7 @@ export default function Setup() {
           <Sheru mood="proud" size={120} decorative />
           <Badge tone="reward" icon="star">Optional</Badge>
           <h1 className="text-h1">Try Family free for 7 days</h1>
-          <p className="text-body-l text-ink-2">All 35 letters, every sakhi and up to 5 children. We&apos;ll remind you on day 5. Cancel any time.</p>
+          <p className="text-body-l text-ink-2">All 35 letters, words and sentences, every sakhi and up to 5 children. We&apos;ll remind you on day 5. Cancel any time.</p>
           {!billing().live && (
             <p className="rounded-md bg-info-bg px-3 py-2 text-[14px] font-bold text-info">Payments aren&apos;t live yet — you can start the trial once Family launches.</p>
           )}

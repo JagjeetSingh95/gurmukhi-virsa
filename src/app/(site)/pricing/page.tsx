@@ -13,7 +13,9 @@ export const metadata: Metadata = {
 const compare: [string, string, string][] = [
   ["Paath reader, audio, meaning", "✓", "✓"],
   ["Gurmukhi letters", "First 10", "All 35"],
-  ["Laga matra, words, sentences", "—", "✓"],
+  ["Laga matra (vowel signs)", "—", "✓"],
+  ["Words & short sentences", "—", "✓"],
+  ["Everyday words (numbers, colours, family)", "—", "✓"],
   ["Sakhis", "2", "All"],
   ["Culture lessons", "Preview", "All"],
   ["Child profiles", "1", "Up to 5"],
@@ -30,7 +32,7 @@ export default function Pricing() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <PageHero eyebrow="Pricing" title="Simple plans for every family" body="Paath stays free for everyone, forever. Upgrade to Family to unlock every letter, story and child profile." />
+      <PageHero eyebrow="Pricing" title="Simple plans for every family" body="Paath stays free for everyone, forever. Upgrade to Family to unlock every letter, word, sentence, story and child profile." />
 
       <Section>
         <PricingCards />
