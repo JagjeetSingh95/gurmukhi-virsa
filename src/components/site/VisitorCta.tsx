@@ -31,12 +31,13 @@ export function useVisitor(): Visitor {
   return useSyncExternalStore(subscribe, readVisitor, () => "out");
 }
 
+const leadIcon = { parent: "letter", guest: "book" } as const;
 const dest: Record<Visitor, string> = { out: site.appEntry, parent: "/profiles", guest: "/paath" };
 
 /** Navbar actions. `mobile` = full-width stack inside the menu. */
 export function HeaderCta({ mobile = false }: { mobile?: boolean }) {
   const v = useVisitor();
-  const label = v === "out" ? "Let's start — free" : v === "parent" ? "Let's learn" : "Let's read Paath";
+  const label = v === "out" ? "Join now — free" : v === "parent" ? "Let's learn" : "Let's read Paath";
   return (
     <span className={mobile ? "mt-2 flex flex-col gap-2" : "flex items-center gap-2"}>
       {v !== "parent" && (
@@ -52,8 +53,8 @@ export function HeaderCta({ mobile = false }: { mobile?: boolean }) {
         </Link>
       )}
       <ButtonLink href={dest[v]} size={mobile ? undefined : "sm"} block={mobile}>
+        {v !== "out" && <Icon name={leadIcon[v]} size={16} />}
         {label}
-        {v !== "out" && <Icon name="arrow-right" size={16} />}
       </ButtonLink>
     </span>
   );
@@ -76,7 +77,9 @@ export function HeroCta() {
   const label = v === "parent" ? "Let's learn" : v === "guest" ? "Let's read Paath" : "Start learning — free";
   return (
     <ButtonLink href={dest[v]}>
-      {label} <Icon name="arrow-right" size={18} />
+      {v !== "out" && <Icon name={leadIcon[v]} size={18} />}
+      {label}
+      {v === "out" && <Icon name="arrow-right" size={18} />}
     </ButtonLink>
   );
 }
