@@ -74,7 +74,7 @@ export function HeroEyebrow() {
 /** Primary hero button. */
 export function HeroCta() {
   const v = useVisitor();
-  const label = v === "parent" ? "Let's learn" : v === "guest" ? "Let's read Paath" : "Start learning — free";
+  const label = v === "parent" ? "Let's learn" : v === "guest" ? "Let's read Paath" : "Join now — free";
   return (
     <ButtonLink href={dest[v]}>
       {v !== "out" && <Icon name={leadIcon[v]} size={18} />}

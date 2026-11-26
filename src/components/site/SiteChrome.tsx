@@ -48,7 +48,7 @@ export function SiteHeader() {
 }
 
 const footerCols = [
-  { title: "Product", links: [["Features", "/features"], ["Pricing", "/pricing"], ["Get the app", "/download"], ["Start free", "/welcome"]] },
+  { title: "Product", links: [["Features", "/features"], ["Pricing", "/pricing"], ["Get the app", "/download"], ["Join now — free", "/welcome"]] },
   { title: "Company", links: [["About", "/about"], ["Contact", "/contact"]] },
   { title: "Help", links: [["Help centre", "/support"], ["Privacy", "/privacy"], ["Terms", "/terms"]] },
 ] as const;

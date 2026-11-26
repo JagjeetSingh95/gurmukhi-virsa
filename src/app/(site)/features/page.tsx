@@ -102,7 +102,7 @@ export default function Features() {
           ))}
         </div>
         <div className="mt-10 flex justify-center">
-          <ButtonLink href={site.appEntry}>Start learning — free</ButtonLink>
+          <ButtonLink href={site.appEntry}>Join now — free</ButtonLink>
         </div>
       </Section>
 
